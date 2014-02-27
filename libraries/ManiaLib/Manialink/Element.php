@@ -198,14 +198,14 @@ abstract class Element extends Component implements Drawable
 		$this->setStyle(null);
 		$this->setSubStyle(null);
 	}
-	
+
 	function setBgcolorFocus($bgcolor)
 	{
 		$this->bgcolorfocus = $bgcolor;
 		$this->setStyle(null);
 		$this->setSubStyle(null);
 	}
-	
+
 	/**
 	 * Set the opacity of a quad or a label
 	 * @param float $opacity
@@ -386,12 +386,12 @@ abstract class Element extends Component implements Drawable
 	{
 		return $this->bgcolor;
 	}
-	
+
 	function getBgcolorFocus()
 	{
 		return $this->bgcolorfocus;
 	}
-	
+
 	function getOpacity()
 	{
 		return $this->opacity;
@@ -526,19 +526,16 @@ abstract class Element extends Component implements Drawable
 		if($this->opacity !== null) $this->xml->setAttribute('opacity', $this->opacity);
 
 		// Add links
-		if(Manialink::$linksEnabled)
-		{
-			if($this->addPlayerId !== null) $this->xml->setAttribute('addplayerid', $this->addPlayerId);
-			if($this->manialink !== null) $this->xml->setAttribute('manialink', $this->manialink);
-			if($this->goto !== null) $this->xml->setAttribute('goto', $this->goto);
-			if($this->manialinkId !== null) $this->xml->setAttribute('manialinkId', $this->manialinkId);
-			if($this->url !== null) $this->xml->setAttribute('url', $this->url);
-			if($this->urlId !== null) $this->xml->setAttribute('urlid', $this->urlId);
-			if($this->maniazone !== null) $this->xml->setAttribute('maniazone', $this->maniazone);
+		if($this->addPlayerId !== null) $this->xml->setAttribute('addplayerid', $this->addPlayerId);
+		if($this->manialink !== null) $this->xml->setAttribute('manialink', $this->manialink);
+		if($this->goto !== null) $this->xml->setAttribute('goto', $this->goto);
+		if($this->manialinkId !== null) $this->xml->setAttribute('manialinkId', $this->manialinkId);
+		if($this->url !== null) $this->xml->setAttribute('url', $this->url);
+		if($this->urlId !== null) $this->xml->setAttribute('urlid', $this->urlId);
+		if($this->maniazone !== null) $this->xml->setAttribute('maniazone', $this->maniazone);
 
-			// Add action
-			if($this->action !== null) $this->xml->setAttribute('action', $this->action);
-		}
+		// Add action
+		if($this->action !== null) $this->xml->setAttribute('action', $this->action);
 		if($this->actionKey !== null) $this->xml->setAttribute('actionkey', $this->actionKey);
 
 		// Add images
@@ -551,12 +548,12 @@ abstract class Element extends Component implements Drawable
 		if($this->id) $this->xml->setAttribute('id', $this->id);
 		if($this->scriptevents !== null) $this->xml->setAttribute('scriptevents', $this->scriptevents);
 		if($this->hidden !== null) $this->xml->setAttribute('hidden', $this->hidden);
-                
-                // Add all other attributes
-                foreach($this->attributes as $name => $value)
-                {
-                    $this->xml->setAttribute($name, $value);
-                }
+
+		// Add all other attributes
+		foreach($this->attributes as $name => $value)
+		{
+			$this->xml->setAttribute($name, $value);
+		}
 	}
 
 	final protected function handleCardElements()

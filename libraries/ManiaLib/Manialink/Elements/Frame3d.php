@@ -17,8 +17,10 @@ use ManiaLib\Manialink\Manialink;
 /*
  * Yep it should extend both Frame and Quad but eh!
  */
+
 class Frame3d extends Frame
 {
+
 	protected $xmlTagName = 'frame3d';
 
 	const BaseStation = 'BaseStation';
@@ -30,11 +32,10 @@ class Frame3d extends Frame
 	const Window = 'Window';
 	const Title = 'Title';
 	const TitleEditor = 'TitleEditor';
-	
+
 	protected $style = \ManiaLib\Manialink\Elements\Bgs1::Bgs1;
 	protected $subStyle = \ManiaLib\Manialink\Elements\Bgs1::BgTitle3_2;
 	protected $style3d = self::Window;
-
 	protected $manialink;
 	protected $maniazone;
 	protected $manialinkId;
@@ -62,7 +63,7 @@ class Frame3d extends Frame
 	{
 		$this->manialink = $manialink;
 	}
-	
+
 	/**
 	 * Sets the Manialink of the element. It works as a hyperlink.
 	 * @param string Can be either a short Manialink or an URL pointing to a
@@ -125,26 +126,26 @@ class Frame3d extends Frame
 	{
 		$this->actionKey = $actionKey;
 	}
-	
+
 	function setStyle($style)
 	{
 		$this->style = $style;
 	}
-	
+
 	function setSubStyle($subStyle)
 	{
 		$this->subStyle = $subStyle;
 	}
-	
+
 	function setStyle3D($style3D)
 	{
 		$this->style3d = $style3D;
 	}
-	
+
 	function buildXML()
 	{
 		parent::buildXML();
-		
+
 		if($this->scriptevents) $this->xml->setAttribute('scriptevents', $this->scriptevents);
 
 		if($this->style !== null) $this->xml->setAttribute('style', $this->style);
@@ -160,20 +161,17 @@ class Frame3d extends Frame
 		if($this->halign !== null) $this->xml->setAttribute('halign', $this->halign);
 		if($this->valign !== null) $this->xml->setAttribute('valign', $this->valign);
 
-		// Add links
-		if(Manialink::$linksEnabled)
-		{
-			if($this->manialink !== null) $this->xml->setAttribute('manialink', $this->manialink);
-			if($this->maniazone !== null) $this->xml->setAttribute('maniazone', $this->maniazone);
-			if($this->manialinkId !== null) $this->xml->setAttribute('manialinkId', $this->manialinkId);
-			if($this->url !== null) $this->xml->setAttribute('url', $this->url);
-			if($this->urlId !== null) $this->xml->setAttribute('urlid', $this->urlId);
+		if($this->manialink !== null) $this->xml->setAttribute('manialink', $this->manialink);
+		if($this->maniazone !== null) $this->xml->setAttribute('maniazone', $this->maniazone);
+		if($this->manialinkId !== null) $this->xml->setAttribute('manialinkId', $this->manialinkId);
+		if($this->url !== null) $this->xml->setAttribute('url', $this->url);
+		if($this->urlId !== null) $this->xml->setAttribute('urlid', $this->urlId);
 
-			// Add action
-			if($this->action !== null) $this->xml->setAttribute('action', $this->action);
-		}
+		// Add action
+		if($this->action !== null) $this->xml->setAttribute('action', $this->action);
 		if($this->actionKey !== null) $this->xml->setAttribute('actionkey', $this->actionKey);
-		
 	}
+
 }
+
 ?>

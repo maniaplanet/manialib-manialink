@@ -40,7 +40,6 @@ abstract class Manialink
 	 * @var Elements\Frame[]
 	 */
 	public static $parentFrames;
-	public static $linksEnabled = true;
 	public static $langsURL;
 	public static $imagesURL;
 	public static $mediaURL;
@@ -214,22 +213,6 @@ abstract class Manialink
 		$script = self::$domDocument->createElement('script');
 		$script->appendChild(self::$domDocument->createTextNode($maniaScript));
 		end(self::$parentNodes)->appendChild($script);
-	}
-
-	/**
-	 * Disable all Manialinks, URLs and actions of GUIElement objects as long as it is disabled
-	 */
-	static function disableLinks()
-	{
-		self::$linksEnabled = false;
-	}
-
-	/**
-	 * Enable links
-	 */
-	static function enableLinks()
-	{
-		self::$linksEnabled = true;
 	}
 
 }
