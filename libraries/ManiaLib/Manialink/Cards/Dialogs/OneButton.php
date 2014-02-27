@@ -10,20 +10,20 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Cards\Dialogs;
+namespace ManiaLib\Manialink\Cards\Dialogs;
 
-use ManiaLib\Gui\Elements\Label;
+use ManiaLib\Manialink\Elements\Label;
 
-class OneButton extends \ManiaLib\Gui\Cards\Panel
+class OneButton extends \ManiaLib\Manialink\Cards\Panel
 {
 
 	/**
-	 * @var \ManiaLib\Gui\Elements\Button
+	 * @var \ManiaLib\Manialink\Elements\Button
 	 */
 	public $button;
 
 	/**
-	 * @var \ManiaLib\Gui\Elements\Label
+	 * @var \ManiaLib\Manialink\Elements\Label
 	 */
 	public $text;
 
@@ -31,11 +31,11 @@ class OneButton extends \ManiaLib\Gui\Cards\Panel
 	{
 		parent::__construct($sizeX, $sizeY);
 
-		$this->setSubStyle(\ManiaLib\Gui\Elements\Bgs1::BgWindow2);
-		$this->title->setStyle(\ManiaLib\Gui\Elements\Label::TextTitle2);
+		$this->setSubStyle(\ManiaLib\Manialink\Elements\Bgs1::BgWindow2);
+		$this->title->setStyle(\ManiaLib\Manialink\Elements\Label::TextTitle2);
 		$this->addCardElement($this->title);
 
-		$this->button = new \ManiaLib\Gui\Elements\Button;
+		$this->button = new \ManiaLib\Manialink\Elements\Button;
 		$this->button->setAlign('center', 'bottom');
 		$this->addCardElement($this->button);
 

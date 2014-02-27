@@ -10,7 +10,7 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Maniacode;
+namespace ManiaLib\Manialink\Maniacode;
 
 abstract class Maniacode
 {

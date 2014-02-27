@@ -10,9 +10,9 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Elements;
+namespace ManiaLib\Manialink\Elements;
 
-class Video extends \ManiaLib\Gui\Elements\Audio
+class Video extends \ManiaLib\Manialink\Elements\Audio
 {
 
 	protected $xmlTagName = 'video';

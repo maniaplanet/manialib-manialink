@@ -10,7 +10,7 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Elements;
+namespace ManiaLib\Manialink\Elements;
 
 class UIConstructionSimple_Buttons extends Icon
 {
@@ -59,7 +59,7 @@ class UIConstructionSimple_Buttons extends Icon
 	const Up = 'Up';
 	const Validate = 'Validate';
 
-	protected $style = \ManiaLib\Gui\Elements\Quad::UIConstructionSimple_Buttons;
+	protected $style = \ManiaLib\Manialink\Elements\Quad::UIConstructionSimple_Buttons;
 	protected $subStyle = self::Options;
 
 }

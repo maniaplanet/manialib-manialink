@@ -10,7 +10,7 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui;
+namespace ManiaLib\Manialink;
 
 abstract class Element extends Component implements Drawable
 {
@@ -51,7 +51,7 @@ abstract class Element extends Component implements Drawable
 	/**
 	 * Used by cards, all the elements in that array will be renderd before
 	 * the post filter.
-	 * @var array[\ManiaLib\Gui\Element]
+	 * @var array[\ManiaLib\Manialink\Element]
 	 */
 	protected $cardElements = array();
 	protected $cardElementsHalign = 'left';
@@ -61,7 +61,7 @@ abstract class Element extends Component implements Drawable
 	protected $cardElementsPosZ = 0.1;
 
 	/**
-	 * @var \ManiaLib\Gui\Layouts\AbstractLayout
+	 * @var \ManiaLib\Manialink\Layouts\AbstractLayout
 	 */
 	protected $cardElementsLayout = null;
 
@@ -427,9 +427,9 @@ abstract class Element extends Component implements Drawable
 
 	/**
 	 * Imports links and actions from another Manialink element
-	 * @param \ManiaLib\Gui\Element The source object
+	 * @param \ManiaLib\Manialink\Element The source object
 	 */
-	function addLink(\ManiaLib\Gui\Element $object)
+	function addLink(\ManiaLib\Manialink\Element $object)
 	{
 		$this->manialink = $object->getManialink();
 		$this->url = $object->getUrl();
@@ -463,7 +463,7 @@ abstract class Element extends Component implements Drawable
 	/**
 	 * @deprecated
 	 */
-	protected function addCardElement(\ManiaLib\Gui\Element $element)
+	protected function addCardElement(\ManiaLib\Manialink\Element $element)
 	{
 		$this->cardElements[] = $element;
 	}
@@ -586,7 +586,7 @@ abstract class Element extends Component implements Drawable
 
 	/**
 	 * Saves the object in the Manialink object stack for further rendering.
-	 * Thanks to the use of \ManiaLib\Gui\Element::preFilter() and \ManiaLib\Gui\Element::
+	 * Thanks to the use of \ManiaLib\Manialink\Element::preFilter() and \ManiaLib\Manialink\Element::
 	 * postFilter(), you shouldn't have to override this method
 	 */
 	final function save()

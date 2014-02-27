@@ -10,30 +10,30 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Cards;
+namespace ManiaLib\Manialink\Cards;
 
-use ManiaLib\Gui\Elements\Label;
-use ManiaLib\Gui\Elements\Bgs1;
-use ManiaLib\Gui\Elements\Bgs1InRace;
-use ManiaLib\Gui\Elements\Quad;
+use ManiaLib\Manialink\Elements\Label;
+use ManiaLib\Manialink\Elements\Bgs1;
+use ManiaLib\Manialink\Elements\Bgs1InRace;
+use ManiaLib\Manialink\Elements\Quad;
 
 class Panel extends Quad
 {
 
 	/**
-	 * @var \ManiaLib\Gui\Elements\Label
+	 * @var \ManiaLib\Manialink\Elements\Label
 	 */
 	public $title;
 
 	/**
 	 * Title background
-	 * @var \ManiaLib\Gui\Elements\Quad
+	 * @var \ManiaLib\Manialink\Elements\Quad
 	 */
 	public $titleBg;
 
 	/**
 	 * Panel background
-	 * @var \ManiaLib\Gui\Elements\Quad
+	 * @var \ManiaLib\Manialink\Elements\Quad
 	 */
 	protected $panelBg;
 

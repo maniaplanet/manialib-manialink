@@ -10,15 +10,15 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Cards;
+namespace ManiaLib\Manialink\Cards;
 
-use ManiaLib\Gui\Elements\Label;
+use ManiaLib\Manialink\Elements\Label;
 use ManiaLib\Utils\Logger;
 use ManiaLib\Utils\Arrays;
 use ManiaLib\Utils\Formatting;
-use ManiaLib\Gui\Layouts\Column;
-use ManiaLib\Gui\Manialink;
-use ManiaLib\Gui\Elements\Bgs1;
+use ManiaLib\Manialink\Layouts\Column;
+use ManiaLib\Manialink\Manialink;
+use ManiaLib\Manialink\Elements\Bgs1;
 
 /**
  * A simple card to display an array of (title, label) inside a Bgs1 quad

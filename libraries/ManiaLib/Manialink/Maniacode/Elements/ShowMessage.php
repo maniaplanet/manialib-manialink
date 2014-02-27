@@ -10,9 +10,9 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Maniacode\Elements;
+namespace ManiaLib\Manialink\Maniacode\Elements;
 
-class ShowMessage extends \ManiaLib\Gui\Maniacode\Component
+class ShowMessage extends \ManiaLib\Manialink\Maniacode\Component
 {
 
 	protected $xmlTagName = 'show_message';
@@ -37,8 +37,8 @@ class ShowMessage extends \ManiaLib\Gui\Maniacode\Component
 	{
 		if($this->message)
 		{
-			$elem = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createElement('message');
-			$value = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createTextNode($this->message);
+			$elem = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createElement('message');
+			$value = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createTextNode($this->message);
 			$elem->appendChild($value);
 			$this->xml->appendChild($elem);
 		}

@@ -10,7 +10,7 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Layouts;
+namespace ManiaLib\Manialink\Layouts;
 
 /**
  * Elements are added below their predecessor
@@ -34,7 +34,7 @@ class Column extends AbstractLayout
 		$this->direction = $direction;
 	}
 
-	function preFilter(\ManiaLib\Gui\Component $item)
+	function preFilter(\ManiaLib\Manialink\Component $item)
 	{
 		if($this->direction == self::DIRECTION_UP)
 		{
@@ -42,7 +42,7 @@ class Column extends AbstractLayout
 		}
 	}
 
-	function postFilter(\ManiaLib\Gui\Component $item)
+	function postFilter(\ManiaLib\Manialink\Component $item)
 	{
 		if($this->direction == self::DIRECTION_DOWN)
 		{

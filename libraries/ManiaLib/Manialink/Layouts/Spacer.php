@@ -10,7 +10,7 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Layouts;
+namespace ManiaLib\Manialink\Layouts;
 
 /**
  * Do nothing, used to set a frame's size

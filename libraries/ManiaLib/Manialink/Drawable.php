@@ -10,7 +10,7 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui;
+namespace ManiaLib\Manialink;
 
 /**
  * Can be drawn onto the Screen.

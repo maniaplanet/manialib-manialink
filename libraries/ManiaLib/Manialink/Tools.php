@@ -10,7 +10,7 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui;
+namespace ManiaLib\Manialink;
 
 abstract class Tools
 {
@@ -107,13 +107,13 @@ abstract class Tools
 	 * Returns the position of an element in relation to another element and
 	 * according to their respective alignments
 	 * 
-	 * @param \ManiaLib\Gui\Element Parent element
+	 * @param \ManiaLib\Manialink\Element Parent element
 	 * @param string Horizontal alignement of the element you want to place
 	 * @param string Vertical alignement of the element you want to place
 	 * @return array Calculated position of the element you want to place. The
 	 * array contains 2 elements with "x" and "y" indexes
 	 */
-	final public static function getAlignedPos(\ManiaLib\Gui\Element $object,
+	final public static function getAlignedPos(\ManiaLib\Manialink\Element $object,
 		$newHalign, $newValign)
 	{
 		$newPosX = self::getAlignedPosX(

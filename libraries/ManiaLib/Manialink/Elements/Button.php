@@ -10,9 +10,9 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Elements;
+namespace ManiaLib\Manialink\Elements;
 
-class Button extends \ManiaLib\Gui\Elements\Label
+class Button extends \ManiaLib\Manialink\Elements\Label
 {
 	const CardButtonMedium = 'CardButtonMedium';
 	const CardButtonMediumWide = 'CardButtonMediumWide';

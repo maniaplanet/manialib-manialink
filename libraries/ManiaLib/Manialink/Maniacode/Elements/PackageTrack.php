@@ -10,7 +10,7 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Maniacode\Elements;
+namespace ManiaLib\Manialink\Maniacode\Elements;
 
 /**
  * Use it only with InstallTrackPack

@@ -10,7 +10,7 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Elements;
+namespace ManiaLib\Manialink\Elements;
 
 class Bgs1 extends Quad
 {

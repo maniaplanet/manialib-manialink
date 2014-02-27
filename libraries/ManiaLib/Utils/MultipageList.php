@@ -30,13 +30,13 @@ class MultipageList
 	protected $linkCallback = 'setManialink';
 
 	/**
-	 * @var \ManiaLib\Gui\Cards\PageNavigator
+	 * @var \ManiaLib\Manialink\Cards\PageNavigator
 	 */
 	public $pageNavigator;
 
 	function __construct($perPage = 8)
 	{
-		$this->pageNavigator = new \ManiaLib\Gui\Cards\PageNavigator;
+		$this->pageNavigator = new \ManiaLib\Manialink\Cards\PageNavigator;
 		$this->perPage = $perPage;
 	}
 

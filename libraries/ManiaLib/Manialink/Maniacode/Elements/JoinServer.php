@@ -10,9 +10,9 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Maniacode\Elements;
+namespace ManiaLib\Manialink\Maniacode\Elements;
 
-class JoinServer extends \ManiaLib\Gui\Maniacode\Component
+class JoinServer extends \ManiaLib\Manialink\Maniacode\Component
 {
 	const PLAY = 1;
 	const SPEC = 2;
@@ -62,24 +62,24 @@ class JoinServer extends \ManiaLib\Gui\Maniacode\Component
 	{
 		if(isset($this->ip))
 		{
-			$elem = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createElement('ip');
-			$value = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createTextNode($this->ip);
+			$elem = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createElement('ip');
+			$value = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createTextNode($this->ip);
 			$elem->appendChild($value);
 			$this->xml->appendChild($elem);
 		}
 
 		if(isset($this->password))
 		{
-			$elem = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createElement('password');
-			$value = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createTextNode($this->password);
+			$elem = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createElement('password');
+			$value = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createTextNode($this->password);
 			$elem->appendChild($value);
 			$this->xml->appendChild($elem);
 		}
 
 		if(isset($this->connectionType))
 		{
-			$elem = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createElement('connection_type');
-			$value = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createTextNode($this->connectionType);
+			$elem = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createElement('connection_type');
+			$value = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createTextNode($this->connectionType);
 			$elem->appendChild($value);
 			$this->xml->appendChild($elem);
 		}

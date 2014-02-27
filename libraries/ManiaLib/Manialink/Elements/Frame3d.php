@@ -10,9 +10,9 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Elements;
+namespace ManiaLib\Manialink\Elements;
 
-use ManiaLib\Gui\Manialink;
+use ManiaLib\Manialink\Manialink;
 
 /*
  * Yep it should extend both Frame and Quad but eh!
@@ -31,8 +31,8 @@ class Frame3d extends Frame
 	const Title = 'Title';
 	const TitleEditor = 'TitleEditor';
 	
-	protected $style = \ManiaLib\Gui\Elements\Bgs1::Bgs1;
-	protected $subStyle = \ManiaLib\Gui\Elements\Bgs1::BgTitle3_2;
+	protected $style = \ManiaLib\Manialink\Elements\Bgs1::Bgs1;
+	protected $subStyle = \ManiaLib\Manialink\Elements\Bgs1::BgTitle3_2;
 	protected $style3d = self::Window;
 
 	protected $manialink;
@@ -47,7 +47,7 @@ class Frame3d extends Frame
 	function __construct($sizeX, $sizeY)
 	{
 		parent::__construct($sizeX, $sizeY);
-		$this->setLayout(new \ManiaLib\Gui\Layouts\Spacer($sizeX, $sizeY));
+		$this->setLayout(new \ManiaLib\Manialink\Layouts\Spacer($sizeX, $sizeY));
 
 		$this->halign = 'left';
 		$this->valign = 'top';

@@ -10,9 +10,9 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Elements;
+namespace ManiaLib\Manialink\Elements;
 
-class IncludeManialink extends \ManiaLib\Gui\Element
+class IncludeManialink extends \ManiaLib\Manialink\Element
 {
 
 	function __construct()
@@ -31,7 +31,7 @@ class IncludeManialink extends \ManiaLib\Gui\Element
 	{
 		if(!$absoluteUrl)
 		{
-			$this->url = \ManiaLib\Gui\Manialink::$mediaURL.'maniascript/'.$url;
+			$this->url = \ManiaLib\Manialink\Manialink::$mediaURL.'maniascript/'.$url;
 		}
 		else
 		{

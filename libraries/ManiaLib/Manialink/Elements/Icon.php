@@ -10,10 +10,10 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Elements;
+namespace ManiaLib\Manialink\Elements;
 
 /**
- * Should be abstract some day, use classes like "\ManiaLib\Gui\Elements\Icons128x128_1" instead
+ * Should be abstract some day, use classes like "\ManiaLib\Manialink\Elements\Icons128x128_1" instead
  */
 abstract class Icon extends Quad
 {

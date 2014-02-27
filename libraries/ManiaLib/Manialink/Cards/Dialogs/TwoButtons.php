@@ -10,24 +10,24 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Cards\Dialogs;
+namespace ManiaLib\Manialink\Cards\Dialogs;
 
 class TwoButtons extends OneButton
 {
 
 	/**
-	 * @var \ManiaLib\Gui\Elements\Button
+	 * @var \ManiaLib\Manialink\Elements\Button
 	 */
 	public $button2;
 
 	function __construct($sizeX = 65, $sizeY = 25)
 	{
 		parent::__construct($sizeX, $sizeY);
-		$this->titleBg->setSubStyle(\ManiaLib\Gui\Elements\Bgs1::BgTitle3_1);
+		$this->titleBg->setSubStyle(\ManiaLib\Manialink\Elements\Bgs1::BgTitle3_1);
 
 		$this->button->setPosition(-15, 0, 0);
 
-		$this->button2 = new \ManiaLib\Gui\Elements\Button;
+		$this->button2 = new \ManiaLib\Manialink\Elements\Button;
 		$this->button2->setPosition(15, 0, 0);
 		$this->button2->setAlign('left', 'bottom');
 		$this->addCardElement($this->button2);

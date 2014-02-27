@@ -10,12 +10,12 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Elements;
+namespace ManiaLib\Manialink\Elements;
 
 class Icons64x64_1 extends Icon
 {
 
-	protected $style = \ManiaLib\Gui\Elements\Quad::Icons64x64_1;
+	protected $style = \ManiaLib\Manialink\Elements\Quad::Icons64x64_1;
 	protected $subStyle = self::GenericButton;
 
 	const Stereo3D = '3DStereo';

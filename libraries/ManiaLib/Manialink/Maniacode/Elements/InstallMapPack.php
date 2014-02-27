@@ -10,9 +10,9 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Maniacode\Elements;
+namespace ManiaLib\Manialink\Maniacode\Elements;
 
-class InstallMapPack extends \ManiaLib\Gui\Maniacode\Component
+class InstallMapPack extends \ManiaLib\Manialink\Maniacode\Component
 {
 
 	protected $xmlTagName = 'install_map_pack';
@@ -25,7 +25,7 @@ class InstallMapPack extends \ManiaLib\Gui\Maniacode\Component
 
 	function addMap($name = '', $url = '')
 	{
-		$this->maps[] = new \ManiaLib\Gui\Maniacode\Elements\PackageMap($name, $url);
+		$this->maps[] = new \ManiaLib\Manialink\Maniacode\Elements\PackageMap($name, $url);
 	}
 
 	function getLastInsert()

@@ -10,7 +10,7 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Layouts;
+namespace ManiaLib\Manialink\Layouts;
 
 /**
  * Text-like, items fill the current line then next line etc.
@@ -21,7 +21,7 @@ class Flow extends AbstractLayout
 	protected $maxHeight = 0;
 	protected $currentLineElementCount = 0;
 
-	function preFilter(\ManiaLib\Gui\Component $item)
+	function preFilter(\ManiaLib\Manialink\Component $item)
 	{
 		// flo: added 0.1 because of floating mistakes
 		$availableWidth = $this->sizeX - $this->xIndex - $this->borderWidth + 0.1;
@@ -36,7 +36,7 @@ class Flow extends AbstractLayout
 		}
 	}
 
-	function postFilter(\ManiaLib\Gui\Component $item)
+	function postFilter(\ManiaLib\Manialink\Component $item)
 	{
 		$this->xIndex += $item->getRealSizeX() + $this->marginWidth;
 		if(!$this->maxHeight || $item->getRealSizeY() > $this->maxHeight)

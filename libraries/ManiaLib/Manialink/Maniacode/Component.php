@@ -10,7 +10,7 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Maniacode;
+namespace ManiaLib\Manialink\Maniacode;
 
 abstract class Component
 {
@@ -56,13 +56,13 @@ abstract class Component
 	{
 		$this->preFilter();
 
-		$this->xml = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createElement($this->xmlTagName);
-		end(\ManiaLib\Gui\Maniacode\Maniacode::$parentNodes)->appendChild($this->xml);
+		$this->xml = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createElement($this->xmlTagName);
+		end(\ManiaLib\Manialink\Maniacode\Maniacode::$parentNodes)->appendChild($this->xml);
 
 		if(isset($this->name))
 		{
-			$elem = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createElement('name');
-			$value = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createTextNode($this->name);
+			$elem = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createElement('name');
+			$value = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createTextNode($this->name);
 			$elem->appendChild($value);
 			$this->xml->appendChild($elem);
 		}

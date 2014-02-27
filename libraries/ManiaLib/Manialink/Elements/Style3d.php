@@ -7,11 +7,11 @@
  * @author      $Author$:
  * @date        $Date$:
  */
-namespace ManiaLib\Gui\Elements;
+namespace ManiaLib\Manialink\Elements;
 
-use ManiaLib\Gui\Manialink;
+use ManiaLib\Manialink\Manialink;
 
-class Style3d implements \ManiaLib\Gui\Drawable
+class Style3d implements \ManiaLib\Manialink\Drawable
 {
 	const Floating = 'Floating';
 	const Box = 'Box';

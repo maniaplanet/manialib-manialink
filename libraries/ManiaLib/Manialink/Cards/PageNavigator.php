@@ -10,60 +10,60 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Cards;
+namespace ManiaLib\Manialink\Cards;
 
 /**
  * Page navigation arrows at the bottom of the lists
  */
-class PageNavigator extends \ManiaLib\Gui\Elements\Frame
+class PageNavigator extends \ManiaLib\Manialink\Elements\Frame
 {
 
 	/**
-	 * @var \ManiaLib\Gui\Elements\Icons64x64_1
+	 * @var \ManiaLib\Manialink\Elements\Icons64x64_1
 	 */
 	public $arrowNext;
 
 	/**
-	 * @var \ManiaLib\Gui\Elements\Icons64x64_1
+	 * @var \ManiaLib\Manialink\Elements\Icons64x64_1
 	 */
 	public $arrowPrev;
 
 	/**
-	 * @var \ManiaLib\Gui\Elements\Icons64x64_1
+	 * @var \ManiaLib\Manialink\Elements\Icons64x64_1
 	 */
 	public $arrowFastNext;
 
 	/**
-	 * @var \ManiaLib\Gui\Elements\Icons64x64_1
+	 * @var \ManiaLib\Manialink\Elements\Icons64x64_1
 	 */
 	public $arrowFastPrev;
 
 	/**
-	 * @var \ManiaLib\Gui\Elements\Icons64x64_1
+	 * @var \ManiaLib\Manialink\Elements\Icons64x64_1
 	 */
 	public $arrowLast;
 
 	/**
-	 * @var \ManiaLib\Gui\Elements\Icons64x64_1
+	 * @var \ManiaLib\Manialink\Elements\Icons64x64_1
 	 */
 	public $arrowFirst;
 
 	/**
-	 * @var \ManiaLib\Gui\Elements\Label
+	 * @var \ManiaLib\Manialink\Elements\Label
 	 */
 	public $text;
 
 	/**
-	 * @var \ManiaLib\Gui\Elements\Bgs1
+	 * @var \ManiaLib\Manialink\Elements\Bgs1
 	 */
 	public $textBg;
-	public $arrowNoneStyle = \ManiaLib\Gui\Elements\Icons64x64_1::ArrowDisabled;
-	public $arrowNextStyle = \ManiaLib\Gui\Elements\Icons64x64_1::ArrowNext;
-	public $arrowPrevStyle = \ManiaLib\Gui\Elements\Icons64x64_1::ArrowPrev;
-	public $arrowFastNextStyle = \ManiaLib\Gui\Elements\Icons64x64_1::ArrowFastNext;
-	public $arrowFastPrevStyle = \ManiaLib\Gui\Elements\Icons64x64_1::ArrowFastPrev;
-	public $arrowFirstStyle = \ManiaLib\Gui\Elements\Icons64x64_1::ArrowFirst;
-	public $arrowLastStyle = \ManiaLib\Gui\Elements\Icons64x64_1::ArrowLast;
+	public $arrowNoneStyle = \ManiaLib\Manialink\Elements\Icons64x64_1::ArrowDisabled;
+	public $arrowNextStyle = \ManiaLib\Manialink\Elements\Icons64x64_1::ArrowNext;
+	public $arrowPrevStyle = \ManiaLib\Manialink\Elements\Icons64x64_1::ArrowPrev;
+	public $arrowFastNextStyle = \ManiaLib\Manialink\Elements\Icons64x64_1::ArrowFastNext;
+	public $arrowFastPrevStyle = \ManiaLib\Manialink\Elements\Icons64x64_1::ArrowFastPrev;
+	public $arrowFirstStyle = \ManiaLib\Manialink\Elements\Icons64x64_1::ArrowFirst;
+	public $arrowLastStyle = \ManiaLib\Manialink\Elements\Icons64x64_1::ArrowLast;
 
 	/*	 * #@+
 	 * @ignore
@@ -79,14 +79,14 @@ class PageNavigator extends \ManiaLib\Gui\Elements\Frame
 	{
 		parent::__construct();
 
-		$this->arrowNext = new \ManiaLib\Gui\Elements\Icons64x64_1($iconSize);
-		$this->arrowPrev = new \ManiaLib\Gui\Elements\Icons64x64_1($iconSize);
-		$this->arrowFastNext = new \ManiaLib\Gui\Elements\Icons64x64_1($iconSize);
-		$this->arrowFastPrev = new \ManiaLib\Gui\Elements\Icons64x64_1($iconSize);
-		$this->arrowLast = new \ManiaLib\Gui\Elements\Icons64x64_1($iconSize);
-		$this->arrowFirst = new \ManiaLib\Gui\Elements\Icons64x64_1($iconSize);
-		$this->text = new \ManiaLib\Gui\Elements\Label(14);
-		$this->textBg = new \ManiaLib\Gui\Elements\Bgs1(16, $iconSize - 2);
+		$this->arrowNext = new \ManiaLib\Manialink\Elements\Icons64x64_1($iconSize);
+		$this->arrowPrev = new \ManiaLib\Manialink\Elements\Icons64x64_1($iconSize);
+		$this->arrowFastNext = new \ManiaLib\Manialink\Elements\Icons64x64_1($iconSize);
+		$this->arrowFastPrev = new \ManiaLib\Manialink\Elements\Icons64x64_1($iconSize);
+		$this->arrowLast = new \ManiaLib\Manialink\Elements\Icons64x64_1($iconSize);
+		$this->arrowFirst = new \ManiaLib\Manialink\Elements\Icons64x64_1($iconSize);
+		$this->text = new \ManiaLib\Manialink\Elements\Label(14);
+		$this->textBg = new \ManiaLib\Manialink\Elements\Bgs1(16, $iconSize - 2);
 
 		$this->showLast = false;
 		$this->showFastNext = false;
@@ -107,7 +107,7 @@ class PageNavigator extends \ManiaLib\Gui\Elements\Frame
 	{
 		foreach($this as $name => $property)
 		{
-			if($property instanceof \ManiaLib\Gui\Element)
+			if($property instanceof \ManiaLib\Manialink\Element)
 			{
 				$this->$name = clone $property;
 			}
@@ -256,14 +256,14 @@ class PageNavigator extends \ManiaLib\Gui\Elements\Frame
 		}
 
 		// Text
-		$this->text->setStyle(\ManiaLib\Gui\Elements\Label::TextValueSmall);
+		$this->text->setStyle(\ManiaLib\Manialink\Elements\Label::TextValueSmall);
 		$this->text->setText($this->currentPage.' / '.$this->pageNumber);
 
 		// Positioning in relation to the center of the containing frame
 		$this->text->setAlign("center", "center2");
 		$this->text->setPosZ(1);
 
-		$this->textBg->setSubStyle(\ManiaLib\Gui\Elements\Bgs1::BgPager);
+		$this->textBg->setSubStyle(\ManiaLib\Manialink\Elements\Bgs1::BgPager);
 		$this->textBg->setAlign('center', 'center');
 		$this->textBg->setPosZ(.5);
 

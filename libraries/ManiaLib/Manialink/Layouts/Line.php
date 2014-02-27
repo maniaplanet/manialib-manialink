@@ -10,7 +10,7 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Layouts;
+namespace ManiaLib\Manialink\Layouts;
 
 /**
  * Elements are added at the right of their predecessor
@@ -18,7 +18,7 @@ namespace ManiaLib\Gui\Layouts;
 class Line extends AbstractLayout
 {
 
-	function postFilter(\ManiaLib\Gui\Component $item)
+	function postFilter(\ManiaLib\Manialink\Component $item)
 	{
 		$this->xIndex += $item->getRealSizeX() + $this->marginWidth;
 	}

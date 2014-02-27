@@ -10,12 +10,12 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Elements;
+namespace ManiaLib\Manialink\Elements;
 
 class Icons128x128_Blink extends Icons128x128_1
 {
 
-	protected $style = \ManiaLib\Gui\Elements\Quad::Icons128x128_Blink;
+	protected $style = \ManiaLib\Manialink\Elements\Quad::Icons128x128_Blink;
 
 }
 

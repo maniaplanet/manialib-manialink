@@ -10,10 +10,10 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Cards\Navigation;
+namespace ManiaLib\Manialink\Cards\Navigation;
 
 /**
- * @method \ManiaLib\Gui\Cards\Navigation\Config getInstance()
+ * @method \ManiaLib\Manialink\Cards\Navigation\Config getInstance()
  */
 class Config extends \ManiaLib\Utils\Singleton
 {

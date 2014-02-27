@@ -10,9 +10,9 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Elements;
+namespace ManiaLib\Manialink\Elements;
 
-class Quad extends \ManiaLib\Gui\Element
+class Quad extends \ManiaLib\Manialink\Element
 {
 	const BgRaceScore2 = 'BgRaceScore2';
 	const Bgs1 = 'Bgs1';
@@ -31,7 +31,7 @@ class Quad extends \ManiaLib\Gui\Element
 
 	protected $xmlTagName = 'quad';
 	protected $style = self::Bgs1;
-	protected $subStyle = \ManiaLib\Gui\Elements\Bgs1::BgWindow2;
+	protected $subStyle = \ManiaLib\Manialink\Elements\Bgs1::BgWindow2;
 	
 	protected $colorize;
 	protected $modulateColor;

@@ -10,9 +10,9 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Elements;
+namespace ManiaLib\Manialink\Elements;
 
-class Music extends \ManiaLib\Gui\Element
+class Music extends \ManiaLib\Manialink\Element
 {
 
 	protected $xmlTagName = 'music';
@@ -40,7 +40,7 @@ class Music extends \ManiaLib\Gui\Element
 	{
 		if(!$absoluteUrl)
 		{
-			$this->data = \ManiaLib\Gui\Manialink::$mediaURL.$filename;
+			$this->data = \ManiaLib\Manialink\Manialink::$mediaURL.$filename;
 		}
 		else
 		{

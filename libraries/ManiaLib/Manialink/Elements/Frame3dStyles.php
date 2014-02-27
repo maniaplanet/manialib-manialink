@@ -7,7 +7,7 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Elements;
+namespace ManiaLib\Manialink\Elements;
 
 class Frame3dStyles extends Frame
 {

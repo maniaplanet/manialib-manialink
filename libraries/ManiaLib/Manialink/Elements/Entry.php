@@ -10,9 +10,9 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Elements;
+namespace ManiaLib\Manialink\Elements;
 
-class Entry extends \ManiaLib\Gui\Elements\Label
+class Entry extends \ManiaLib\Manialink\Elements\Label
 {
 
 	protected $xmlTagName = 'entry';

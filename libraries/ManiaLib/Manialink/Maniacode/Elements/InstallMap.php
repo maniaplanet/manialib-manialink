@@ -10,9 +10,9 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Maniacode\Elements;
+namespace ManiaLib\Manialink\Maniacode\Elements;
 
-class InstallMap extends \ManiaLib\Gui\Maniacode\Elements\FileDownload
+class InstallMap extends \ManiaLib\Manialink\Maniacode\Elements\FileDownload
 {
 
 	protected $xmlTagName = 'install_map';

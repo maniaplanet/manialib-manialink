@@ -10,9 +10,9 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Elements;
+namespace ManiaLib\Manialink\Elements;
 
-class Label extends \ManiaLib\Gui\Elements\Format
+class Label extends \ManiaLib\Manialink\Elements\Format
 {
 
 	protected $xmlTagName = 'label';
@@ -144,7 +144,7 @@ class Label extends \ManiaLib\Gui\Elements\Format
 		parent::postFilter();
 		if($this->text !== null)
 		{
-			if(\ManiaLib\Gui\Manialink::$linksEnabled)
+			if(\ManiaLib\Manialink\Manialink::$linksEnabled)
 				$this->xml->setAttribute('text', $this->text);
 			else
 				$this->xml->setAttribute('text',
@@ -152,7 +152,7 @@ class Label extends \ManiaLib\Gui\Elements\Format
 		}
 		if($this->textid !== null)
 		{
-			if(\ManiaLib\Gui\Manialink::$linksEnabled)
+			if(\ManiaLib\Manialink\Manialink::$linksEnabled)
 				$this->xml->setAttribute('textid', $this->textid);
 			else
 				$this->xml->setAttribute('textid',

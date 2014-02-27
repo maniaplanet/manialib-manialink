@@ -10,12 +10,12 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Elements;
+namespace ManiaLib\Manialink\Elements;
 
 /**
  * A blank element, useful to place gaps between elements when using layouts
  */
-class Spacer extends \ManiaLib\Gui\Element
+class Spacer extends \ManiaLib\Manialink\Element
 {
 
 	protected $xmlTagName = null;

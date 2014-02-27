@@ -10,7 +10,7 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Maniacode\Elements;
+namespace ManiaLib\Manialink\Maniacode\Elements;
 
 class InstallSkin extends FileDownload
 {
@@ -52,8 +52,8 @@ class InstallSkin extends FileDownload
 		parent::postFilter();
 		if(isset($this->file))
 		{
-			$elem = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createElement('file');
-			$value = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createTextNode($this->file);
+			$elem = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createElement('file');
+			$value = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createTextNode($this->file);
 			$elem->appendChild($value);
 			$this->xml->appendChild($elem);
 		}

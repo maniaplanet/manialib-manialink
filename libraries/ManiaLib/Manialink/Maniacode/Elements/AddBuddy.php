@@ -10,9 +10,9 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Maniacode\Elements;
+namespace ManiaLib\Manialink\Maniacode\Elements;
 
-class AddBuddy extends \ManiaLib\Gui\Maniacode\Component
+class AddBuddy extends \ManiaLib\Manialink\Maniacode\Component
 {
 
 	protected $xmlTagName = 'add_buddy';
@@ -37,8 +37,8 @@ class AddBuddy extends \ManiaLib\Gui\Maniacode\Component
 	{
 		if(isset($this->login))
 		{
-			$elem = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createElement('login');
-			$value = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createTextNode($this->login);
+			$elem = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createElement('login');
+			$value = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createTextNode($this->login);
 			$elem->appendChild($value);
 			$this->xml->appendChild($elem);
 		}

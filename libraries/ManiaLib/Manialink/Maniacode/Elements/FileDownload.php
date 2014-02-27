@@ -10,9 +10,9 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Maniacode\Elements;
+namespace ManiaLib\Manialink\Maniacode\Elements;
 
-abstract class FileDownload extends \ManiaLib\Gui\Maniacode\Component
+abstract class FileDownload extends \ManiaLib\Manialink\Maniacode\Component
 {
 
 	protected $url;
@@ -50,8 +50,8 @@ abstract class FileDownload extends \ManiaLib\Gui\Maniacode\Component
 	{
 		if(isset($this->url))
 		{
-			$elem = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createElement('url');
-			$value = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createTextNode($this->url);
+			$elem = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createElement('url');
+			$value = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createTextNode($this->url);
 			$elem->appendChild($value);
 			$this->xml->appendChild($elem);
 		}

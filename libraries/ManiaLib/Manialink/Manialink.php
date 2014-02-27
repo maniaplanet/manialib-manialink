@@ -10,7 +10,7 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui;
+namespace ManiaLib\Manialink;
 
 abstract class Manialink
 {
@@ -111,12 +111,12 @@ abstract class Manialink
 	 * @param float Y position
 	 * @param float Z position
 	 * @param float Scale (default is null or 1)
-	 * @param \ManiaLib\Gui\Layouts\AbstractLayout The optionnal layout associated with the frame. If
+	 * @param \ManiaLib\Manialink\Layouts\AbstractLayout The optionnal layout associated with the frame. If
 	 * you pass a layout object, all the items inside the frame will be
 	 * positionned using constraints defined by the layout
 	 */
 	final public static function beginFrame($x = 0, $y = 0, $z = 0, $scale = null,
-		\ManiaLib\Gui\Layouts\AbstractLayout $layout = null)
+		\ManiaLib\Manialink\Layouts\AbstractLayout $layout = null)
 	{
 		$frame = new Elements\Frame();
 		$frame->setPosition($x, $y, $z);

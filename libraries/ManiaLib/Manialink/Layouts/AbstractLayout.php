@@ -10,12 +10,12 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Layouts;
+namespace ManiaLib\Manialink\Layouts;
 
 /**
  * Abstract class used for building layouts
  */
-abstract class AbstractLayout extends \ManiaLib\Gui\Component
+abstract class AbstractLayout extends \ManiaLib\Manialink\Component
 {
 
 	public $xIndex = 0;
@@ -28,7 +28,7 @@ abstract class AbstractLayout extends \ManiaLib\Gui\Component
 
 	/**
 	 * Default constructor is used to set the size of the layout, just like
-	 * \ManiaLib\Gui\Element
+	 * \ManiaLib\Manialink\Element
 	 * @param float Layout's width
 	 * @param float Layout's height
 	 */
@@ -136,7 +136,7 @@ abstract class AbstractLayout extends \ManiaLib\Gui\Component
 		return $this->borderHeight;
 	}
 
-	final function updateComponent(\ManiaLib\Gui\Component $item)
+	final function updateComponent(\ManiaLib\Manialink\Component $item)
 	{
 		$item->incPosX($this->xIndex);
 		$item->incPosY($this->yIndex);
@@ -147,7 +147,7 @@ abstract class AbstractLayout extends \ManiaLib\Gui\Component
 	 * Override this method to perform an action before rendering an item.
 	 * Typical use: look for overflow
 	 */
-	function preFilter(\ManiaLib\Gui\Component $item)
+	function preFilter(\ManiaLib\Manialink\Component $item)
 	{
 		
 	}
@@ -156,7 +156,7 @@ abstract class AbstractLayout extends \ManiaLib\Gui\Component
 	 * Override this method to perform an action after rendering an an item.
 	 * Typical use: update x,y,z indexes for the next item
 	 */
-	function postFilter(\ManiaLib\Gui\Component $item)
+	function postFilter(\ManiaLib\Manialink\Component $item)
 	{
 		
 	}

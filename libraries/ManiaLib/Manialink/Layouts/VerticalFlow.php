@@ -10,7 +10,7 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Layouts;
+namespace ManiaLib\Manialink\Layouts;
 
 /**
  * Column-like, items fill vertically the current column then the next one on the right etc.
@@ -21,7 +21,7 @@ class VerticalFlow extends AbstractLayout
 	protected $maxWidth = 0;
 	protected $currentColumnElementCount = 0;
 
-	function preFilter(\ManiaLib\Gui\Component $item)
+	function preFilter(\ManiaLib\Manialink\Component $item)
 	{
 		// add minimal number to avoid floating error
 		$availableHeight = $this->sizeY + $this->yIndex - $this->borderHeight + 0.1;
@@ -36,7 +36,7 @@ class VerticalFlow extends AbstractLayout
 		}
 	}
 
-	function postFilter(\ManiaLib\Gui\Component $item)
+	function postFilter(\ManiaLib\Manialink\Component $item)
 	{
 		$this->yIndex -= $item->getRealSizeY() + $this->marginHeight;
 		if(!$this->maxWidth || $item->getRealSizeX() > $this->maxWidth)

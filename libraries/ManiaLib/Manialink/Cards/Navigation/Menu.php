@@ -10,15 +10,15 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Cards\Navigation;
+namespace ManiaLib\Manialink\Cards\Navigation;
 
-use ManiaLib\Gui\Manialink;
-use ManiaLib\Gui\Elements\Quad;
-use ManiaLib\Gui\Elements\Bgs1;
-use ManiaLib\Gui\Elements\Icons128x128_1;
-use ManiaLib\Gui\Elements\Icons64x64_1;
-use ManiaLib\Gui\Elements\Label;
-use ManiaLib\Gui\Layouts\Column;
+use ManiaLib\Manialink\Manialink;
+use ManiaLib\Manialink\Elements\Quad;
+use ManiaLib\Manialink\Elements\Bgs1;
+use ManiaLib\Manialink\Elements\Icons128x128_1;
+use ManiaLib\Manialink\Elements\Icons64x64_1;
+use ManiaLib\Manialink\Elements\Label;
+use ManiaLib\Manialink\Layouts\Column;
 
 /**
  * Navigation menu
@@ -40,22 +40,22 @@ class Menu extends Bgs1
 	public $subTitle;
 
 	/**
-	 * @var \ManiaLib\Gui\Elements\Quad
+	 * @var \ManiaLib\Manialink\Elements\Quad
 	 */
 	public $titleBg;
 
 	/**
-	 * @var \ManiaLib\Gui\Elements\Quad
+	 * @var \ManiaLib\Manialink\Elements\Quad
 	 */
 	public $logo;
 
 	/**
-	 * @var \ManiaLib\Gui\Cards\Navigation\Button
+	 * @var \ManiaLib\Manialink\Cards\Navigation\Button
 	 */
 	public $quitButton;
 
 	/**
-	 * @var \ManiaLib\Gui\Cards\Navigation\Button
+	 * @var \ManiaLib\Manialink\Cards\Navigation\Button
 	 */
 	public $lastItem;
 	protected $showQuitButton = true;
@@ -125,7 +125,7 @@ class Menu extends Bgs1
 	 */
 	function addGap($gap = 4)
 	{
-		$item = new \ManiaLib\Gui\Elements\Spacer(1, $gap);
+		$item = new \ManiaLib\Manialink\Elements\Spacer(1, $gap);
 		$this->items[] = $item;
 	}
 

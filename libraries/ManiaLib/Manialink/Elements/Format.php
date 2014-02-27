@@ -10,9 +10,9 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Elements;
+namespace ManiaLib\Manialink\Elements;
 
-class Format extends \ManiaLib\Gui\Element
+class Format extends \ManiaLib\Manialink\Element
 {
 	const AvatarButtonNormal = 'AvatarButtonNormal';
 	const StyleTextScriptEditor = 'StyleTextScriptEditor';

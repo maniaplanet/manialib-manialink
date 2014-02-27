@@ -10,9 +10,9 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Cards\Navigation;
+namespace ManiaLib\Manialink\Cards\Navigation;
 
-class Button extends \ManiaLib\Gui\Elements\Bgs1
+class Button extends \ManiaLib\Manialink\Elements\Bgs1
 {
 
 	/**
@@ -22,19 +22,19 @@ class Button extends \ManiaLib\Gui\Elements\Bgs1
 	static public $unselectedTextStyle = '$fff';
 
 	/**
-	 * @var \ManiaLib\Gui\Elements\Label
+	 * @var \ManiaLib\Manialink\Elements\Label
 	 */
 	public $text;
 
 	/**
-	 * @var \ManiaLib\Gui\Elements\Icon
+	 * @var \ManiaLib\Manialink\Elements\Icon
 	 */
 	public $icon;
 	public $iconSizeMinimizer = 1.5;
 	public $textSizeMinimizer = 10;
 
 	/**
-	 * @var \ManiaLib\Gui\Elements\Icons64x64_1
+	 * @var \ManiaLib\Manialink\Elements\Icons64x64_1
 	 */
 	protected $selectedIcon;
 	protected $isSelected = false;
@@ -44,18 +44,18 @@ class Button extends \ManiaLib\Gui\Elements\Bgs1
 	{
 		parent::__construct($sizeX, $sizeY);
 
-		$this->setSubStyle(\ManiaLib\Gui\Elements\Bgs1::BgEmpty);
+		$this->setSubStyle(\ManiaLib\Manialink\Elements\Bgs1::BgEmpty);
 
 		$this->cardElementsValign = 'center2';
 
-		$this->text = new \ManiaLib\Gui\Elements\Label(45);
+		$this->text = new \ManiaLib\Manialink\Elements\Label(45);
 		$this->text->setSizeY(0);
 		$this->text->setValign("center");
 		$this->text->setPosition(8);
-		$this->text->setStyle(\ManiaLib\Gui\Elements\Label::TextButtonNav);
+		$this->text->setStyle(\ManiaLib\Manialink\Elements\Label::TextButtonNav);
 		$this->addCardElement($this->text);
 
-		$this->icon = new \ManiaLib\Gui\Elements\Icons128x128_1($this->sizeY);
+		$this->icon = new \ManiaLib\Manialink\Elements\Icons128x128_1($this->sizeY);
 		$this->icon->setValign("center");
 		$this->icon->setPosition(55, 0, 0.1);
 		$this->addCardElement($this->icon);
@@ -68,8 +68,8 @@ class Button extends \ManiaLib\Gui\Elements\Bgs1
 	{
 		$this->isSelected = true;
 
-		$this->selectedIcon = new \ManiaLib\Gui\Elements\Icons64x64_1(11);
-		$this->selectedIcon->setSubStyle(\ManiaLib\Gui\Elements\Icons64x64_1::ShowRight);
+		$this->selectedIcon = new \ManiaLib\Manialink\Elements\Icons64x64_1(11);
+		$this->selectedIcon->setSubStyle(\ManiaLib\Manialink\Elements\Icons64x64_1::ShowRight);
 		$this->selectedIcon->setValign('center');
 		$this->selectedIcon->setPosX(71);
 		$this->addCardElement($this->selectedIcon);

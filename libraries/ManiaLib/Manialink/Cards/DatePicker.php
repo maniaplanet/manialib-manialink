@@ -10,21 +10,21 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Cards;
+namespace ManiaLib\Manialink\Cards;
 
-use ManiaLib\Gui\Manialink;
-use ManiaLib\Gui\Elements\Entry;
-use ManiaLib\Gui\Elements\Button;
+use ManiaLib\Manialink\Manialink;
+use ManiaLib\Manialink\Elements\Entry;
+use ManiaLib\Manialink\Elements\Button;
 
-class DatePicker extends \ManiaLib\Gui\Component
+class DatePicker extends \ManiaLib\Manialink\Component
 {
 	/**
-	 * @var \ManiaLib\Gui\Elements\Entry
+	 * @var \ManiaLib\Manialink\Elements\Entry
 	 */
 	public $entry;
 
 	/**
-	 * @var \ManiaLib\Gui\Button
+	 * @var \ManiaLib\Manialink\Button
 	 */
 	public $button;
 

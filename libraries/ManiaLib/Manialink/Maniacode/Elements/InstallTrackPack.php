@@ -10,13 +10,13 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Maniacode\Elements;
+namespace ManiaLib\Manialink\Maniacode\Elements;
 
 /**
  * @deprecated
  * use InstallMapPack class instead
  */
-class InstallTrackPack extends \ManiaLib\Gui\Maniacode\Component
+class InstallTrackPack extends \ManiaLib\Manialink\Maniacode\Component
 {
 
 	protected $xmlTagName = 'install_map_pack';
@@ -29,7 +29,7 @@ class InstallTrackPack extends \ManiaLib\Gui\Maniacode\Component
 
 	function addTrack($name = '', $url = '')
 	{
-		$this->tracks[] = new \ManiaLib\Gui\Maniacode\Elements\PackageTrack($name, $url);
+		$this->tracks[] = new \ManiaLib\Manialink\Maniacode\Elements\PackageTrack($name, $url);
 	}
 
 	function getLastInsert()

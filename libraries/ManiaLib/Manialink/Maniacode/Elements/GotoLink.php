@@ -10,9 +10,9 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Maniacode\Elements;
+namespace ManiaLib\Manialink\Maniacode\Elements;
 
-class GotoLink extends \ManiaLib\Gui\Maniacode\Component
+class GotoLink extends \ManiaLib\Manialink\Maniacode\Component
 {
 
 	protected $xmlTagName = 'goto';
@@ -37,8 +37,8 @@ class GotoLink extends \ManiaLib\Gui\Maniacode\Component
 	{
 		if(isset($this->link))
 		{
-			$elem = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createElement('link');
-			$value = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createTextNode($this->link);
+			$elem = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createElement('link');
+			$value = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createTextNode($this->link);
 			$elem->appendChild($value);
 			$this->xml->appendChild($elem);
 		}

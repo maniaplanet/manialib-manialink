@@ -10,13 +10,13 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Elements;
+namespace ManiaLib\Manialink\Elements;
 
-use ManiaLib\Gui\Component;
-use ManiaLib\Gui\Drawable;
-use ManiaLib\Gui\Layouts\AbstractLayout;
-use ManiaLib\Gui\Manialink;
-use ManiaLib\Gui\Tools;
+use ManiaLib\Manialink\Component;
+use ManiaLib\Manialink\Drawable;
+use ManiaLib\Manialink\Layouts\AbstractLayout;
+use ManiaLib\Manialink\Manialink;
+use ManiaLib\Manialink\Tools;
 
 class Frame extends Component implements Drawable
 {

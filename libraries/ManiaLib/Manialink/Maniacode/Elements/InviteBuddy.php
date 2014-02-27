@@ -10,9 +10,9 @@
  * @date        $Date$:
  */
 
-namespace ManiaLib\Gui\Maniacode\Elements;
+namespace ManiaLib\Manialink\Maniacode\Elements;
 
-class InviteBuddy extends \ManiaLib\Gui\Maniacode\Component
+class InviteBuddy extends \ManiaLib\Manialink\Maniacode\Component
 {
 
 	protected $xmlTagName = 'invite_buddy';
@@ -37,8 +37,8 @@ class InviteBuddy extends \ManiaLib\Gui\Maniacode\Component
 	{
 		if(isset($this->email))
 		{
-			$elem = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createElement('email');
-			$value = \ManiaLib\Gui\Maniacode\Maniacode::$domDocument->createTextNode($this->email);
+			$elem = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createElement('email');
+			$value = \ManiaLib\Manialink\Maniacode\Maniacode::$domDocument->createTextNode($this->email);
 			$elem->appendChild($value);
 			$this->xml->appendChild($elem);
 		}
