@@ -20,9 +20,14 @@ abstract class Node
 	protected $parent;
 
 	/**
-	 * @param \DOMDocument
+	 * @var callable[]
 	 */
-	protected $document;
+	protected $preFilters = array();
+
+	/**
+	 * @var callable[]
+	 */
+	protected $postFilters = array();
 
 	/**
 	 * @return \static
@@ -46,18 +51,20 @@ abstract class Node
 		return array_key_exists($name, $this->attributes);
 	}
 
-	function getAttribute($name)
+	function getAttribute($name, $default = null)
 	{
-		if(!$this->attributeExists($name))
-		{
-			throw new \UnexpectedValueException(sprintf('Unknown attribute %s', $name));
-		}
-		return $this->attributes[$name];
+		return $this->attributeExists($name) ? $this->attributes[$name] : $default;
+	}
+
+	function getAttributes()
+	{
+		return $this->attributes;
 	}
 
 	function deleteAttribute($name)
 	{
 		unset($this->attributes[$name]);
+		return $this;
 	}
 
 	function setParent(Node $node)
@@ -78,6 +85,11 @@ abstract class Node
 		return $this->parent;
 	}
 
+	function getChildren()
+	{
+		return $this->children;
+	}
+
 	function addChild(Node $child)
 	{
 		$this->children[] = $child;
@@ -89,47 +101,56 @@ abstract class Node
 		$key = array_search($child, $this->children);
 		if($key === false)
 		{
-			throw new \UnexpectedValueException('Cannot remove a child: it does not exist.');
+			throw new Exception('Cannot remove a child: it does not exist.');
 		}
 		$this->children->deleteParent();
 		unset($this->children[$key]);
 	}
 
-	function setDOMDocument(\DOMDocument $document)
+	function appendPreFilter($callback)
 	{
-		$this->document = $document;
+		array_push($this->preFilters, $callback);
 	}
 
-	/**
-	 * @return \DOMDocument
-	 */
-	function getDOMDocument()
+	function prependPreFilter($callback)
 	{
-		if(!$this->document)
-		{
-			$this->document = new \DOMDocument('1.0', 'utf-8');
-		}
-		return $this->document;
+		array_unshift($this->preFilters, $callback);
 	}
 
-	function getDOMElement()
+	function getPreFilters()
 	{
-		$element = $this->getDOMDocument()->createElement(static::XML_TAG_NAME);
-		foreach($this->attributes as $name => $value)
-		{
-			$element->setAttribute($name, $value);
-		}
-		foreach($this->children as $child)
-		{
-			$child->setDOMDocument($this->getDOMDocument());
-			$element->appendChild($child->getDOMElement());
-		}
-		return $element;
+		return $this->preFilters;
 	}
 
-	function getXML()
+	function appendPostFilter(callable $callback)
 	{
-		
+		array_push($this->postFilters, $callback);
+	}
+
+	function prependPostFilter(callable $callback)
+	{
+		array_unshift($this->postFilters, $callback);
+	}
+
+	function getPostFilters()
+	{
+		return $this->postFilters;
+	}
+
+	function preFilter()
+	{
+		foreach($this->getPreFilters() as $callback)
+		{
+			call_user_func($callback);
+		}
+	}
+
+	function postFilter()
+	{
+		foreach($this->getPostFilters() as $callback)
+		{
+			call_user_func($callback);
+		}
 	}
 
 }
