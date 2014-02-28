@@ -12,6 +12,23 @@ class Quad extends \ManiaLib\Manialink\Leaf
 		$this->registerCallback('prefilter', array($this, 'filterPosition'), 'prefilter.position');
 	}
 
+	/**
+	 * @return \static
+	 */
+	function setStyle($style)
+	{
+		$style = explode('::', $style);
+		if(count($style) == 2)
+		{
+			list($_style, $_substyle) = $style;
+			return $this->setAttribute('style', $_style)->setAttribute('substyle', $_substyle);
+		}
+		else
+		{
+			return $this->setAttribute('style', $_style);
+		}
+	}
+
 	protected function filterPosition()
 	{
 		if(!$this->attributeExists('posn'))
