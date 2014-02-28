@@ -15,6 +15,7 @@ $manialink = new Manialink();
 $manialink->appendChild(Redirect::create()->setNodeValue('hahaha'));
 $manialink->appendChild(Timeout::create());
 $manialink->appendChild(Quad::create()->setAttribute('sizen', '20 20')->setAttribute('posnX', '3.12')->setStyle(Bgs1::BgWindow1));
+$manialink->appendChild(\ManiaLib\Manialink\Elements\Script::create()->setNodeValue('< yes " " >'));
 
 $renderer = new Renderer();
 $renderer->setRoot($manialink);
