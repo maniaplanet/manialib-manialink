@@ -9,7 +9,7 @@
  * @author      $Author: maxime $:
  * @date        $Date: 2014-02-10 14:20:55 +0100 (lun., 10 févr. 2014) $:
  */
-if(!defined('MANIALIB_APP_PATH'))
+ if(!defined('MANIALIB_APP_PATH'))
 {
 	define('MANIALIB_APP_PATH', __DIR__.'/../');
 }
