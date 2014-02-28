@@ -44,6 +44,8 @@ class Renderer
 		if($node->getNodeValue() !== null)
 		{
 			$element->nodeValue = $node->getNodeValue();
+			// TODO Should it create a text node instead of setting node value?
+			//$element->appendChild($this->getDOMDocument()->createTextNode($node->getNodeValue()));
 		}
 		foreach($node->getAttributes() as $name => $value)
 		{
@@ -51,11 +53,10 @@ class Renderer
 		}
 		foreach($node->getChildren() as $child)
 		{
-			// Should filtering be done in the tree rather than in the renderer?
+			// TODO Should filtering be done in the tree rather than in the renderer?
 			$child->executeCallbacks('prefilter');
 			$subelement = $this->getDOMElement($child);
 			$child->executeCallbacks('postfilter');
-			
 			$element->appendChild($subelement);
 		}
 		return $element;
