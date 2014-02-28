@@ -2,7 +2,9 @@
 
 namespace ManiaLib\Manialink\Elements;
 
-class Quad extends \ManiaLib\Manialink\Leaf
+use ManiaLib\Manialink\Node;
+
+class Quad extends Node
 {
 
 	const XML_TAG_NAME = 'quad';

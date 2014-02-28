@@ -2,9 +2,9 @@
 
 namespace ManiaLib\Manialink\Elements;
 
-use ManiaLib\Manialink\Leaf;
+use ManiaLib\Manialink\Node;
 
-class Redirect extends Leaf
+class Redirect extends Node
 {
 
 	const XML_TAG_NAME = 'redirect';

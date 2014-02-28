@@ -2,7 +2,9 @@
 
 namespace ManiaLib\Manialink\Elements;
 
-class Script extends \ManiaLib\Manialink\Leaf
+use ManiaLib\Manialink\Node;
+
+class Script extends Node
 {
 
 	const XML_TAG_NAME = 'script';

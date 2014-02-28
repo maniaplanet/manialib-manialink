@@ -2,7 +2,9 @@
 
 namespace ManiaLib\Manialink\Elements;
 
-class Timeout extends \ManiaLib\Manialink\Leaf
+use ManiaLib\Manialink\Node;
+
+class Timeout extends Node
 {
 
 	const XML_TAG_NAME = 'timeout';
