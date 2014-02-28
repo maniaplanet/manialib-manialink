@@ -80,23 +80,23 @@ abstract class Node
 		return $this->nodeValue;
 	}
 
-//	function setParent(Node $node)
-//	{
-//		$this->parent = $node;
-//	}
-//
-//	function deleteParent()
-//	{
-//		$this->parent = null;
-//	}
-//
-//	/**
-//	 * @return Node
-//	 */
-//	function getParent()
-//	{
-//		return $this->parent;
-//	}
+	function setParent(Node $node)
+	{
+		$this->parent = $node;
+	}
+
+	function deleteParent()
+	{
+		$this->parent = null;
+	}
+
+	/**
+	 * @return Node
+	 */
+	function getParent()
+	{
+		return $this->parent;
+	}
 
 	function getChildren()
 	{
@@ -109,7 +109,7 @@ abstract class Node
 	function appendChild(Node $child)
 	{
 		$this->children[] = $child;
-		//$child->setParent($this);
+		$child->setParent($this);
 		return $this;
 	}
 
