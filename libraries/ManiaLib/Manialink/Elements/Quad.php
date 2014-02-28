@@ -2,45 +2,48 @@
 
 namespace ManiaLib\Manialink\Elements;
 
-use ManiaLib\Manialink\Node;
-
-class Quad extends Node
+class Quad extends Base
 {
 
 	const XML_TAG_NAME = 'quad';
 
-	function __construct()
+	/**
+	 * @return \static
+	 */
+	function setImage($image)
 	{
-		$this->registerCallback('prefilter', array($this, 'filterPosition'), 'prefilter.position');
+		return $this->setAttribute("image", $image);
+	}
+
+	function getImage()
+	{
+		return $this->getAttribute("image");
 	}
 
 	/**
 	 * @return \static
 	 */
-	function setStyle($style)
+	function setImagefocus($imagefocus)
 	{
-		$style = explode('::', $style);
-		if(count($style) == 2)
-		{
-			list($_style, $_substyle) = $style;
-			return $this->setAttribute('style', $_style)->setAttribute('substyle', $_substyle);
-		}
-		else
-		{
-			return $this->setAttribute('style', $_style);
-		}
+		return $this->setAttribute("imagefocus", $imagefocus);
 	}
 
-	protected function filterPosition()
+	function getImagefocus()
 	{
-		if(!$this->attributeExists('posn'))
-		{
-			$posnX = $this->getAttribute('posnX', 0);
-			$posnY = $this->getAttribute('posnY', 0);
-			$posnZ = $this->getAttribute('posnZ', 0);
-			$this->deleteAttribute('posnX')->deleteAttribute('posnY')->deleteAttribute('posnZ');
-			$this->setAttribute('posn', $posnX.' '.$posnY.' '.$posnZ);
-		}
+		return $this->getAttribute("imagefocus");
+	}
+
+	/**
+	 * @return \static
+	 */
+	function setBgcolor($bgcolor)
+	{
+		return $this->setAttribute("bgcolor", $bgcolor);
+	}
+
+	function getBgcolor()
+	{
+		return $this->getAttribute("bgcolor");
 	}
 
 }
