@@ -124,20 +124,13 @@ abstract class Node
 		unset($this->children[$key]);
 	}
 
-	function registerCallback($event, $callback, $id = null)
+	function registerCallback($event, $callback)
 	{
 		if(!is_callable($callback))
 		{
 			throw new Exception('Provided $callback is not callable in '.get_called_class());
 		}
-		if($id === null)
-		{
-			$this->callbacks[$event][] = $callback;
-		}
-		else
-		{
-			$this->callbacks[$event][$id] = $callback;
-		}
+		$this->callbacks[$event][] = $callback;
 	}
 
 	function executeCallbacks($event, $parameters = array())
