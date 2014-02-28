@@ -6,6 +6,9 @@ header('Content-Type: text/plain');
 function printSetter($name)
 {
 	echo
+	"\t".'/**'."\n".
+	"\t".' * @return \static'."\n".
+	"\t".' */'."\n".
 	"\t".'function set'.ucfirst($name).'($'.$name.')'."\n".
 	"\t".'{'."\n".
 	"\t\t".'return $this->setAttribute("'.$name.'", '.'$'.$name.');'."\n".
@@ -30,7 +33,6 @@ function dothebarrelroll()
 		printSetter($name);
 		printGetter($name);
 	}
-	hr();
 }
 
 function hr()
@@ -39,7 +41,14 @@ function hr()
 }
 
 dothebarrelroll('id', 'class', 'hidden');
-dothebarrelroll('posn', 'scale');
-dothebarrelroll('sizen', 'halign', 'valign');
+dothebarrelroll('posnX', 'posnY', 'posnZ', 'scale');
+dothebarrelroll('sizenX', 'sizenY','halign', 'valign');
 dothebarrelroll('style', 'substyle', 'style3d');
 dothebarrelroll('manialink', 'maniazones', 'goto', 'url', 'action', 'scriptevents');
+dothebarrelroll('colorize', 'modulizecolor', 'opacity');
+hr();
+dothebarrelroll('image', 'imagefocus', 'bgcolor');
+hr();
+dothebarrelroll('textprefix', 'textemboss', 'textcolor', 'textsize', 'focusareacolor1', 'focusareacolor2');
+hr();
+dothebarrelroll('text', 'autonewline', 'maxline');
