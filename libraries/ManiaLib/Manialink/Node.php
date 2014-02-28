@@ -20,14 +20,9 @@ abstract class Node
 	protected $parent;
 
 	/**
-	 * @var callable[]
+	 * @var callable[][]
 	 */
-	protected $preFilters = array();
-
-	/**
-	 * @var callable[]
-	 */
-	protected $postFilters = array();
+	protected $callbacks = array();
 
 	/**
 	 * @return \static
@@ -107,49 +102,30 @@ abstract class Node
 		unset($this->children[$key]);
 	}
 
-	function appendPreFilter($callback)
+	function registerCallback($event, $callback, $id = null)
 	{
-		array_push($this->preFilters, $callback);
-	}
-
-	function prependPreFilter($callback)
-	{
-		array_unshift($this->preFilters, $callback);
-	}
-
-	function getPreFilters()
-	{
-		return $this->preFilters;
-	}
-
-	function appendPostFilter(callable $callback)
-	{
-		array_push($this->postFilters, $callback);
-	}
-
-	function prependPostFilter(callable $callback)
-	{
-		array_unshift($this->postFilters, $callback);
-	}
-
-	function getPostFilters()
-	{
-		return $this->postFilters;
-	}
-
-	function preFilter()
-	{
-		foreach($this->getPreFilters() as $callback)
+		if(!is_callable($callback))
 		{
-			call_user_func($callback);
+			throw new Exception('Provided $callback is not callable in '.get_called_class());
+		}
+		if($id === null)
+		{
+			$this->callbacks[$event][] = $callback;
+		}
+		else
+		{
+			$this->callbacks[$event][$id] = $callback;
 		}
 	}
 
-	function postFilter()
+	function executeCallbacks($event, $parameters = array())
 	{
-		foreach($this->getPostFilters() as $callback)
+		if(array_key_exists($event, $this->callbacks))
 		{
-			call_user_func($callback);
+			foreach($this->callbacks[$event] as $callback)
+			{
+				call_user_func_array($callback, $parameters);
+			}
 		}
 	}
 

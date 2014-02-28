@@ -48,9 +48,9 @@ class Renderer
 		foreach($node->getChildren() as $child)
 		{
 			// Should filtering be done in the tree rather than in the renderer?
-			$child->preFilter();
+			$child->executeCallbacks('prefilter');
 			$subelement = $this->getDOMElement($child);
-			$child->postFilter();
+			$child->executeCallbacks('postfilter');
 			
 			$element->appendChild($subelement);
 		}

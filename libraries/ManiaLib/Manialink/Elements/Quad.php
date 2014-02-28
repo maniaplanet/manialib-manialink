@@ -9,7 +9,7 @@ class Quad extends \ManiaLib\Manialink\Leaf
 
 	function __construct()
 	{
-		$this->appendPreFilter(array($this, 'filterPosition'));
+		$this->registerCallback('prefilter', array($this, 'filterPosition'), 'prefilter.position');
 	}
 
 	protected function filterPosition()
@@ -20,7 +20,7 @@ class Quad extends \ManiaLib\Manialink\Leaf
 			$posnY = $this->getAttribute('posnY', 0);
 			$posnZ = $this->getAttribute('posnZ', 0);
 			$this->deleteAttribute('posnX')->deleteAttribute('posnY')->deleteAttribute('posnZ');
-			$this->setAttribute('posn', sprintf("%d %d %d", $posnX, $posnY, $posnZ));
+			$this->setAttribute('posn', $posnX.' '.$posnY.' '.$posnZ);
 		}
 	}
 
