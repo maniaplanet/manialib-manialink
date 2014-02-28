@@ -33,6 +33,16 @@ abstract class Base extends \ManiaLib\Manialink\Node
 			$this->setAttribute('sizen', $sizenX.' '.$sizenY);
 		}
 	}
+	
+	function getRealSizenX()
+	{
+		return $this->getAttribute("sizenX", 0) * $this->getAttribute("scale", 1);
+	}
+	
+	function getRealSizenY()
+	{
+		return $this->getAttribute("sizenY", 0) * $this->getAttribute("scale", 1);
+	}
 
 	/**
 	 * @return \static
