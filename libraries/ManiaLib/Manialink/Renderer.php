@@ -41,6 +41,10 @@ class Renderer
 	function getDOMElement(Node $node)
 	{
 		$element = $this->getDOMDocument()->createElement($node::XML_TAG_NAME);
+		if($node->getNodeValue() !== null)
+		{
+			$element->nodeValue = $node->getNodeValue();
+		}
 		foreach($node->getAttributes() as $name => $value)
 		{
 			$element->setAttribute($name, $value);
