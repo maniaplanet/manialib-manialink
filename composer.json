@@ -1,24 +1,24 @@
 {
-    "name": "maniaplanet/manialib",
+    "name": "maniaplanet/manialib-manialink",
     "type": "library",
-    "description": "Library to query ManiaPlanet webservices (shootmania and trackmania 2)",
-    "keywords": ["ManiaPlanet", "ShootMania", "TrackMania"],
-    "homepage": "https://github.com/maniaplanet/manialib",
-	"license": "LGPL-3.0",
+    "description": "[WIP] Object-oriented PHP framework for writing Manialink interfaces.",
+    "keywords": ["ManiaPlanet", "ShootMania", "TrackMania", "ManiaLib"],
+    "license": "MIT",
+    "homepage": "https://github.com/maniaplanet/manialib-manialink",
     "authors": [
         {
-            "name": "NadeoLive",
-            "email": "livedev@nadeo.com",
+            "name": "Nadeo",
+            "email": "contact@nadeo.com",
             "homepage": "http://www.nadeo.com/"
         }
     ],
-	"support": {
+    "support": {
         "forum": "http://forum.maniaplanet.com/viewforum.php?f=40"
     },
     "require": {
         "php": ">=5.3"
     },
     "autoload": {
-        "classmap": ["libraries/ManiaLib"]
+        "psr-4": {"ManiaLib\\": "src/"}
     }
 }
