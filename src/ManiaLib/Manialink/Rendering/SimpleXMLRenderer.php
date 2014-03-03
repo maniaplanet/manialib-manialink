@@ -22,7 +22,9 @@ class SimpleXMLRenderer implements RendererInterface
 		}
 		foreach($node->getChildren() as $child)
 		{
+			$child->executeCallbacks('prefilter');
 			$this->getElement($element, $child);
+			$child->executeCallbacks('postfilter');
 		}
 		return $element;
 	}
