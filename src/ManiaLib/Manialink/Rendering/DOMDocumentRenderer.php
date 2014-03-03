@@ -1,44 +1,37 @@
 <?php
 
-namespace ManiaLib\Manialink;
+namespace ManiaLib\Manialink\Rendering;
 
-class Renderer
+use DOMDocument;
+use ManiaLib\Manialink\Node;
+
+class DOMDocumentRenderer implements RendererInterface
 {
 
 	/**
-	 * @var \DOMDocument
+	 * @var DOMDocument
 	 */
 	protected $document;
 
-	/**
-	 * @var Node
-	 */
-	protected $root;
-
 	function __construct()
 	{
-		$this->document = new \DOMDocument('1.0', 'utf-8');
+		$this->document = new DOMDocument('1.0', 'utf-8');
 	}
 
-	function setDOMDocument(\DOMDocument $document)
+	function setDOMDocument(DOMDocument $document)
 	{
 		$this->document = $document;
 	}
 
 	/**
-	 * @return \DOMDocument
+	 * @return DOMDocument
 	 */
-	function getDOMDocument()
+	protected function getDOMDocument()
 	{
 		return $this->document;
 	}
 
-	function setRoot(Node $root)
-	{
-		$this->root = $root;
-	}
-
-	function getDOMElement(Node $node)
+	protected function getDOMElement(Node $node)
 	{
 		$element = $this->getDOMDocument()->createElement($node::XML_TAG_NAME);
 		if($node->getNodeValue() !== null)

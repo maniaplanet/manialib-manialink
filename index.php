@@ -8,14 +8,14 @@ use ManiaLib\Manialink\Elements\Redirect;
 use ManiaLib\Manialink\Elements\Script;
 use ManiaLib\Manialink\Elements\Timeout;
 use ManiaLib\Manialink\Layouts\Line;
-use ManiaLib\Manialink\Renderer;
+use ManiaLib\Manialink\Rendering\DOMDocumentRenderer;
 use ManiaLib\Manialink\Styles\Bgs1;
 
 error_reporting(E_ALL);
 
 require_once __DIR__.'/src/autoload.php';
 
-header('Content-Type: text/xml; charset=utf-8');
+header('Content-Type: application/xml; charset=utf-8');
 
 $manialink = new Manialink();
 $manialink->appendChild(Redirect::create()->setNodeValue('hahaha'));
@@ -35,7 +35,7 @@ $frame->appendChild(Quad::create()->setSizen(20, 20));
 $frame->appendChild(Quad::create()->setSizen(20, 20));
 $manialink->appendChild($frame);
 
-$renderer = new Renderer();
+$renderer = new ManiaLib\Manialink\Rendering\XMLWriterRenderer();
 $renderer->setRoot($manialink);
 echo $renderer->getXML();
 
