@@ -7,9 +7,7 @@ use ManiaLib\Manialink\Layouts\Line;
 use ManiaLib\Manialink\Renderer;
 
 error_reporting(E_ALL);
-
-require_once __DIR__.'/src/autoload.php';
-
+require_once __DIR__.'/../src/autoload.php';
 header('Content-Type: text/xml; charset=utf-8');
 
 $manialink = new Manialink();
