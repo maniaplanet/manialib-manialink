@@ -66,19 +66,35 @@ abstract class Base extends Node
 
 	protected function preFilterRelativePosition()
 	{
-		if($this->getParent() instanceof Frame)
+		if($this->getParent() instanceof Base)
 		{
 			if($this->getParent()->getSizenX() && $this->getRelativeHalign())
 			{
-				$xIncrement = Utils::getAlignedPosX(0, $this->getParent()->getSizenX(), $this->getParent()->getHalign('left'),
-						$this->getRelativeHalign('left'));
+				$xIncrement = Utils::getAlignedPosX(0, $this->getParent()->getSizenX(), $this->getParent()->getHalign(),
+						$this->getRelativeHalign());
 				$this->setPosnX($this->getPosnX() + $xIncrement);
 				$this->deleteAttribute('relativehalign');
 			}
 			if($this->getParent()->getSizenY() && $this->getRelativeValign())
 			{
-				$yIncrement = Utils::getAlignedPosY(0, $this->getParent()->getSizenY(), $this->getParent()->getValign('top'),
-						$this->getRelativeValign('top'));
+				$yIncrement = Utils::getAlignedPosY(0, $this->getParent()->getSizenY(), $this->getParent()->getValign(),
+						$this->getRelativeValign());
+				$this->setPosnY($this->getPosnY() + $yIncrement);
+				$this->deleteAttribute('relativevalign');
+			}
+		}
+		// TODO Good idea?
+		elseif($this->getParent() instanceof Manialink)
+		{
+			if($this->getRelativeHalign())
+			{
+				$xIncrement = Utils::getAlignedPosX(0, 320, 'center', $this->getRelativeHalign());
+				$this->setPosnX($this->getPosnX() + $xIncrement);
+				$this->deleteAttribute('relativehalign');
+			}
+			if($this->getRelativeValign())
+			{
+				$yIncrement = Utils::getAlignedPosY(0, 180, 'center', $this->getRelativeValign());
 				$this->setPosnY($this->getPosnY() + $yIncrement);
 				$this->deleteAttribute('relativevalign');
 			}
@@ -110,7 +126,7 @@ abstract class Base extends Node
 		}
 		if($posnZ !== null)
 		{
-			$this->setPosnY($posnY);
+			$this->setPosnZ($posnZ);
 		}
 		return $this;
 	}
@@ -257,6 +273,30 @@ abstract class Base extends Node
 			$this->setRelativeValign($valign);
 		}
 		return $this;
+	}
+
+	/**
+	 * @return \static
+	 */
+	function setBothHalign($halign)
+	{
+		return $this->setHalign($halign)->setRelativeHalign($halign);
+	}
+
+	/**
+	 * @return \static
+	 */
+	function setBothValign($valign)
+	{
+		return $this->setValign($valign)->setRelativeValign($valign);
+	}
+
+	/**
+	 * @return \static
+	 */
+	function setBothAlign($halign = null, $valign = null)
+	{
+		return $this->setAlign($halign, $valign)->setRelativeAlign($halign, $valign);
 	}
 
 	/**
