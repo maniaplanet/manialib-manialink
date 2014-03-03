@@ -8,12 +8,17 @@ class Frame extends Base
 {
 
 	const XML_TAG_NAME = 'frame';
-
+	
 	/**
 	 * @var AbstractLayout
 	 */
 	protected $layout;
 
+	protected function preFilterSize()
+	{
+		// Override parent. Do nothing.
+	}
+	
 	/**
 	 * @return AbstractLayout
 	 */
