@@ -13,7 +13,7 @@ use ManiaLib\Manialink\Styles\Bgs1;
 
 error_reporting(E_ALL);
 
-require_once __DIR__.'/libraries/autoload.php';
+require_once __DIR__.'/src/autoload.php';
 
 header('Content-Type: text/xml; charset=utf-8');
 
