@@ -35,7 +35,7 @@ $frame->appendChild(Quad::create()->setSizen(20, 20));
 $frame->appendChild(Quad::create()->setSizen(20, 20));
 $manialink->appendChild($frame);
 
-$renderer = new ManiaLib\Manialink\Rendering\XMLWriterRenderer();
+$renderer = new ManiaLib\Manialink\Rendering\SimpleXMLRenderer();
 $renderer->setRoot($manialink);
 echo $renderer->getXML();
 

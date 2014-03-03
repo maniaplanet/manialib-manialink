@@ -30,7 +30,6 @@ class XMLWriterRenderer extends AbstractRenderer
 		foreach($node->getAttributes() as $name => $value)
 		{
 			$this->writer->writeAttribute($name, $value);
-			\ChromePhp::log("$name $value");
 		}
 		foreach($node->getChildren() as $child)
 		{

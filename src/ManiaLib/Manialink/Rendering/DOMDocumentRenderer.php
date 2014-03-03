@@ -5,7 +5,7 @@ namespace ManiaLib\Manialink\Rendering;
 use DOMDocument;
 use ManiaLib\Manialink\Node;
 
-class DOMDocumentRenderer implements RendererInterface
+class DOMDocumentRenderer extends AbstractRenderer
 {
 
 	/**
