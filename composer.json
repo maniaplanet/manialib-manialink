@@ -16,7 +16,8 @@
         "forum": "http://forum.maniaplanet.com/viewforum.php?f=40"
     },
     "require": {
-        "php": ">=5.3"
+        "php": ">=5.3",
+        "ccampbell/chromephp" : "dev-master"
     },
     "autoload": {
         "psr-4": {"ManiaLib\\": "src/"}
