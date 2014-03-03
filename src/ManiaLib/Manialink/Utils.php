@@ -1,18 +1,10 @@
 <?php
-/**
- * ManiaLib - Lightweight PHP framework for Manialinks
- * 
- * @see         http://code.google.com/p/manialib/
- * @copyright   Copyright (c) 2009-2011 NADEO (http://www.nadeo.com)
- * @license     http://www.gnu.org/licenses/lgpl.html LGPL License 3
- * @version     $Revision$:
- * @author      $Author$:
- * @date        $Date$:
- */
 
-namespace ManiaLib\Gui;
+namespace ManiaLib\Manialink;
 
-abstract class Tools
+use ManiaLib\Manialink\Elements\Base;
+
+abstract class Utils
 {
 
 	/**
@@ -62,7 +54,7 @@ abstract class Tools
 				break;
 
 			default:
-				throw new \Exception('GUITools: Unsupported positions: '.$alignmentString);
+				throw new Exception('Unsupported positions: '.$alignmentString);
 		}
 		return $posX + $factor * $sizeX;
 	}
@@ -107,24 +99,19 @@ abstract class Tools
 	 * Returns the position of an element in relation to another element and
 	 * according to their respective alignments
 	 * 
-	 * @param \ManiaLib\Gui\Element Parent element
+	 * @param Base Parent element
 	 * @param string Horizontal alignement of the element you want to place
 	 * @param string Vertical alignement of the element you want to place
 	 * @return array Calculated position of the element you want to place. The
 	 * array contains 2 elements with "x" and "y" indexes
 	 */
-	final public static function getAlignedPos(\ManiaLib\Gui\Element $object,
-		$newHalign, $newValign)
+	final public static function getAlignedPos(Base $object, $newHalign, $newValign)
 	{
 		$newPosX = self::getAlignedPosX(
-				$object->getPosX(), $object->getRealSizeX(), $object->getHalign(),
-				$newHalign);
+				$object->getPosnX(), $object->getRealSizeX(), $object->getHalign(), $newHalign);
 		$newPosY = self::getAlignedPosY(
-				$object->getPosY(), $object->getRealSizeY(), $object->getValign(),
-				$newValign);
+				$object->getPosnY(), $object->getRealSizeY(), $object->getValign(), $newValign);
 		return array('x' => $newPosX, 'y' => $newPosY);
 	}
 
 }
-
-?>

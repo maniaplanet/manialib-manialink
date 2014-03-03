@@ -4,6 +4,7 @@ namespace ManiaLib\Manialink\Elements;
 
 use ManiaLib\Manialink\Layouts\AbstractLayout;
 use ManiaLib\Manialink\Node;
+use ManiaLib\Manialink\Utils;
 
 abstract class Base extends Node
 {
@@ -17,6 +18,7 @@ abstract class Base extends Node
 	function __construct()
 	{
 		$this->registerCallback('prefilter', array($this, 'preFilterLayout'));
+		$this->registerCallback('prefilter', array($this, 'preFilterRelativePosition'));
 		$this->registerCallback('prefilter', array($this, 'preFilterPosition'));
 		$this->registerCallback('prefilter', array($this, 'preFilterSize'));
 		$this->registerCallback('postfilter', array($this, 'postFilterLayout'));
@@ -28,7 +30,7 @@ abstract class Base extends Node
 		{
 			if($this->posnX !== null || $this->posnY !== null || $this->posnZ !== null)
 			{
-				
+
 				$this->setAttribute('posn', (float) $this->posnX.' '.(float) $this->posnY.' '.(float) $this->posnZ);
 			}
 		}
@@ -59,6 +61,27 @@ abstract class Base extends Node
 		if($this->getParent() instanceof Frame && $this->getParent()->getLayout() instanceof AbstractLayout)
 		{
 			$this->getParent()->getLayout()->postFilter($this);
+		}
+	}
+
+	protected function preFilterRelativePosition()
+	{
+		if($this->getParent() instanceof Frame)
+		{
+			if($this->getParent()->getSizenX() && $this->getRelativeHalign())
+			{
+				$xIncrement = Utils::getAlignedPosX(0, $this->getParent()->getSizenX(), $this->getParent()->getHalign('left'),
+						$this->getRelativeHalign('left'));
+				$this->setPosnX($this->getPosnX() + $xIncrement);
+				$this->deleteAttribute('relativehalign');
+			}
+			if($this->getParent()->getSizenY() && $this->getRelativeValign())
+			{
+				$yIncrement = Utils::getAlignedPosY(0, $this->getParent()->getSizenY(), $this->getParent()->getValign('top'),
+						$this->getRelativeValign('top'));
+				$this->setPosnY($this->getPosnY() + $yIncrement);
+				$this->deleteAttribute('relativevalign');
+			}
 		}
 	}
 
@@ -177,7 +200,7 @@ abstract class Base extends Node
 	{
 		return $this->sizenY;
 	}
-	
+
 	/**
 	 * @return \static
 	 */
@@ -190,6 +213,48 @@ abstract class Base extends Node
 		if($valign !== null)
 		{
 			$this->setValign($valign);
+		}
+		return $this;
+	}
+
+	/**
+	 * @return \static
+	 */
+	function setRelativeHalign($halign)
+	{
+		return $this->setAttribute('relativehalign', $halign);
+	}
+
+	function getRelativeHalign()
+	{
+		return $this->getAttribute('relativehalign');
+	}
+
+	/**
+	 * @return \static
+	 */
+	function setRelativeValign($valign)
+	{
+		return $this->setAttribute('relativevalign', $valign);
+	}
+
+	function getRelativeValign()
+	{
+		return $this->getAttribute('relativevalign');
+	}
+
+	/**
+	 * @return \static
+	 */
+	function setRelativeAlign($halign = null, $valign = null)
+	{
+		if($halign !== null)
+		{
+			$this->setRelativeHalign($halign);
+		}
+		if($valign !== null)
+		{
+			$this->setRelativeValign($valign);
 		}
 		return $this;
 	}
