@@ -177,6 +177,22 @@ abstract class Base extends Node
 	{
 		return $this->sizenY;
 	}
+	
+	/**
+	 * @return \static
+	 */
+	function setAlign($halign = null, $valign = null)
+	{
+		if($halign !== null)
+		{
+			$this->setHalign($halign);
+		}
+		if($valign !== null)
+		{
+			$this->setValign($valign);
+		}
+		return $this;
+	}
 
 	/**
 	 * @return \static
