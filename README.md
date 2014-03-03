@@ -1,34 +1,22 @@
 ManiaLib framework
 ===================================================
 
-[![Latest Stable Version](https://poser.pugx.org/maniaplanet/manialib/v/stable.png)](https://packagist.org/packages/maniaplanet/manialib)
-[![Total Downloads](https://poser.pugx.org/maniaplanet/manialib/downloads.png)](https://packagist.org/packages/maniaplanet/manialib)
+*Work in progress*
 
-ManiaLib is a lightweight PHP framework for Manialink and Web developement. It 
-provides a set of object-oriented libraries to help you save time on classic 
-Manialink (and Web) tasks.
-
-The library is released under the GNU LESSER GENERAL PUBLIC LICENSE Version 3.
-
-This is the framework package
------------------------------
-
-This project is the framework package only. It is made to be used in other projects. If you want the full-stacked application with a demo to start building your own Manialink, check out https://github.com/maniaplanet/manialib-application-template
+ManiaLib Manialink is an object-oriented PHP framework for writing Manialink interfaces.
+Compared to former version of ManiaLib, this is just meant to be a standalone package to build Manialink pages.
+It can be used in any sort of projects, from Web frameworks (eg. ManiaLib) to server controllers (eg. ManiaLive).
+It shares some common code with ManiaLib\Gui, but a lot was changed in naming an overall architecture.
 
 Installation
 -----------------------------
 
-We use [Composer](https://getcomposer.org/), because we're cool:
+Easy install with [Composer](https://getcomposer.org/):
 
 ```
 {
 	"require": {
-        "maniaplanet/manialib": "~3.1"
+        "maniaplanet/manialib-manialink": "dev-master"
     }
 }
 ```
-
-Useful links
-------------
-
-* Support forum: http://forum.maniaplanet.com/viewforum.php?f=40
