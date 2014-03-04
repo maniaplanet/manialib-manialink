@@ -6,7 +6,7 @@ ManiaLib\Manialink is an object-oriented PHP framework for writing Manialink int
 Compared to former version of ManiaLib, this is just meant to be a standalone package to build Manialink pages.
 It can be used in any sort of projects, from Web frameworks (eg. ManiaLib) to server controllers (eg. ManiaLive).
 
-It shares some common code with ManiaLib\Gui, but a lot was changed in naming an overall architecture.
+It shares some common code with ManiaLib\Gui, but a lot was changed in naming and overall architecture.
 
 Work in progress
 -----------------------------
@@ -16,7 +16,7 @@ Please beware this is a wip lib. We might break stuff at any time. But it is als
 Installation
 -----------------------------
 
-Easy install with [Composer](https://getcomposer.org/):
+[Co-co-co-Composer \o/](https://getcomposer.org/):
 
 ```
 {
@@ -30,10 +30,12 @@ Architecture
 -----------------------------
 
  * Every element is a child of `ManiaLib\Manialink\Node`.
- * No element has constructor arguments.
- * Every setter method returns the element.
- * `ManiaLib\Manialink\Node::create()` instanciate the element and returns it for easy chaining of setters. If you're running PHP5.4+ you can use class member access on instantiation instead eg. `(new Node)->setAttribute('foo', 'bar')`.
- * The important method of Node are:
+ * No constructor arguments.
+ * Setter methods return the element.
+ * `ManiaLib\Manialink\Node::create()` instanciates the object and returns it for easy chaining. 
+If you're running PHP 5.4+ you can use class member access on instantiation instead eg. 
+`(new Node)->setAttribute('foo', 'bar')`.
+ * The important methods of Node are:
 
 ```
 namespace ManiaLib\Manialink;
@@ -47,11 +49,10 @@ abstract class Node
 }
 ```
 
- * Most element should implement setter for usual attributes (eg. `ManiaLib\Manialink\Elements\Quad::setImage($image)`), but if the setter doesnt exists you can use `setAttribute($name, $value)` instead.
- * For style and substyle, the setStyle($style) method handles both at once when used with abstract classes in `ManiaLib\Manialink\Styles\` eg.
-```
-ManiaLib\Manialink\Elements\Quad::create()->setStyle(ManiaLib\Manialink\Styles\Bgs1::BgWindow1);
-```
+ * Most element should implement setter for usual attributes (eg. `ManiaLib\Manialink\Elements\Quad::setImage($image)`), 
+but if the setter doesnt exists you can use `setAttribute($name, $value)` instead.
+ * For style and substyle, the setStyle($style) method handles both at once when used with abstract classes 
+in `ManiaLib\Manialink\Styles\` eg. `Quad::create()->setStyle(Bgs1::BgWindow1);`
  * Actual XML rendering is done by an implementation of `ManiaLib\Manialink\Rendering\RendererInterface` (see examples for usage).
 
 Examples
