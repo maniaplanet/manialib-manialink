@@ -14,13 +14,13 @@ class Box extends \ManiaLib\Manialink\Elements\Frame
 	{
 		parent::__construct();
 		$this->bg = new \ManiaLib\Manialink\Elements\Quad();
+		$this->appendChild($this->bg);
 	}
 
 	function preFilterSize()
 	{
 		parent::__construct();
 		$this->bg->setSizen($this->getSizenX(), $this->getSizenY());
-		$this->appendChild($this->bg);
 	}
 
 }
