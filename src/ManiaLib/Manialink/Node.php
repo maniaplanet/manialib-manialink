@@ -113,6 +113,15 @@ abstract class Node
 		return $this;
 	}
 
+	/**
+	 * @return \static
+	 */
+	function appendTo(Node $parent)
+	{
+		$parent->appendChild($this);
+		return $this;
+	}
+
 	function removeChild(Node $child)
 	{
 		$key = array_search($child, $this->children);

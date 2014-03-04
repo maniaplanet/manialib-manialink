@@ -40,6 +40,7 @@ abstract class Node
 	function setAttribute($name, $value)
 	function setNodeValue($value)
 	function appendChild(Node $child)
+	function appendTo(Node $parent)
 }
 ```
 
