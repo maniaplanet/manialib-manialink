@@ -112,7 +112,7 @@ abstract class Node
 		$child->setParent($this);
 		return $this;
 	}
-
+	
 	/**
 	 * @return \static
 	 */

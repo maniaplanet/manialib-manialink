@@ -18,6 +18,14 @@ abstract class AbstractLayout
 	/**
 	 * @return \static
 	 */
+	static function create()
+	{
+		return new static;
+	}
+	
+	/**
+	 * @return \static
+	 */
 	function setMarginWidth($marginWidth)
 	{
 		$this->marginWidth = $marginWidth;
