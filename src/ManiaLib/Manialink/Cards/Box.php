@@ -2,25 +2,35 @@
 
 namespace ManiaLib\Manialink\Cards;
 
-class Box extends \ManiaLib\Manialink\Elements\Frame
+use ManiaLib\Manialink\Elements\Frame;
+use ManiaLib\Manialink\Elements\Quad;
+
+class Box extends Frame
 {
 
 	/**
-	 * @var \ManiaLib\Manialink\Elements\Quad
+	 * @var Quad
 	 */
-	public $bg;
+	protected $bg;
 
 	function __construct()
 	{
 		parent::__construct();
-		$this->bg = new \ManiaLib\Manialink\Elements\Quad();
-		$this->appendChild($this->bg);
+		$this->bg = Quad::create()->appendTo($this);
 	}
 
-	function preFilterSize()
+	protected function preFilterSize()
 	{
 		parent::__construct();
 		$this->bg->setSizen($this->getSizenX(), $this->getSizenY());
+	}
+
+	/**
+	 * @return Quad
+	 */
+	function bg()
+	{
+		return $this->bg;
 	}
 
 }

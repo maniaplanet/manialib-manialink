@@ -119,15 +119,12 @@ for($i = 0; $i < 5; $i++)
 $ui = LabelBox::create()
 	->setPosn(0, -35)
 	->setSizen(100, 10)
-	->appendTo($frame)
-	->bg
-	->setStyle(Bgs1::BgTitle3)
-	->getParent()
-	->label
-	->setText('Much foobar')
-	->setTextSize(4)
-	->getParent()
 	->appendTo($frame);
+$ui->bg()
+	->setStyle(Bgs1::BgTitle3);
+$ui->label()
+	->setText('Much foobar')
+	->setTextSize(4);
 
 $frame2 = Frame::create()
 	->setPosn(0, -50)

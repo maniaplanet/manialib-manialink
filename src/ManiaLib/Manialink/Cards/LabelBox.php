@@ -10,16 +10,18 @@ class LabelBox extends Box
 	/**
 	 * @var Label
 	 */
-	public $label;
+	protected $label;
 
 	function __construct()
 	{
 		parent::__construct();
-		$this->label = Label::create()->setBothAlign('center', 'center')->setPosn(0, 0, 0.1);
-		$this->appendChild($this->label);
+		$this->label = Label::create()
+			->setBothAlign('center', 'center')
+			->setPosn(0, 0, 0.1)
+			->appendTo($this);
 	}
 
-	function preFilterSize()
+	protected function preFilterSize()
 	{
 		parent::preFilterSize();
 
@@ -27,6 +29,14 @@ class LabelBox extends Box
 		{
 			$this->label->setSizen($this->getSizenX(), $this->getSizenY());
 		}
+	}
+
+	/**
+	 * @return Label
+	 */
+	function label()
+	{
+		return $this->label;
 	}
 
 }
