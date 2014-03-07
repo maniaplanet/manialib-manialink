@@ -33,12 +33,12 @@ class DOMDocumentRenderer extends AbstractRenderer
 
 	protected function getDOMElement(Node $node)
 	{
+		$node->executeCallbacks('prefilter');
+		
 		$element = $this->getDOMDocument()->createElement($node::XML_TAG_NAME);
 		if($node->getNodeValue() !== null)
 		{
 			$element->nodeValue = $node->getNodeValue();
-			// TODO Should it create a text node instead of setting node value?
-			//$element->appendChild($this->getDOMDocument()->createTextNode($node->getNodeValue()));
 		}
 		foreach($node->getAttributes() as $name => $value)
 		{
@@ -46,12 +46,12 @@ class DOMDocumentRenderer extends AbstractRenderer
 		}
 		foreach($node->getChildren() as $child)
 		{
-			// TODO Should filtering be done in the tree rather than in the renderer?
-			$child->executeCallbacks('prefilter');
 			$subelement = $this->getDOMElement($child);
-			$child->executeCallbacks('postfilter');
 			$element->appendChild($subelement);
 		}
+		
+		$node->executeCallbacks('postfilter');
+		
 		return $element;
 	}
 

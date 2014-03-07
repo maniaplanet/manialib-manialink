@@ -22,6 +22,8 @@ class XMLWriterRenderer extends AbstractRenderer
 
 	protected function writeElement(Node $node)
 	{
+		$node->executeCallbacks('prefilter');
+		
 		$this->writer->startElement($node::XML_TAG_NAME);
 		if($node->getNodeValue())
 		{
@@ -33,11 +35,11 @@ class XMLWriterRenderer extends AbstractRenderer
 		}
 		foreach($node->getChildren() as $child)
 		{
-			$child->executeCallbacks('prefilter');
 			$this->writeElement($child);
-			$child->executeCallbacks('postfilter');
 		}
 		$this->writer->endElement();
+		
+		$node->executeCallbacks('postfilter');
 	}
 
 	public function getXML()

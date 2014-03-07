@@ -15,6 +15,8 @@ class SimpleXMLRenderer implements RendererInterface
 
 	protected function getElement(SimpleXMLElement $parent, Node $node)
 	{
+		$node->executeCallbacks('prefilter');
+		
 		$element = $parent->addChild($node::XML_TAG_NAME, $node->getNodeValue());
 		foreach($node->getAttributes() as $name => $value)
 		{
@@ -22,10 +24,13 @@ class SimpleXMLRenderer implements RendererInterface
 		}
 		foreach($node->getChildren() as $child)
 		{
-			$child->executeCallbacks('prefilter');
+			
 			$this->getElement($element, $child);
-			$child->executeCallbacks('postfilter');
+			
 		}
+		
+		$node->executeCallbacks('postfilter');
+		
 		return $element;
 	}
 
