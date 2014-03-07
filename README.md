@@ -186,8 +186,8 @@ This will output:
 
 Todo
 -----------------------------
+ * Append XML
  * Implement all Element classes
- * Implement all Styles classes
  * Implement all layouts
  * Relative position bug (?)
  * Doc
