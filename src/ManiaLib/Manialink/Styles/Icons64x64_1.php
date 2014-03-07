@@ -1,0 +1,94 @@
+<?php
+
+namespace ManiaLib\Manialink\Styles;
+
+abstract class Icons64x64_1
+{
+
+    const _3DStereo = 'Icons64x64_1:3DStereo';
+    const Add = 'Icons64x64_1:Add';
+    const ArrowBlue = 'Icons64x64_1:ArrowBlue';
+    const ArrowDisabled = 'Icons64x64_1:ArrowDisabled';
+    const ArrowDown = 'Icons64x64_1:ArrowDown';
+    const ArrowFastNext = 'Icons64x64_1:ArrowFastNext';
+    const ArrowFastPrev = 'Icons64x64_1:ArrowFastPrev';
+    const ArrowFirst = 'Icons64x64_1:ArrowFirst';
+    const ArrowGreen = 'Icons64x64_1:ArrowGreen';
+    const ArrowLast = 'Icons64x64_1:ArrowLast';
+    const ArrowNext = 'Icons64x64_1:ArrowNext';
+    const ArrowPrev = 'Icons64x64_1:ArrowPrev';
+    const ArrowRed = 'Icons64x64_1:ArrowRed';
+    const ArrowUp = 'Icons64x64_1:ArrowUp';
+    const Browser = 'Icons64x64_1:Browser';
+    const Buddy = 'Icons64x64_1:Buddy';
+    const ButtonLeagues = 'Icons64x64_1:ButtonLeagues';
+    const Camera = 'Icons64x64_1:Camera';
+    const CameraLocal = 'Icons64x64_1:CameraLocal';
+    const Check = 'Icons64x64_1:Check';
+    const ClipPause = 'Icons64x64_1:ClipPause';
+    const ClipPlay = 'Icons64x64_1:ClipPlay';
+    const ClipRewind = 'Icons64x64_1:ClipRewind';
+    const Close = 'Icons64x64_1:Close';
+    const Empty_ = 'Icons64x64_1:Empty';
+    const Finish = 'Icons64x64_1:Finish';
+    const FinishGrey = 'Icons64x64_1:FinishGrey';
+    const First = 'Icons64x64_1:First';
+    const GenericButton = 'Icons64x64_1:GenericButton';
+    const Green = 'Icons64x64_1:Green';
+    const IconLeaguesLadder = 'Icons64x64_1:IconLeaguesLadder';
+    const IconPlayers = 'Icons64x64_1:IconPlayers';
+    const IconPlayersLadder = 'Icons64x64_1:IconPlayersLadder';
+    const IconServers = 'Icons64x64_1:IconServers';
+    const Inbox = 'Icons64x64_1:Inbox';
+    const LvlGreen = 'Icons64x64_1:LvlGreen';
+    const LvlRed = 'Icons64x64_1:LvlRed';
+    const LvlYellow = 'Icons64x64_1:LvlYellow';
+    const ManiaLinkNext = 'Icons64x64_1:ManiaLinkNext';
+    const ManiaLinkPrev = 'Icons64x64_1:ManiaLinkPrev';
+    const Maximize = 'Icons64x64_1:Maximize';
+    const MediaAudioDownloading = 'Icons64x64_1:MediaAudioDownloading';
+    const MediaPlay = 'Icons64x64_1:MediaPlay';
+    const MediaStop = 'Icons64x64_1:MediaStop';
+    const MediaVideoDownloading = 'Icons64x64_1:MediaVideoDownloading';
+    const NewMessage = 'Icons64x64_1:NewMessage';
+    const NotBuddy = 'Icons64x64_1:NotBuddy';
+    const OfficialRace = 'Icons64x64_1:OfficialRace';
+    const Opponents = 'Icons64x64_1:Opponents';
+    const Outbox = 'Icons64x64_1:Outbox';
+    const QuitRace = 'Icons64x64_1:QuitRace';
+    const RedHigh = 'Icons64x64_1:RedHigh';
+    const RedLow = 'Icons64x64_1:RedLow';
+    const Refresh = 'Icons64x64_1:Refresh';
+    const RestartRace = 'Icons64x64_1:RestartRace';
+    const Save = 'Icons64x64_1:Save';
+    const Second = 'Icons64x64_1:Second';
+    const ShowDown = 'Icons64x64_1:ShowDown';
+    const ShowDown2 = 'Icons64x64_1:ShowDown2';
+    const ShowLeft = 'Icons64x64_1:ShowLeft';
+    const ShowLeft2 = 'Icons64x64_1:ShowLeft2';
+    const ShowRight = 'Icons64x64_1:ShowRight';
+    const ShowRight2 = 'Icons64x64_1:ShowRight2';
+    const ShowUp = 'Icons64x64_1:ShowUp';
+    const ShowUp2 = 'Icons64x64_1:ShowUp2';
+    const SliderCursor = 'Icons64x64_1:SliderCursor';
+    const SliderCursor2 = 'Icons64x64_1:SliderCursor2';
+    const StateFavourite = 'Icons64x64_1:StateFavourite';
+    const StatePrivate = 'Icons64x64_1:StatePrivate';
+    const StateSuggested = 'Icons64x64_1:StateSuggested';
+    const Sub = 'Icons64x64_1:Sub';
+    const TagTypeBronze = 'Icons64x64_1:TagTypeBronze';
+    const TagTypeGold = 'Icons64x64_1:TagTypeGold';
+    const TagTypeNadeo = 'Icons64x64_1:TagTypeNadeo';
+    const TagTypeNone = 'Icons64x64_1:TagTypeNone';
+    const TagTypeSilver = 'Icons64x64_1:TagTypeSilver';
+    const Third = 'Icons64x64_1:Third';
+    const ToolLeague1 = 'Icons64x64_1:ToolLeague1';
+    const ToolRoot = 'Icons64x64_1:ToolRoot';
+    const ToolTree = 'Icons64x64_1:ToolTree';
+    const ToolUp = 'Icons64x64_1:ToolUp';
+    const TrackInfo = 'Icons64x64_1:TrackInfo';
+    const TV = 'Icons64x64_1:TV';
+    const YellowHigh = 'Icons64x64_1:YellowHigh';
+    const YellowLow = 'Icons64x64_1:YellowLow';
+
+}
