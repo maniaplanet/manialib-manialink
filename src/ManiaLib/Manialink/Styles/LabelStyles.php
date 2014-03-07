@@ -44,7 +44,6 @@ abstract class LabelStyles
     const TextInfoSmall = 'LabelStyles:TextInfoSmall';
     const TextPlayerCardName = 'LabelStyles:TextPlayerCardName';
     const TextPlayerCardScore = 'LabelStyles:TextPlayerCardScore';
-    const TextPlayerCardScore = 'LabelStyles:TextPlayerCardScore';
     const TextRaceChat = 'LabelStyles:TextRaceChat';
     const TextRaceChrono = 'LabelStyles:TextRaceChrono';
     const TextRaceChronoError = 'LabelStyles:TextRaceChronoError';
