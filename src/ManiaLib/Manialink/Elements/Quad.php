@@ -45,5 +45,19 @@ class Quad extends Base
 	{
 		return $this->getAttribute("bgcolor");
 	}
+	
+	/**
+	 * @return \static
+	 */
+	function setBgcolorFocus($bgcolor)
+	{
+		return $this->setAttribute("bgcolorfocus", $bgcolor);
+	}
+
+	function getBgcolorfocus()
+	{
+		return $this->getAttribute("bgcolorfocus");
+	}
+	
 
 }
