@@ -2,6 +2,8 @@
 
 namespace ManiaLib\Manialink\Elements;
 
+use ManiaLib\Manialink\Layouts\AbstractLayout;
+
 class Frame3d extends Base
 {
 
@@ -19,7 +21,7 @@ class Frame3d extends Base
 	{
 		return $this->getAttribute("style3d");
 	}
-	
+
 	/**
 	 * @return AbstractLayout
 	 */
