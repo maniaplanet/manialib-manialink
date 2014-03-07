@@ -38,7 +38,7 @@ class DOMDocumentRenderer extends AbstractRenderer
 		$element = $this->getDOMDocument()->createElement($node::XML_TAG_NAME);
 		if($node->getNodeValue() !== null)
 		{
-			$element->nodeValue = $node->getNodeValue();
+			$element->appendChild($this->getDOMDocument()->createTextNode($node->getNodeValue()));
 		}
 		foreach($node->getAttributes() as $name => $value)
 		{
