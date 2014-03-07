@@ -312,7 +312,7 @@ abstract class Base extends Node
 		}
 		else
 		{
-			return $this->setAttribute('style', $_style);
+			return $this->setAttribute('style', $style);
 		}
 	}
 
