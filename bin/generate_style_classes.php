@@ -70,10 +70,23 @@ function generateStyles(array $styles)
 			$sourceCode = generateCode($style->styles[0], $style->substyles, true);
 			writeClass(filterKeyword($style->styles[0]), $sourceCode);
 		}
-		elseif(count($styles) > 0 && !property_exists($style, 'substyles'))
+		elseif(count($style->styles) > 0 && !property_exists($style, 'substyles') && count($style->elements) == 1)
 		{
-			$sourceCode = generateCode('LabelStyles', $style->styles, false);
-			writeClass('LabelStyles', $sourceCode);
+			switch($style->elements[0])
+			{
+				case 'label':
+					$_style = 'LabelStyles';
+					break;
+
+				case 'frame3d':
+					$_style = 'Frame3dStyles';
+					break;
+
+				default:
+					throw new UnexpectedValueException('Woot');
+			}
+			$sourceCode = generateCode($_style, $style->styles, false);
+			writeClass($_style, $sourceCode);
 		}
 		else
 		{
