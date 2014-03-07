@@ -72,7 +72,7 @@ function generateStyles(array $styles)
 		}
 		elseif(count($styles) > 0 && !property_exists($style, 'substyles'))
 		{
-			$sourceCode = generateCode('LabelStyles', $style->styles, true);
+			$sourceCode = generateCode('LabelStyles', $style->styles, false);
 			writeClass('LabelStyles', $sourceCode);
 		}
 		else
