@@ -29,23 +29,34 @@ class XMLWriterDriver implements DriverInterface
 
 	protected function getElement(Node $node)
 	{
+		// Filter
 		$node->executeCallbacks('prefilter');
 
+		// Create
 		$this->writer->startElement($node::XML_TAG_NAME);
+		
+		// Value
 		if($node->getNodeValue() !== null)
 		{
 			$this->writer->writeRaw(htmlspecialchars($node->getNodeValue(), ENT_NOQUOTES, 'UTF-8'));
 		}
+		
+		// Attributes
 		foreach($node->getAttributes() as $name => $value)
 		{
 			$this->writer->writeAttribute($name, $value);
 		}
+		
+		// Children
 		foreach($node->getChildren() as $child)
 		{
 			$this->getElement($child);
 		}
+		
+		// End create
 		$this->writer->endElement();
 
+		// Filter
 		$node->executeCallbacks('postfilter');
 	}
 
