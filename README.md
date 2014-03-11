@@ -72,6 +72,7 @@ use ManiaLib\Manialink\Elements\Manialink;
 use ManiaLib\Manialink\Elements\Quad;
 use ManiaLib\Manialink\Elements\Script;
 use ManiaLib\Manialink\Elements\Timeout;
+use ManiaLib\Manialink\Elements\XMLFragment;
 use ManiaLib\Manialink\Layouts\Line;
 use ManiaLib\Manialink\Rendering\Renderer;
 use ManiaLib\Manialink\Styles\Bgs1;
@@ -148,6 +149,10 @@ Script::create()
 	->setNodeValue('main(){ log("Hello world"); } // < &')
 	->appendTo($ml);
 
+XMLFragment::create()
+	->setNodeValue('<label text="This label is written directly in XML" />')
+	->appendTo($ml);
+
 header('Content-type: application/xml; charset=utf-8');
 
 $renderer = new Renderer();
@@ -182,13 +187,14 @@ This will output:
 		</frame>
 	</frame>
 	<script>main(){ log("Hello world"); } // &lt; &amp;</script>
+	<label text="This label is written directly in XML"/>
 </manialink>
 
 ```
 
 Todo
 -----------------------------
- * Append XML
+ * Driver examples
  * Implement all Element classes
  * Implement all layouts
  * Relative position bug (?)
