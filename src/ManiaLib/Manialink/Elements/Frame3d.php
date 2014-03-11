@@ -10,6 +10,11 @@ class Frame3d extends Base
 	const XML_TAG_NAME = 'frame3d';
 
 	/**
+	 * @var AbstractLayout
+	 */
+	protected $layout;
+
+	/**
 	 * @return \static
 	 */
 	function setStyle3D($style3D)
