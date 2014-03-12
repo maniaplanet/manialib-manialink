@@ -34,7 +34,7 @@ class LabelBox extends Box
 	/**
 	 * @return Label
 	 */
-	function label()
+	function getLabel()
 	{
 		return $this->label;
 	}

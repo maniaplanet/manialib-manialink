@@ -28,7 +28,7 @@ class Box extends Frame
 	/**
 	 * @return Quad
 	 */
-	function bg()
+	function getBg()
 	{
 		return $this->bg;
 	}

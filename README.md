@@ -120,9 +120,9 @@ $ui = LabelBox::create()
 	->setPosn(0, -35)
 	->setSizen(100, 10)
 	->appendTo($frame);
-$ui->bg()
+$ui->getBg()
 	->setStyle(Bgs1::BgTitle3);
-$ui->label()
+$ui->getLabel()
 	->setText('Much foobar')
 	->setTextSize(4);
 
