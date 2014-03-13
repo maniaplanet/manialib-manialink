@@ -17,7 +17,7 @@ class Frame extends Base
 	function __construct()
 	{
 		parent::__construct();
-		$this->registerCallback('prefilter', array($this, 'preFilterAlign'));
+		$this->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilterAlign'));
 	}
 
 	protected function preFilterSize()

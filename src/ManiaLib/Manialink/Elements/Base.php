@@ -9,6 +9,9 @@ use ManiaLib\Manialink\Utils;
 abstract class Base extends Node
 {
 
+	const EVENT_PREFILTER = 'prefilter';
+	const EVENT_POSTFILTER = 'postfilter';
+	
 	protected $posnX;
 	protected $posnY;
 	protected $posnZ;
@@ -17,11 +20,11 @@ abstract class Base extends Node
 
 	function __construct()
 	{
-		$this->registerCallback('prefilter', array($this, 'preFilterLayout'));
-		$this->registerCallback('prefilter', array($this, 'preFilterRelativePosition'));
-		$this->registerCallback('prefilter', array($this, 'preFilterPosition'));
-		$this->registerCallback('prefilter', array($this, 'preFilterSize'));
-		$this->registerCallback('postfilter', array($this, 'postFilterLayout'));
+		$this->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilterLayout'));
+		$this->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilterRelativePosition'));
+		$this->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilterPosition'));
+		$this->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilterSize'));
+		$this->registerCallback(self::EVENT_POSTFILTER, array($this, 'postFilterLayout'));
 	}
 
 	protected function preFilterPosition()
