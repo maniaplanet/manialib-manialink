@@ -31,7 +31,8 @@ abstract class Base extends Node
 			if($this->posnX !== null || $this->posnY !== null || $this->posnZ !== null)
 			{
 
-				$this->setAttribute('posn', (float) $this->posnX.' '.(float) $this->posnY.' '.(float) $this->posnZ);
+				$this->setAttribute('posn',
+					(float) $this->posnX.' '.(float) $this->posnY.' '.(float) $this->posnZ);
 			}
 		}
 	}
@@ -70,15 +71,15 @@ abstract class Base extends Node
 		{
 			if($this->getParent()->getSizenX() && $this->getRelativeHalign())
 			{
-				$xIncrement = Utils::getAlignedPosX(0, $this->getParent()->getSizenX(), $this->getParent()->getHalign(),
-						$this->getRelativeHalign());
+				$xIncrement = Utils::getAlignedPosX(0, $this->getParent()->getSizenX(),
+						$this->getParent()->getHalign(), $this->getRelativeHalign());
 				$this->setPosnX($this->getPosnX() + $xIncrement);
 				$this->deleteAttribute('relativehalign');
 			}
 			if($this->getParent()->getSizenY() && $this->getRelativeValign())
 			{
-				$yIncrement = Utils::getAlignedPosY(0, $this->getParent()->getSizenY(), $this->getParent()->getValign(),
-						$this->getRelativeValign());
+				$yIncrement = Utils::getAlignedPosY(0, $this->getParent()->getSizenY(),
+						$this->getParent()->getValign(), $this->getRelativeValign());
 				$this->setPosnY($this->getPosnY() + $yIncrement);
 				$this->deleteAttribute('relativevalign');
 			}
@@ -304,10 +305,10 @@ abstract class Base extends Node
 	 */
 	function setStyle($style)
 	{
-		$style = explode(':', $style);
-		if(count($style) == 2)
+		$explodedStyle = explode(':', $style);
+		if(count($explodedStyle) == 2)
 		{
-			list($_style, $_substyle) = $style;
+			list($_style, $_substyle) = $explodedStyle;
 			return $this->setAttribute('style', $_style)->setAttribute('substyle', $_substyle);
 		}
 		else
