@@ -108,11 +108,15 @@ abstract class Node
 	 */
 	function appendChild(Node $child)
 	{
+		if($child->getParent() instanceof Node)
+		{
+			throw new Exception('Cannot append a child: it already has a parent Node.');
+		}
 		$this->children[] = $child;
 		$child->setParent($this);
 		return $this;
 	}
-	
+
 	/**
 	 * @return \static
 	 */
