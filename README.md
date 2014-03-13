@@ -194,6 +194,9 @@ This will output:
 
 Todo
 -----------------------------
+ * XMLComment
+ * setNodeValue? setValue?
+ * Bug layouts dans Frame3d?
  * Driver examples
  * Implement all Element classes
  * Implement all layouts
