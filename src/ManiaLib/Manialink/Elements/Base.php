@@ -549,5 +549,10 @@ abstract class Base extends Node
 	{
 		return $this->getAttribute("opacity");
 	}
+	
+	function hasLink()
+	{
+		return $this->getAttribute('manialink') || $this->getAttribute('url') || $this->getAttribute('action') || $this->getAttribute('maniazone') || $this->getAttribute('scriptevents');
+	}
 
 }
