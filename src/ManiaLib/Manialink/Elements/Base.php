@@ -11,7 +11,7 @@ abstract class Base extends Node
 
 	const EVENT_PREFILTER = 'prefilter';
 	const EVENT_POSTFILTER = 'postfilter';
-	
+
 	protected $posnX;
 	protected $posnY;
 	protected $posnZ;
@@ -441,14 +441,14 @@ abstract class Base extends Node
 	/**
 	 * @return \static
 	 */
-	function setManiazones($maniazones)
+	function setManiazone($maniazone)
 	{
-		return $this->setAttribute("maniazones", $maniazones);
+		return $this->setAttribute("maniazone", $maniazone);
 	}
 
-	function getManiazones()
+	function getManiazone()
 	{
-		return $this->getAttribute("maniazones");
+		return $this->getAttribute("maniazone");
 	}
 
 	/**
