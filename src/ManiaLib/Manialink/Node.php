@@ -133,7 +133,7 @@ abstract class Node
 		{
 			throw new Exception('Cannot remove a child: it does not exist.');
 		}
-		$this->children->deleteParent();
+		$this->children[$key]->deleteParent();
 		unset($this->children[$key]);
 	}
 
