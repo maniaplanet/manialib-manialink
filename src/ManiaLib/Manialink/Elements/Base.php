@@ -107,11 +107,19 @@ abstract class Base extends Node
 
 	function getRealSizenX()
 	{
+		if ($this->sizenX === null)
+		{
+			throw new \ManiaLib\Manialink\Exception('SizenX is not set');
+		}
 		return $this->sizenX * $this->getAttribute("scale", 1);
 	}
 
 	function getRealSizenY()
 	{
+		if ($this->sizenY === null)
+		{
+			throw new \ManiaLib\Manialink\Exception('SizenY is not set');
+		}
 		return $this->sizenY * $this->getAttribute("scale", 1);
 	}
 
@@ -493,7 +501,7 @@ abstract class Base extends Node
 	/**
 	 * @return \static
 	 */
-	function setScriptevents($scriptevents)
+	function setScriptevents($scriptevents = 1)
 	{
 		return $this->setAttribute("scriptevents", $scriptevents);
 	}
