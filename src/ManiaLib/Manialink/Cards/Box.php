@@ -21,7 +21,7 @@ class Box extends Frame
 
 	protected function preFilterSize()
 	{
-		parent::__construct();
+		parent::preFilterSize();
 		$this->bg->setSizen($this->getSizenX(), $this->getSizenY());
 	}
 
