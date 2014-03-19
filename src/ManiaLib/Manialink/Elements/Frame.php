@@ -43,7 +43,7 @@ class Frame extends Base
 	 */
 	function setLayout(AbstractLayout $layout)
 	{
-		$this->layout = $layout;
+		$this->layout = $layout->setParent($this);
 		return $this;
 	}
 

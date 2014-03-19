@@ -14,6 +14,10 @@ abstract class AbstractLayout
 	protected $marginHeight;
 	protected $borderWidth;
 	protected $borderHeight;
+	/**
+	 * @var Base
+	 */
+	protected $parent;
 
 	/**
 	 * @return \static
@@ -22,7 +26,7 @@ abstract class AbstractLayout
 	{
 		return new static;
 	}
-	
+
 	/**
 	 * @return \static
 	 */
@@ -78,6 +82,16 @@ abstract class AbstractLayout
 	{
 		$this->setBorderWidth($borderWidth);
 		$this->setBorderHeight($borderHeight);
+		return $this;
+	}
+
+	/**
+	 * @param Base $parent
+	 * @return \static
+	 */
+	function setParent(Base $parent)
+	{
+		$this->parent = $parent;
 		return $this;
 	}
 
