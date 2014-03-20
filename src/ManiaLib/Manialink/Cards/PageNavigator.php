@@ -174,7 +174,7 @@ class PageNavigator extends \ManiaLib\Manialink\Elements\Frame
 		$this->arrowFastNext->setStyle($this->arrowNoneStyle);
 		$this->arrowFastPrev->setStyle($this->arrowNoneStyle);
 		$this->arrowFirst->setStyle($this->arrowNoneStyle);
-		$this->arrowLast->setStyle($this->arrowLastStyle);
+		$this->arrowLast->setStyle($this->arrowNoneStyle);
 		$this->arrowPrev->setStyle($this->arrowNoneStyle);
 		$this->arrowNext->setStyle($this->arrowNoneStyle);
 
