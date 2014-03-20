@@ -13,45 +13,45 @@ use ManiaLib\Manialink\Elements\Label;
 class PageNavigator extends \ManiaLib\Manialink\Elements\Frame
 {
 	/**
-	 * @var Quad 
+	 * @var Quad
 	 */
 	public $arrowNext;
 
 	/**
-	 * @var Quad 
+	 * @var Quad
 	 */
 	public $arrowPrev;
 
 	/**
-	 * @var Quad 
+	 * @var Quad
 	 */
 	public $arrowFastNext;
 
 	/**
-	 * @var Quad 
+	 * @var Quad
 	 */
 	public $arrowFastPrev;
 
 	/**
-	 * @var Quad 
+	 * @var Quad
 	 */
 	public $arrowLast;
 
 	/**
-	 * @var Quad 
+	 * @var Quad
 	 */
 	public $arrowFirst;
 
 	/**
-	 * @var Label 
+	 * @var Label
 	 */
 	public $text;
 
 	/**
-	 * @var Quad 
+	 * @var Quad
 	 */
 	public $textBg;
-	
+
 	public $arrowNoneStyle = 'Icons64x64_1:ArrowDisabled';
 	public $arrowNextStyle = 'Icons64x64_1:ArrowNext';
 	public $arrowPrevStyle = 'Icons64x64_1:ArrowPrev';
@@ -65,11 +65,11 @@ class PageNavigator extends \ManiaLib\Manialink\Elements\Frame
 	protected $showText;
 	protected $pageNumber;
 	protected $currentPage;
-	
+
 	function __construct($iconSize = 8)
 	{
 		parent::__construct();
-		
+
 		$this->arrowFastNext = Quad::create()
 				->setSizen(8, 8);
 		$this->arrowFastPrev = Quad::create()
@@ -84,10 +84,10 @@ class PageNavigator extends \ManiaLib\Manialink\Elements\Frame
 				->setSizen(8, 8);
 		$this->text = Label::create();
 		$this->textBg = Quad::create();
-		
+
 		$this->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilter'));
 	}
-	
+
 	/**
 	 * Sets the page number
 	 */
@@ -152,7 +152,7 @@ class PageNavigator extends \ManiaLib\Manialink\Elements\Frame
 	{
 		return $this->showText;
 	}
-	
+
 	/**
 	 * Cloning behaviour: if you clone this, it also clones sub-Elements
 	 */
@@ -167,17 +167,17 @@ class PageNavigator extends \ManiaLib\Manialink\Elements\Frame
 			}
 		}
 	}
-	
+
 	function preFilter()
 	{
 		// Set styles
-//		$this->arrowFastNext->setStyle($this->arrowFastNextStyle);
-//		$this->arrowFastPrev->setStyle($this->arrowFastPrevStyle);
-//		$this->arrowFirst->setStyle($this->arrowFirstStyle);
-//		$this->arrowLast->setStyle($this->arrowLastStyle);
-//		$this->arrowPrev->setStyle($this->arrowPrevStyle);
-//		$this->arrowNext->setStyle($this->arrowNextStyle);
-		
+		$this->arrowFastNext->setStyle($this->arrowNoneStyle);
+		$this->arrowFastPrev->setStyle($this->arrowNoneStyle);
+		$this->arrowFirst->setStyle($this->arrowNoneStyle);
+		$this->arrowLast->setStyle($this->arrowLastStyle);
+		$this->arrowPrev->setStyle($this->arrowNoneStyle);
+		$this->arrowNext->setStyle($this->arrowNoneStyle);
+
 		// Arrow styles
 		if($this->arrowNext->hasLink())
 		{
@@ -219,11 +219,11 @@ class PageNavigator extends \ManiaLib\Manialink\Elements\Frame
 		{
 			$this->arrowFirst->setManialink(null);
 		}
-		
+
 		$this->text->setText($this->currentPage.' / '.$this->pageNumber);
 		$this->text->setAlign('center', 'center2');
 		$this->text->setPosnZ(0.1);
-		
+
 		$this->arrowNext->setValign("center");
 		$this->arrowFastNext->setValign("center");
 		$this->arrowLast->setValign("center");
@@ -245,7 +245,7 @@ class PageNavigator extends \ManiaLib\Manialink\Elements\Frame
 			$this->arrowPrev->getPosnX() -
 			(int) $this->showFastNext * $this->arrowFastPrev->getSizenX() -
 			$this->arrowPrev->getSizenX(), 0, 1);
-		
+
 		if ($this->showText)
 		{
 			$this->appendChild($this->text);
