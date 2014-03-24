@@ -20,6 +20,7 @@ abstract class Base extends Node
 
 	function __construct()
 	{
+		parent::__construct();
 		$this->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilterLayout'));
 		$this->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilterRelativePosition'));
 		$this->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilterPosition'));

@@ -19,6 +19,11 @@ abstract class Node
 	 * @var Node
 	 */
 	protected $parent;
+	
+	/**
+	 * @var Node
+	 */
+	protected $current;
 
 	/**
 	 * @var callable[][]
@@ -31,6 +36,41 @@ abstract class Node
 	static function create()
 	{
 		return new static;
+	}
+
+	function __construct()
+	{
+		$this->current = $this;
+	}
+	
+	function __clone()
+	{
+		$this->deleteParent();
+
+		foreach($this->children as $key => $child)
+		{
+			$cloned = clone $child;
+			$this->removeChild($child);
+			$this->appendChild($cloned);
+		}
+
+		foreach($this->callbacks as $id => $callbacks)
+		{
+			foreach($callbacks as $key => $callback)
+			{
+				if(is_array($callback) && count($callback) == 2)
+				{
+					list($object, $method) = $callback;
+					if($object == $this->current)
+					{
+						// There may be some weird edge cases, but this should cover most of the cloning issues.
+						$this->callbacks[$id][$key] = array($this, $method);
+					}
+				}
+			}
+		}
+		
+		$this->current = $this;
 	}
 
 	/**

@@ -11,6 +11,7 @@ class Manialink extends Node
 
 	function __construct()
 	{
+		parent::__construct();
 		$this->setVersion(1);
 	}
 
