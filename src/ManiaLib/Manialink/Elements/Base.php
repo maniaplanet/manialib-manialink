@@ -424,19 +424,6 @@ abstract class Base extends Node
 	/**
 	 * @return \static
 	 */
-	function setStyle3d($style3d)
-	{
-		return $this->setAttribute("style3d", $style3d);
-	}
-
-	function getStyle3d()
-	{
-		return $this->getAttribute("style3d");
-	}
-
-	/**
-	 * @return \static
-	 */
 	function setManialink($manialink)
 	{
 		return $this->setAttribute("manialink", $manialink);
