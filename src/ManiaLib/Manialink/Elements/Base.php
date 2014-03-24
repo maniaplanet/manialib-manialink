@@ -108,7 +108,7 @@ abstract class Base extends Node
 
 	function getRealSizenX()
 	{
-		if ($this->sizenX === null)
+		if($this->sizenX === null)
 		{
 			throw new \ManiaLib\Manialink\Exception('SizenX is not set');
 		}
@@ -117,7 +117,7 @@ abstract class Base extends Node
 
 	function getRealSizenY()
 	{
-		if ($this->sizenY === null)
+		if($this->sizenY === null)
 		{
 			throw new \ManiaLib\Manialink\Exception('SizenY is not set');
 		}
@@ -550,10 +550,15 @@ abstract class Base extends Node
 	{
 		return $this->getAttribute("opacity");
 	}
-	
+
 	function hasLink()
 	{
-		return $this->getAttribute('manialink') || $this->getAttribute('url') || $this->getAttribute('action') || $this->getAttribute('maniazone') || $this->getAttribute('scriptevents');
+		return
+			$this->getAttribute('manialink') !== null ||
+			$this->getAttribute('url') !== null ||
+			$this->getAttribute('action') !== null ||
+			$this->getAttribute('maniazone') !== null ||
+			$this->getAttribute('scriptevents') !== null;
 	}
 
 }
