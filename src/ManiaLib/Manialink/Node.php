@@ -50,6 +50,13 @@ abstract class Node
 		foreach($this->children as $key => $child)
 		{
 			$cloned = clone $child;
+			foreach($this as $propertyName => $propertyValue)
+			{
+				if($child === $propertyValue)
+				{
+					$this->$propertyName = $cloned;
+				}
+			}
 			$this->removeChild($child);
 			$this->appendChild($cloned);
 		}
