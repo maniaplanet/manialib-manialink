@@ -7,109 +7,292 @@
 
 namespace ManiaLib\Manialink\Cards;
 
-use ManiaLib\Manialink\Elements\Quad;
+use ManiaLib\Manialink\Elements\Frame;
 use ManiaLib\Manialink\Elements\Label;
+use ManiaLib\Manialink\Elements\Quad;
+use ManiaLib\Manialink\Node;
 
-class PageNavigator extends \ManiaLib\Manialink\Elements\Frame
+class PageNavigator extends Frame
 {
-	/**
-	 * @var Quad
-	 */
-	public $arrowNext;
 
 	/**
 	 * @var Quad
 	 */
-	public $arrowPrev;
+	protected $arrowNext;
 
 	/**
 	 * @var Quad
 	 */
-	public $arrowFastNext;
+	protected $arrowPrev;
 
 	/**
 	 * @var Quad
 	 */
-	public $arrowFastPrev;
+	protected $arrowFastNext;
 
 	/**
 	 * @var Quad
 	 */
-	public $arrowLast;
+	protected $arrowFastPrev;
 
 	/**
 	 * @var Quad
 	 */
-	public $arrowFirst;
+	protected $arrowLast;
+
+	/**
+	 * @var Quad
+	 */
+	protected $arrowFirst;
 
 	/**
 	 * @var Label
 	 */
-	public $text;
+	protected $text;
 
 	/**
 	 * @var Quad
 	 */
-	public $textBg;
-
-	public $arrowNoneStyle = 'Icons64x64_1:ArrowDisabled';
-	public $arrowNextStyle = 'Icons64x64_1:ArrowNext';
-	public $arrowPrevStyle = 'Icons64x64_1:ArrowPrev';
-	public $arrowFastNextStyle = 'Icons64x64_1:ArrowFastNext';
-	public $arrowFastPrevStyle = 'Icons64x64_1:ArrowFastPrev';
-	public $arrowFirstStyle = 'Icons64x64_1:ArrowFirst';
-	public $arrowLastStyle = 'Icons64x64_1:ArrowLast';
-
+	protected $textBg;
+	protected $arrowNoneStyle = 'Icons64x64_1:ArrowDisabled';
+	protected $arrowNextStyle = 'Icons64x64_1:ArrowNext';
+	protected $arrowPrevStyle = 'Icons64x64_1:ArrowPrev';
+	protected $arrowFastNextStyle = 'Icons64x64_1:ArrowFastNext';
+	protected $arrowFastPrevStyle = 'Icons64x64_1:ArrowFastPrev';
+	protected $arrowFirstStyle = 'Icons64x64_1:ArrowFirst';
+	protected $arrowLastStyle = 'Icons64x64_1:ArrowLast';
 	protected $showLast;
 	protected $showFastNext;
 	protected $showText;
 	protected $pageNumber;
 	protected $currentPage;
 
-	function __construct($iconSize = 8)
+	function __construct()
 	{
 		parent::__construct();
 
 		$this->arrowFastNext = Quad::create()
-				->setSizen(8, 8);
+			->setSizen(8, 8);
 		$this->arrowFastPrev = Quad::create()
-				->setSizen(8, 8);
+			->setSizen(8, 8);
 		$this->arrowFirst = Quad::create()
-				->setSizen(8, 8);
+			->setSizen(8, 8);
 		$this->arrowLast = Quad::create()
-				->setSizen(8, 8);
+			->setSizen(8, 8);
 		$this->arrowPrev = Quad::create()
-				->setSizen(8, 8);
+			->setSizen(8, 8);
 		$this->arrowNext = Quad::create()
-				->setSizen(8, 8);
-		$this->text = Label::create();
-		$this->textBg = Quad::create();
+			->setSizen(8, 8);
+		$this->text = Label::create()
+			->setSizen(14);
+		$this->textBg = Quad::create()
+			->setSizen(16, 6);
 
 		$this->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilter'));
 	}
 
 	/**
+	 * @return Quad
+	 */
+	public function getArrowNext()
+	{
+		return $this->arrowNext;
+	}
+
+	/**
+	 * @return Quad
+	 */
+	public function getArrowPrev()
+	{
+		return $this->arrowPrev;
+	}
+
+	/**
+	 * @return Quad
+	 */
+	public function getArrowFastNext()
+	{
+		return $this->arrowFastNext;
+	}
+
+	/**
+	 * @return Quad
+	 */
+	public function getArrowFastPrev()
+	{
+		return $this->arrowFastPrev;
+	}
+
+	/**
+	 * @return Quad
+	 */
+	public function getArrowFirst()
+	{
+		return $this->arrowFirst;
+	}
+
+	/**
+	 * @return Quad
+	 */
+	public function getArrowLast()
+	{
+		return $this->arrowLast;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getArrowNoneStyle()
+	{
+		return $this->arrowNoneStyle;
+	}
+
+	/**
+	 * @param string $style
+	 * @return \static
+	 */
+	public function setArrowNoneStyle($style)
+	{
+		$this->arrowNoneStyle = $style;
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getArrowPrevStyle()
+	{
+		return $this->arrowPrevStyle;
+	}
+
+	/**
+	 * @param string $style
+	 * @return \static
+	 */
+	public function setArrowPrevStyle($style)
+	{
+		$this->arrowPrevStyle = $style;
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getArrowNextStyle()
+	{
+		return $this->arrowNextStyle;
+	}
+
+	/**
+	 * @param string $style
+	 * @return \static
+	 */
+	public function setArrowNextStyle($style)
+	{
+		$this->arrowNextStyle = $style;
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getArrowFastNextStyle()
+	{
+		return $this->arrowFastNextStyle;
+	}
+
+	/**
+	 * @param string $style
+	 * @return \static
+	 */
+	public function setArrowFastNextStyle($style)
+	{
+		$this->arrowFastNextStyle = $style;
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getArrowFastPrevStyle()
+	{
+		return $this->arrowFastPrevStyle;
+	}
+
+	/**
+	 * @param string $style
+	 * @return \static
+	 */
+	public function setArrowFastPrevStyle($style)
+	{
+		$this->arrowFastPrev = $style;
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getArrowFirstStyle()
+	{
+		return $this->arrowFirstStyle;
+	}
+
+	/**
+	 * @param string $style
+	 * @return \static
+	 */
+	public function setArrowFirstStyle($style)
+	{
+		$this->arrowFirstStyle = $style;
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getArrowLastStyle()
+	{
+		return $this->arrowLastStyle;
+	}
+
+	/**
+	 * @param string $style
+	 * @return \static
+	 */
+	public function setArrowLastStyle($style)
+	{
+		$this->arrowLastStyle = $style;
+		return $this;
+	}
+
+	/**
 	 * Sets the page number
+	 * @return \static
 	 */
 	function setPageNumber($pageNumber)
 	{
 		$this->pageNumber = $pageNumber;
+		return $this;
 	}
 
 	/**
 	 * Sets the current page
+	 * @return \static
 	 */
 	function setCurrentPage($currentPage)
 	{
 		$this->currentPage = $currentPage;
+		return $this;
 	}
 
 	/**
 	 * Shows or hides the "go to first/last" navigation icons
+	 * @return \static
 	 */
 	function showLast($show = true)
 	{
 		$this->showLast = $show;
+		return $this;
 	}
 
 	/**
@@ -122,10 +305,12 @@ class PageNavigator extends \ManiaLib\Manialink\Elements\Frame
 
 	/**
 	 * Shows or hides the "fast prev/next" navigation icons
+	 * @return \static
 	 */
 	function showFastNext($show = true)
 	{
 		$this->showFastNext = $show;
+		return $this;
 	}
 
 	/**
@@ -139,10 +324,12 @@ class PageNavigator extends \ManiaLib\Manialink\Elements\Frame
 	/**
 	 * Shows or hides the text. Note that if the current page or the page number
 	 * isn't declared, the text won't be shown
+	 * @return \static
 	 */
 	function showText($show = true)
 	{
 		$this->showText = $show;
+		return $this;
 	}
 
 	/**
@@ -161,7 +348,7 @@ class PageNavigator extends \ManiaLib\Manialink\Elements\Frame
 		$this->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilter'));
 		foreach($this as $name => $property)
 		{
-			if($property instanceof \ManiaLib\Manialink\Node)
+			if($property instanceof Node)
 			{
 				$this->$name = clone $property;
 			}
@@ -228,7 +415,7 @@ class PageNavigator extends \ManiaLib\Manialink\Elements\Frame
 		$this->arrowFastNext->setValign("center");
 		$this->arrowLast->setValign("center");
 
-		$this->arrowNext->setPosn(($this->text->getSizenX() / 2) + 1, 0, 1);
+		$this->arrowNext->setPosn(((int) $this->showText * $this->text->getSizenX() / 2), 0, 1);
 		$this->arrowFastNext->setPosn($this->arrowNext->getPosnX() + $this->arrowNext->getSizenX(), 0, 1);
 		$this->arrowLast->setPosn(
 			$this->arrowNext->getPosnX() +
@@ -239,24 +426,24 @@ class PageNavigator extends \ManiaLib\Manialink\Elements\Frame
 		$this->arrowFastPrev->setAlign("right", "center");
 		$this->arrowFirst->setAlign("right", "center");
 
-		$this->arrowPrev->setPosn(-($this->text->getSizenX() / 2) - 1, 0, 1);
+		$this->arrowPrev->setPosn(-((int) $this->showText * $this->text->getSizenX() / 2), 0, 1);
 		$this->arrowFastPrev->setPosn($this->arrowPrev->getPosnX() - $this->arrowPrev->getSizenX(), 0, 1);
 		$this->arrowFirst->setPosn(
 			$this->arrowPrev->getPosnX() -
 			(int) $this->showFastNext * $this->arrowFastPrev->getSizenX() -
 			$this->arrowPrev->getSizenX(), 0, 1);
 
-		if ($this->showText)
+		if($this->showText)
 		{
 			$this->appendChild($this->text);
 			$this->appendChild($this->textBg);
 		}
-		if ($this->showFastNext)
+		if($this->showFastNext)
 		{
 			$this->appendChild($this->arrowFastNext);
 			$this->appendChild($this->arrowFastPrev);
 		}
-		if ($this->showLast)
+		if($this->showLast)
 		{
 			$this->appendChild($this->arrowFirst);
 			$this->appendChild($this->arrowLast);
@@ -264,5 +451,5 @@ class PageNavigator extends \ManiaLib\Manialink\Elements\Frame
 		$this->appendChild($this->arrowPrev);
 		$this->appendChild($this->arrowNext);
 	}
-}
 
+}
