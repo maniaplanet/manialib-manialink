@@ -73,17 +73,19 @@ abstract class Base extends Node
 	{
 		if($this->getParent() instanceof Base)
 		{
-			if($this->getParent()->getSizenX() && $this->getRelativeHalign())
+			if($this->getRelativeHalign())
 			{
-				$xIncrement = Utils::getAlignedPosX(0, $this->getParent()->getSizenX(),
-						$this->getParent()->getHalign(), $this->getRelativeHalign());
+				$sizeX = $this->getParent()->getSizenX();
+				$halign = $this->getParent()->getHalign();
+				$xIncrement = Utils::getAlignedPosX(0, $sizeX, $halign, $this->getRelativeHalign());
 				$this->setPosnX($this->getPosnX() + $xIncrement);
 				$this->deleteAttribute('relativehalign');
 			}
-			if($this->getParent()->getSizenY() && $this->getRelativeValign())
+			if($this->getRelativeValign())
 			{
-				$yIncrement = Utils::getAlignedPosY(0, $this->getParent()->getSizenY(),
-						$this->getParent()->getValign(), $this->getRelativeValign());
+				$sizeY = $this->getParent()->getSizenY();
+				$valign = $this->getParent()->getValign();
+				$yIncrement = Utils::getAlignedPosY(0, $sizeY, $valign, $this->getRelativeValign());
 				$this->setPosnY($this->getPosnY() + $yIncrement);
 				$this->deleteAttribute('relativevalign');
 			}
@@ -93,13 +95,17 @@ abstract class Base extends Node
 		{
 			if($this->getRelativeHalign())
 			{
-				$xIncrement = Utils::getAlignedPosX(0, 320, 'center', $this->getRelativeHalign());
+				$sizeX = 320;
+				$halign = 'center';
+				$xIncrement = Utils::getAlignedPosX(0, $sizeX, $halign, $this->getRelativeHalign());
 				$this->setPosnX($this->getPosnX() + $xIncrement);
 				$this->deleteAttribute('relativehalign');
 			}
 			if($this->getRelativeValign())
 			{
-				$yIncrement = Utils::getAlignedPosY(0, 180, 'center', $this->getRelativeValign());
+				$sizeY = 180;
+				$valign = 'center';
+				$yIncrement = Utils::getAlignedPosY(0, $sizeY, $valign, $this->getRelativeValign());
 				$this->setPosnY($this->getPosnY() + $yIncrement);
 				$this->deleteAttribute('relativevalign');
 			}
