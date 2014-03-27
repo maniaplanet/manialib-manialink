@@ -19,6 +19,15 @@ class Frame extends Base
 		parent::__construct();
 		$this->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilterAlign'));
 	}
+	
+	function __clone()
+	{
+		parent::__clone();
+		if($this->layout instanceof AbstractLayout)
+		{
+			$this->layout = clone $this->layout;
+		}
+	}
 
 	protected function preFilterSize()
 	{

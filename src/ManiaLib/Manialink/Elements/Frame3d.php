@@ -14,6 +14,15 @@ class Frame3d extends Base
 	 */
 	protected $layout;
 
+	function __clone()
+	{
+		parent::__clone();
+		if($this->layout instanceof AbstractLayout)
+		{
+			$this->layout = clone $this->layout;
+		}
+	}
+	
 	/**
 	 * @return \static
 	 */
