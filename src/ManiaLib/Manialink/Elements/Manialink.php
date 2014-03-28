@@ -7,6 +7,11 @@ use ManiaLib\Manialink\Node;
 class Manialink extends Node
 {
 
+	const BG_DEFAULT = 1;
+	const BG_HIDDEN = 0;
+	const BG_STARS = 'stars';
+	const BG_STATIONS = 'stations';
+	const BG_TITLE = 'title';
 	const XML_TAG_NAME = 'manialink';
 
 	function __construct()
