@@ -14,6 +14,15 @@ class Label extends Format
 	{
 		return $this->setAttribute("text", $text);
 	}
+	
+	/**
+	 * @return \static
+	 */
+	function appendText($text)
+	{
+		return $this->appendAttribute("text", $text);
+	}
+	
 
 	function getText()
 	{

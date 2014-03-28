@@ -88,6 +88,15 @@ abstract class Node
 		$this->attributes[$name] = $value;
 		return $this;
 	}
+	
+	/**
+	 * @return \static
+	 */
+	function appendAttribute($name, $value)
+	{
+		$this->attributes[$name] .= $value;
+		return $this;
+	}
 
 	function attributeExists($name)
 	{
@@ -119,6 +128,15 @@ abstract class Node
 	function setNodeValue($value)
 	{
 		$this->nodeValue = $value;
+		return $this;
+	}
+	
+	/**
+	 * @return \static
+	 */
+	function appendNodeValue($value)
+	{
+		$this->nodeValue .= $value;
 		return $this;
 	}
 
