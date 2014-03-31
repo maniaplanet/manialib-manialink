@@ -2,6 +2,7 @@
 
 namespace ManiaLib\Manialink\Elements;
 
+use ManiaLib\Manialink\Utils;
 use ManiaLib\Manialink\Layouts\AbstractLayout;
 
 class Frame extends Base
@@ -17,7 +18,7 @@ class Frame extends Base
 	function __construct()
 	{
 		parent::__construct();
-		$this->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilterAlign'));
+		$this->prependCallback(self::EVENT_PREFILTER, array($this, 'preFilterAlign'));
 	}
 	
 	function __clone()
@@ -36,7 +37,18 @@ class Frame extends Base
 
 	protected function preFilterAlign()
 	{
-		$this->deleteAttribute('halign')->deleteAttribute('valign');
+		$halign = $this->getHalign();
+		$valign = $this->getValign();
+		if ($halign)
+		{
+			$this->setPosnX(Utils::getAlignedPosX($this->getPosnX(), $this->getSizenX(), $halign, "right"));
+			$this->deleteAttribute('halign');
+		}
+		if ($valign)
+		{
+			$this->setPosnY(Utils::getAlignedPosY($this->getPosnY(), $this->getSizenY(), $valign, "top"));
+			$this->deleteAttribute('valign');
+		}
 	}
 
 	/**
