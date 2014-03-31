@@ -210,6 +210,16 @@ abstract class Node
 		}
 		$this->callbacks[$event][] = $callback;
 	}
+	
+	function prependCallback($event, $callback)
+	{
+		if(!is_callable($callback))
+		{
+			throw new Exception('Provided $callback is not callable in '.get_called_class());
+		}
+		array_unshift($this->callbacks[$event], $callback);
+		return $this;
+	}
 
 	function executeCallbacks($event, $parameters = array())
 	{
