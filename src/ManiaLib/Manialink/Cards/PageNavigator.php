@@ -88,7 +88,8 @@ class PageNavigator extends Frame
 		$this->textBg = Quad::create()
 			->setSizen(16, 6);
 
-		$this->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilter'));
+		$this->setSizen(64, 8)
+			->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilter'));
 	}
 
 	/**
