@@ -410,11 +410,14 @@ class PageNavigator extends Frame
 
 		$this->text->setText($this->currentPage.' / '.$this->pageNumber);
 		$this->text->setAlign('center', 'center2');
+		$this->text->setRelativeAlign('center', 'center');
 		$this->text->setPosnZ(0.1);
 
-		$this->arrowNext->setValign("center");
-		$this->arrowFastNext->setValign("center");
-		$this->arrowLast->setValign("center");
+		$this->textBg->setBothAlign('center', 'center');
+
+		$this->arrowNext->setRelativeAlign('center', 'center')->setValign("center");
+		$this->arrowFastNext->setRelativeAlign('center', 'center')->setValign("center");
+		$this->arrowLast->setRelativeAlign('center', 'center')->setValign("center");
 
 		$this->arrowNext->setPosn(((int) $this->showText * $this->text->getSizenX() / 2), 0, 1);
 		$this->arrowFastNext->setPosn($this->arrowNext->getPosnX() + $this->arrowNext->getSizenX(), 0, 1);
@@ -423,9 +426,9 @@ class PageNavigator extends Frame
 			(int) $this->showFastNext * $this->arrowFastNext->getSizenX() +
 			$this->arrowNext->getSizenX(), 0, 1);
 
-		$this->arrowPrev->setAlign("right", "center");
-		$this->arrowFastPrev->setAlign("right", "center");
-		$this->arrowFirst->setAlign("right", "center");
+		$this->arrowPrev->setRelativeAlign('center', 'center')->setAlign("right", "center");
+		$this->arrowFastPrev->setRelativeAlign('center', 'center')->setAlign("right", "center");
+		$this->arrowFirst->setRelativeAlign('center', 'center')->setAlign("right", "center");
 
 		$this->arrowPrev->setPosn(-((int) $this->showText * $this->text->getSizenX() / 2), 0, 1);
 		$this->arrowFastPrev->setPosn($this->arrowPrev->getPosnX() - $this->arrowPrev->getSizenX(), 0, 1);
