@@ -33,11 +33,11 @@ abstract class Node
 	/**
 	 * @return \static
 	 */
-	static function create()
+	final static function create()
 	{
 		return new static;
 	}
-
+	
 	function __construct()
 	{
 		$this->current = $this;
@@ -80,6 +80,14 @@ abstract class Node
 		$this->current = $this;
 	}
 
+	/**
+	 * @return \static
+	 */
+	final function getClone()
+	{
+		return clone $this;
+	}
+	
 	/**
 	 * @return \static
 	 */
