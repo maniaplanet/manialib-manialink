@@ -70,6 +70,7 @@ abstract class Icons64x64_1
     const ShowRight2 = 'Icons64x64_1:ShowRight2';
     const ShowUp = 'Icons64x64_1:ShowUp';
     const ShowUp2 = 'Icons64x64_1:ShowUp2';
+    const ShowUpChanging = 'Icons64x64_1:ShowUpChanging';
     const SliderCursor = 'Icons64x64_1:SliderCursor';
     const SliderCursor2 = 'Icons64x64_1:SliderCursor2';
     const StateFavourite = 'Icons64x64_1:StateFavourite';

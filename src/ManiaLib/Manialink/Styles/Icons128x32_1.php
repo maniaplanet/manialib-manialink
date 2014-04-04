@@ -9,6 +9,7 @@ abstract class Icons128x32_1
     const ManiaLinkHome = 'Icons128x32_1:ManiaLinkHome';
     const ManiaLinkSwitch = 'Icons128x32_1:ManiaLinkSwitch';
     const ManiaPlanet = 'Icons128x32_1:ManiaPlanet';
+    const Minimize = 'Icons128x32_1:Minimize';
     const Music = 'Icons128x32_1:Music';
     const PainterBrush = 'Icons128x32_1:PainterBrush';
     const PainterFill = 'Icons128x32_1:PainterFill';

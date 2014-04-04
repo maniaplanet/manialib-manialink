@@ -27,6 +27,7 @@ abstract class Bgs1InRace
     const BgCardList = 'Bgs1InRace:BgCardList';
     const BgCardOnline = 'Bgs1InRace:BgCardOnline';
     const BgCardPlayer = 'Bgs1InRace:BgCardPlayer';
+    const BgCardProperty = 'Bgs1InRace:BgCardProperty';
     const BgCardSystem = 'Bgs1InRace:BgCardSystem';
     const BgCardZone = 'Bgs1InRace:BgCardZone';
     const BgColorContour = 'Bgs1InRace:BgColorContour';
@@ -59,6 +60,7 @@ abstract class Bgs1InRace
     const BgWindow1 = 'Bgs1InRace:BgWindow1';
     const BgWindow2 = 'Bgs1InRace:BgWindow2';
     const BgWindow3 = 'Bgs1InRace:BgWindow3';
+    const BgWindow4 = 'Bgs1InRace:BgWindow4';
     const EnergyBar = 'Bgs1InRace:EnergyBar';
     const EnergyTeam2 = 'Bgs1InRace:EnergyTeam2';
     const Glow = 'Bgs1InRace:Glow';

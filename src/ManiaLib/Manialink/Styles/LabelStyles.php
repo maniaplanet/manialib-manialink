@@ -27,6 +27,7 @@ abstract class LabelStyles
     const TextCardInfoSmall = 'TextCardInfoSmall';
     const TextCardInfoVerySmall = 'TextCardInfoVerySmall';
     const TextCardMedium = 'TextCardMedium';
+    const TextCardMediumWhite = 'TextCardMediumWhite';
     const TextCardRaceRank = 'TextCardRaceRank';
     const TextCardScores2 = 'TextCardScores2';
     const TextCardSmall = 'TextCardSmall';
@@ -69,8 +70,11 @@ abstract class LabelStyles
     const TextTitle3 = 'TextTitle3';
     const TextTitle3Header = 'TextTitle3Header';
     const TextTitleError = 'TextTitleError';
+    const TextToolTipAM = 'TextToolTipAM';
+    const TextToolTipAMBig = 'TextToolTipAMBig';
     const TextValueBig = 'TextValueBig';
     const TextValueMedium = 'TextValueMedium';
+    const TextValueMediumSm = 'TextValueMediumSm';
     const TextValueSmall = 'TextValueSmall';
     const TextValueSmallSm = 'TextValueSmallSm';
     const TrackerText = 'TrackerText';
@@ -98,5 +102,6 @@ abstract class LabelStyles
     const CardButtonSmallXXXL = 'CardButtonSmallXXXL';
     const CardMain_Quit = 'CardMain_Quit';
     const CardMain_Tool = 'CardMain_Tool';
+    const CardMain_Tool_NoBg = 'CardMain_Tool_NoBg';
 
 }

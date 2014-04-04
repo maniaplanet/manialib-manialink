@@ -7,6 +7,7 @@ abstract class UIConstruction_Buttons
 
     const ActionMaker = 'UIConstruction_Buttons:ActionMaker';
     const Add = 'UIConstruction_Buttons:Add';
+    const AirMapping = 'UIConstruction_Buttons:AirMapping';
     const Author = 'UIConstruction_Buttons:Author';
     const AuthorTime = 'UIConstruction_Buttons:AuthorTime';
     const BgEditors = 'UIConstruction_Buttons:BgEditors';
@@ -23,6 +24,7 @@ abstract class UIConstruction_Buttons
     const Down = 'UIConstruction_Buttons:Down';
     const Drive = 'UIConstruction_Buttons:Drive';
     const Erase = 'UIConstruction_Buttons:Erase';
+    const GhostBlocks = 'UIConstruction_Buttons:GhostBlocks';
     const Help = 'UIConstruction_Buttons:Help';
     const Item = 'UIConstruction_Buttons:Item';
     const Left = 'UIConstruction_Buttons:Left';

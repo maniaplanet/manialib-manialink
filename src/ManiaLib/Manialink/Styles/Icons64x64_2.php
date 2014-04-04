@@ -16,6 +16,7 @@ abstract class Icons64x64_2
     const RocketElimination = 'Icons64x64_2:RocketElimination';
     const RocketHit = 'Icons64x64_2:RocketHit';
     const ServerNotice = 'Icons64x64_2:ServerNotice';
+    const SortBy = 'Icons64x64_2:SortBy';
     const UnknownElimination = 'Icons64x64_2:UnknownElimination';
     const UnknownHit = 'Icons64x64_2:UnknownHit';
 

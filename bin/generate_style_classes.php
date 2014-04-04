@@ -65,12 +65,18 @@ function generateStyles(array $styles)
 	debug(count($styles)." styles found");
 	foreach($styles as $style)
 	{
-		if(count($style->styles) == 1 && property_exists($style, 'substyles') && count($style->substyles) > 0)
+		if(property_exists($style, 'styles') 
+			&& count($style->styles) == 1 
+			&& property_exists($style, 'substyles') 
+			&& count($style->substyles) > 0)
 		{
 			$sourceCode = generateCode($style->styles[0], $style->substyles, true);
 			writeClass(filterKeyword($style->styles[0]), $sourceCode);
 		}
-		elseif(count($style->styles) > 0 && !property_exists($style, 'substyles') && count($style->elements) == 1)
+		elseif(property_exists($style, 'styles') 
+			&& count($style->styles) > 0 
+			&& !property_exists($style, 'substyles') 
+			&& count($style->elements) == 1)
 		{
 			switch($style->elements[0])
 			{
@@ -90,7 +96,7 @@ function generateStyles(array $styles)
 		}
 		else
 		{
-			debug("Cannot process $style");
+			debug("Cannot process element");
 		}
 	}
 }
