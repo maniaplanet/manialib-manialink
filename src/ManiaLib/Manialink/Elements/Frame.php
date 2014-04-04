@@ -41,7 +41,7 @@ class Frame extends Base
 		$valign = $this->getValign();
 		if ($halign)
 		{
-			$this->setPosnX(Utils::getAlignedPosX($this->getPosnX(), $this->getRealSizenX(), $halign, "right"));
+			$this->setPosnX(Utils::getAlignedPosX($this->getPosnX(), $this->getRealSizenX(), $halign, "left"));
 			$this->deleteAttribute('halign');
 		}
 		if ($valign)
