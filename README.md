@@ -20,7 +20,7 @@ Please beware this is a wip lib. We might break stuff at any time. But it is als
 Installation
 -----------------------------
 
-[Co-co-co-Composer \o/](https://getcomposer.org/):
+[Install via Composer](https://getcomposer.org/):
 
 ```
 {
@@ -29,6 +29,16 @@ Installation
     }
 }
 ```
+
+Features
+-----------------------------
+ * Standalone package
+ * Flexible object-oriented architecture
+ * Rendering drivers (DOMDocument, XMLWriter)
+ * Frame logical size and alignment
+ * Relative Alignment of child inside sized parent
+ * Cards for composing complex reusable sets of elements
+ * Helper classes for all styles/substyles
 
 Architecture
 -----------------------------
@@ -59,7 +69,7 @@ but if the setter doesnt exists you can use `setAttribute($name, $value)` instea
 in `ManiaLib\Manialink\Styles\` eg. `Quad::create()->setStyle(Bgs1::BgWindow1);`
  * Actual XML rendering is done by an implementation of `ManiaLib\Manialink\Rendering\RendererInterface` (see examples for usage).
 
-Examples
+Example
 -----------------------------
 
 ```
@@ -191,6 +201,17 @@ This will output:
 </manialink>
 
 ```
+
+Alignment and Relative Alignment 
+-----------------------------
+
+ * Frame Size and Alignment emulates the behaviour of standard elements alignment in frames. With this you can create logical containers with a size, and position them using aligns and relative aligns (see below).
+ * Relative Alignment helps position an element relative to its parent container. For this, you need a frame with a size and a child with a size ; for instance you can put a quad in the "bottom right corner of a frame with a size".
+
+To help understand these concepts visually:
+ * Cheat sheet manialink: http://maniapla.net/#url=manialib-manialink:align
+ * Source: https://gist.github.com/gou1/9970824
+
 
 Todo
 -----------------------------
