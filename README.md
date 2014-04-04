@@ -200,6 +200,5 @@ Todo
  * Driver examples
  * Implement all Element classes
  * Implement all layouts
- * Relative position bug (?)
  * Doc
  
