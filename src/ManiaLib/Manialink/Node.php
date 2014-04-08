@@ -7,8 +7,15 @@ abstract class Node
 
 	const XML_TAG_NAME = null;
 
-	protected $attributes = array();
+	/**
+	 * @var string
+	 */
 	protected $nodeValue;
+	
+	/**
+	 * @var mixed[]
+	 */
+	protected $attributes = array();
 
 	/**
 	 * @var Node[]
@@ -91,6 +98,29 @@ abstract class Node
 	/**
 	 * @return \static
 	 */
+	function setNodeValue($value)
+	{
+		$this->nodeValue = $value;
+		return $this;
+	}
+	
+	/**
+	 * @return \static
+	 */
+	function appendNodeValue($value)
+	{
+		$this->nodeValue .= $value;
+		return $this;
+	}
+
+	function getNodeValue()
+	{
+		return $this->nodeValue;
+	}
+	
+	/**
+	 * @return \static
+	 */
 	function setAttribute($name, $value)
 	{
 		$this->attributes[$name] = $value;
@@ -128,29 +158,6 @@ abstract class Node
 	{
 		unset($this->attributes[$name]);
 		return $this;
-	}
-
-	/**
-	 * @return \static
-	 */
-	function setNodeValue($value)
-	{
-		$this->nodeValue = $value;
-		return $this;
-	}
-	
-	/**
-	 * @return \static
-	 */
-	function appendNodeValue($value)
-	{
-		$this->nodeValue .= $value;
-		return $this;
-	}
-
-	function getNodeValue()
-	{
-		return $this->nodeValue;
 	}
 
 	function setParent(Node $node)
