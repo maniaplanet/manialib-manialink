@@ -12,7 +12,7 @@ class Manialink extends Node
 	const BG_STARS = 'stars';
 	const BG_STATIONS = 'stations';
 	const BG_TITLE = 'title';
-	const XML_TAG_NAME = 'manialink';
+	protected $tagName = 'manialink';
 
 	function __construct()
 	{

@@ -5,6 +5,6 @@ namespace ManiaLib\Manialink\Elements;
 class Style3d extends \ManiaLib\Manialink\Elements\Base
 {
 
-	const XML_TAG_NAME = 'style3d';
+	protected $tagName = 'style3d';
 
 }

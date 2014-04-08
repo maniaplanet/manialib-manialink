@@ -5,7 +5,7 @@ namespace ManiaLib\Manialink\Elements;
 class Quad extends Base
 {
 
-	const XML_TAG_NAME = 'quad';
+	protected $tagName = 'quad';
 
 	/**
 	 * @return \static

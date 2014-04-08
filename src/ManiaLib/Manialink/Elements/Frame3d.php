@@ -7,7 +7,7 @@ use ManiaLib\Manialink\Layouts\AbstractLayout;
 class Frame3d extends Base
 {
 
-	const XML_TAG_NAME = 'frame3d';
+	protected $tagName = 'frame3d';
 
 	/**
 	 * @var AbstractLayout

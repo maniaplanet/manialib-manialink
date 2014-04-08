@@ -7,7 +7,7 @@ use ManiaLib\Manialink\Node;
 class Timeout extends Node
 {
 
-	const XML_TAG_NAME = 'timeout';
+	protected $tagName = 'timeout';
 
 	function __construct()
 	{

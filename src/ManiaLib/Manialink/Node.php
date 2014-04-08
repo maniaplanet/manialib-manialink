@@ -5,13 +5,16 @@ namespace ManiaLib\Manialink;
 abstract class Node
 {
 
-	const XML_TAG_NAME = null;
+	/**
+	 * @var string
+	 */
+	protected $tagName;
 
 	/**
 	 * @var string
 	 */
 	protected $nodeValue;
-	
+
 	/**
 	 * @var mixed[]
 	 */
@@ -26,7 +29,7 @@ abstract class Node
 	 * @var Node
 	 */
 	protected $parent;
-	
+
 	/**
 	 * @var Node
 	 */
@@ -44,12 +47,12 @@ abstract class Node
 	{
 		return new static;
 	}
-	
+
 	function __construct()
 	{
 		$this->current = $this;
 	}
-	
+
 	function __clone()
 	{
 		$this->deleteParent();
@@ -83,7 +86,7 @@ abstract class Node
 				}
 			}
 		}
-		
+
 		$this->current = $this;
 	}
 
@@ -94,7 +97,26 @@ abstract class Node
 	{
 		return clone $this;
 	}
-	
+
+	/**
+	 * USE AT YOUR OWN RISK!
+	 * Change the XML tag name
+	 * 
+	 * @return \static
+	 */
+	function setTagName($tagName)
+	{
+		$this->tagName = $tagName;
+	}
+
+	/**
+	 * @return string
+	 */
+	function getTagName()
+	{
+		return $this->tagName;
+	}
+
 	/**
 	 * @return \static
 	 */
@@ -103,7 +125,7 @@ abstract class Node
 		$this->nodeValue = $value;
 		return $this;
 	}
-	
+
 	/**
 	 * @return \static
 	 */
@@ -117,7 +139,7 @@ abstract class Node
 	{
 		return $this->nodeValue;
 	}
-	
+
 	/**
 	 * @return \static
 	 */
@@ -126,7 +148,7 @@ abstract class Node
 		$this->attributes[$name] = $value;
 		return $this;
 	}
-	
+
 	/**
 	 * @return \static
 	 */
@@ -225,7 +247,7 @@ abstract class Node
 		}
 		$this->callbacks[$event][] = $callback;
 	}
-	
+
 	function prependCallback($event, $callback)
 	{
 		if(!is_callable($callback))

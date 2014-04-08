@@ -8,7 +8,7 @@ use ManiaLib\Manialink\Layouts\AbstractLayout;
 class Frame extends Base
 {
 
-	const XML_TAG_NAME = 'frame';
+	protected $tagName = 'frame';
 
 	/**
 	 * @var AbstractLayout

@@ -43,7 +43,7 @@ class DOMDocumentDriver implements \ManiaLib\Manialink\Rendering\DriverInterface
 		$node->executeCallbacks('prefilter');
 
 		// Create
-		$element = $this->document->createElement($node::XML_TAG_NAME);
+		$element = $this->document->createElement($node->getTagName());
 
 		// Value
 		if($node->getNodeValue() !== null)

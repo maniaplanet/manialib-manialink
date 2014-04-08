@@ -44,7 +44,7 @@ class XMLWriterDriver implements DriverInterface
 		$node->executeCallbacks('prefilter');
 
 		// Create
-		$this->writer->startElement($node::XML_TAG_NAME);
+		$this->writer->startElement($node->getTagName());
 
 		// Value
 		if($node->getNodeValue() !== null)

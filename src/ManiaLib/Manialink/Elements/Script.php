@@ -7,6 +7,6 @@ use ManiaLib\Manialink\Node;
 class Script extends Node
 {
 
-	const XML_TAG_NAME = 'script';
+	protected $tagName = 'script';
 
 }
