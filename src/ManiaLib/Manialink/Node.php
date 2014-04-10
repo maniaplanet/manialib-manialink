@@ -2,7 +2,7 @@
 
 namespace ManiaLib\Manialink;
 
-abstract class Node
+class Node
 {
 
 	/**
