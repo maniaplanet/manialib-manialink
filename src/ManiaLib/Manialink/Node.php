@@ -107,6 +107,7 @@ class Node
 	function setTagName($tagName)
 	{
 		$this->tagName = $tagName;
+		return $this;
 	}
 
 	/**
