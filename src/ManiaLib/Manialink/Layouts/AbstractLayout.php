@@ -94,6 +94,11 @@ abstract class AbstractLayout
 		$this->parent = $parent;
 		return $this;
 	}
+	
+	function getParent()
+	{
+		return $this->parent;
+	}
 
 	function getMarginWidth()
 	{
