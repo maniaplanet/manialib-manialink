@@ -33,4 +33,18 @@ class Entry extends Base
 	{
 		return $this->getAttribute('autonewline');
 	}
+	
+	/**
+	 * @param string $name
+	 * @return static
+	 */
+	public function setName($name)
+	{
+		return $this->setAttribute('name', $name);
+	}
+	
+	public function getName()
+	{
+		return $this->getAttribute('name');
+	}
 }
