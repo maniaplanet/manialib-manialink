@@ -521,14 +521,14 @@ abstract class Base extends Node
 	/**
 	 * @return \static
 	 */
-	function setModulizecolor($modulizecolor)
+	function setModulatecolor($modulatecolor)
 	{
-		return $this->setAttribute("modulizecolor", $modulizecolor);
+		return $this->setAttribute('modulatecolor', $modulatecolor);
 	}
 
-	function getModulizecolor()
+	function getModulatecolor()
 	{
-		return $this->getAttribute("modulizecolor");
+		return $this->getAttribute("modulatecolor");
 	}
 
 	/**
