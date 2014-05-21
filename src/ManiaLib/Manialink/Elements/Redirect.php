@@ -2,11 +2,11 @@
 
 namespace ManiaLib\Manialink\Elements;
 
-use ManiaLib\Manialink\Node;
+use ManiaLib\XML\Node;
 
 class Redirect extends Node
 {
 
-	protected $tagName = 'redirect';
+	protected $nodeName = 'redirect';
 
 }

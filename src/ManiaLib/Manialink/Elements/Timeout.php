@@ -2,12 +2,12 @@
 
 namespace ManiaLib\Manialink\Elements;
 
-use ManiaLib\Manialink\Node;
+use ManiaLib\XML\Node;
 
 class Timeout extends Node
 {
 
-	protected $tagName = 'timeout';
+	protected $nodeName = 'timeout';
 
 	function __construct()
 	{

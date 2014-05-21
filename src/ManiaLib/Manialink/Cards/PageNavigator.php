@@ -10,7 +10,7 @@ namespace ManiaLib\Manialink\Cards;
 use ManiaLib\Manialink\Elements\Frame;
 use ManiaLib\Manialink\Elements\Label;
 use ManiaLib\Manialink\Elements\Quad;
-use ManiaLib\Manialink\Node;
+use ManiaLib\XML\Node;
 
 class PageNavigator extends Frame
 {
