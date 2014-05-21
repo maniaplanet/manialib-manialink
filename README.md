@@ -22,7 +22,7 @@ Installation
 
 Features
 -----------------------------
- * Features of [ManiaLib\XML](https://github.com/maniaplanet/manialib-xml)
+ * Features of [ManiaLib\XML](https://github.com/maniaplanet/manialib-xml#features)
  * Frame logical size and alignment
  * Relative Alignment of child inside sized parent
  * Cards for composing complex reusable sets of elements
@@ -31,7 +31,7 @@ Features
 Architecture
 -----------------------------
 
- * See [ManiaLib\XML](https://github.com/maniaplanet/manialib-xml)
+ * Architecure of [ManiaLib\XML](https://github.com/maniaplanet/manialib-xml#architecture)
  * Most element should implement setter for usual attributes (eg. `ManiaLib\Manialink\Elements\Quad::setImage($image)`), 
 but if the setter doesnt exists you can use `setAttribute($name, $value)` instead.
  * For style and substyle, the setStyle($style) method handles both at once when used with abstract classes 
