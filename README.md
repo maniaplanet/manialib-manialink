@@ -32,6 +32,7 @@ Architecture
 -----------------------------
 
  * Architecure of [ManiaLib\XML](https://github.com/maniaplanet/manialib-xml#architecture)
+ * ManiaLib\Manialink\Elements are children of ManiaLib\XML\Node
  * Most element should implement setter for usual attributes (eg. `ManiaLib\Manialink\Elements\Quad::setImage($image)`), 
 but if the setter doesnt exists you can use `setAttribute($name, $value)` instead.
  * For style and substyle, the setStyle($style) method handles both at once when used with abstract classes 
