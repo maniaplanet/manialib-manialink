@@ -12,7 +12,7 @@ It can be used in any sort of projects, from Web frameworks (eg. ManiaLib) to se
 
 It shares some common code with ManiaLib\Gui, but a lot was changed in naming and overall architecture.
 
-Work in progress
+Work in progress 
 -----------------------------
 
 Please beware this is a wip lib. We might break stuff at any time. But it is also the time to ask for features to be considered!
