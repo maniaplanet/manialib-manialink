@@ -1,6 +1,6 @@
 <?php
 
-namespace ManiaLib\Manialink;
+namespace ManiaLib\XML;
 
 class Exception extends \Exception
 {

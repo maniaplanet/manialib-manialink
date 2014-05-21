@@ -1,9 +1,9 @@
 <?php
 
-namespace ManiaLib\Manialink\Rendering\Drivers;
+namespace ManiaLib\XML\Rendering\Drivers;
 
-use ManiaLib\Manialink\Node;
-use ManiaLib\Manialink\Rendering\DriverInterface;
+use ManiaLib\XML\Node;
+use ManiaLib\XML\Rendering\DriverInterface;
 
 class XMLWriterDriver implements DriverInterface
 {
@@ -35,7 +35,7 @@ class XMLWriterDriver implements DriverInterface
 	protected function getElement(Node $node)
 	{
 		// XML fragment?
-		if($node instanceof \ManiaLib\Manialink\Elements\XMLFragment)
+		if($node instanceof \ManiaLib\XML\Fragment)
 		{
 			return $this->appendXML($node->getNodeValue());
 		}
@@ -44,7 +44,7 @@ class XMLWriterDriver implements DriverInterface
 		$node->executeCallbacks('prefilter');
 
 		// Create
-		$this->writer->startElement($node->getTagName());
+		$this->writer->startElement($node->getNodeName());
 
 		// Value
 		if($node->getNodeValue() !== null)

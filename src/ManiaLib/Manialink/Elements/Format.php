@@ -5,7 +5,7 @@ namespace ManiaLib\Manialink\Elements;
 class Format extends Base
 {
 
-	protected $tagName = 'format';
+	protected $nodeName = 'format';
 
 	/**
 	 * @return \static

@@ -3,7 +3,7 @@
 namespace ManiaLib\Manialink\Elements;
 
 use ManiaLib\Manialink\Layouts\AbstractLayout;
-use ManiaLib\Manialink\Node;
+use ManiaLib\XML\Node;
 use ManiaLib\Manialink\Utils;
 
 abstract class Base extends Node
@@ -116,7 +116,7 @@ abstract class Base extends Node
 	{
 		if($this->sizenX === null)
 		{
-			throw new \ManiaLib\Manialink\Exception('SizenX is not set');
+			throw new \ManiaLib\XML\Exception('SizenX is not set');
 		}
 		return $this->sizenX * $this->getAttribute("scale", 1);
 	}
@@ -125,7 +125,7 @@ abstract class Base extends Node
 	{
 		if($this->sizenY === null)
 		{
-			throw new \ManiaLib\Manialink\Exception('SizenY is not set');
+			throw new \ManiaLib\XML\Exception('SizenY is not set');
 		}
 		return $this->sizenY * $this->getAttribute("scale", 1);
 	}

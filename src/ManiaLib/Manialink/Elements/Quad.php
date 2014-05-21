@@ -5,7 +5,7 @@ namespace ManiaLib\Manialink\Elements;
 class Quad extends Base
 {
 
-	protected $tagName = 'quad';
+	protected $nodeName = 'quad';
 
 	/**
 	 * @return \static

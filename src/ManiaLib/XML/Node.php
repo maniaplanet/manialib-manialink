@@ -1,6 +1,6 @@
 <?php
 
-namespace ManiaLib\Manialink;
+namespace ManiaLib\XML;
 
 class Node
 {
@@ -8,7 +8,7 @@ class Node
 	/**
 	 * @var string
 	 */
-	protected $tagName;
+	protected $nodeName;
 
 	/**
 	 * @var string
@@ -104,18 +104,18 @@ class Node
 	 * 
 	 * @return \static
 	 */
-	function setTagName($tagName)
+	function setNodeName($nodeName)
 	{
-		$this->tagName = $tagName;
+		$this->nodeName = $nodeName;
 		return $this;
 	}
 
 	/**
 	 * @return string
 	 */
-	function getTagName()
+	function getNodeName()
 	{
-		return $this->tagName;
+		return $this->nodeName;
 	}
 
 	/**

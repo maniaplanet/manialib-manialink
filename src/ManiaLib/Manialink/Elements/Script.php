@@ -2,11 +2,11 @@
 
 namespace ManiaLib\Manialink\Elements;
 
-use ManiaLib\Manialink\Node;
+use ManiaLib\XML\Node;
 
 class Script extends Node
 {
 
-	protected $tagName = 'script';
+	protected $nodeName = 'script';
 
 }

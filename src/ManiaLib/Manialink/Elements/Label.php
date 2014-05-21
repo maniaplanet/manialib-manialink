@@ -5,7 +5,7 @@ namespace ManiaLib\Manialink\Elements;
 class Label extends Format
 {
 
-	protected $tagName = 'label';
+	protected $nodeName = 'label';
 
 	/**
 	 * @return \static

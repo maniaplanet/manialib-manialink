@@ -1,10 +1,10 @@
 <?php
 
-namespace ManiaLib\Manialink\Rendering;
+namespace ManiaLib\XML\Rendering;
 
-use ManiaLib\Manialink\Exception;
-use ManiaLib\Manialink\Node;
-use ManiaLib\Manialink\Rendering\Drivers\DOMDocumentDriver;
+use ManiaLib\XML\Exception;
+use ManiaLib\XML\Node;
+use ManiaLib\XML\Rendering\Drivers\DOMDocumentDriver;
 
 class Renderer
 {
@@ -38,11 +38,11 @@ class Renderer
 	{
 		if(!($this->root instanceof Node))
 		{
-			throw new Exception('No ManiaLib\Manialink\Node root found.');
+			throw new Exception('No ManiaLib\XML\Node root found.');
 		}
 		if(!($this->driver instanceof DriverInterface))
 		{
-			throw new Exception('No ManiaLib\Manialink\DriverInterface driver found.');
+			throw new Exception('No ManiaLib\XML\Rendering\DriverInterface driver found.');
 		}
 		return $this->driver->getXML($this->root);
 	}

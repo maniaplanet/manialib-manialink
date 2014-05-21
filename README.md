@@ -43,10 +43,10 @@ Features
 Architecture
 -----------------------------
 
- * Every element is a child of `ManiaLib\Manialink\Node`.
+ * Every element is a child of `ManiaLib\XML\Node`.
  * No constructor arguments.
  * Setter methods return the element.
- * `ManiaLib\Manialink\Node::create()` instanciates the object and returns it for easy chaining. 
+ * `ManiaLib\XML\Node::create()` instanciates the object and returns it for easy chaining. 
 If you're running PHP 5.4+ you can use class member access on instantiation instead eg. 
 `(new Node)->setAttribute('foo', 'bar')`.
  * The important methods of Node are:
@@ -67,7 +67,7 @@ abstract class Node
 but if the setter doesnt exists you can use `setAttribute($name, $value)` instead.
  * For style and substyle, the setStyle($style) method handles both at once when used with abstract classes 
 in `ManiaLib\Manialink\Styles\` eg. `Quad::create()->setStyle(Bgs1::BgWindow1);`
- * Actual XML rendering is done by an implementation of `ManiaLib\Manialink\Rendering\RendererInterface` (see examples for usage).
+ * Actual XML rendering is done by an implementation of `ManiaLib\XML\Rendering\RendererInterface` (see examples for usage).
 
 Example
 -----------------------------
@@ -82,9 +82,9 @@ use ManiaLib\Manialink\Elements\Manialink;
 use ManiaLib\Manialink\Elements\Quad;
 use ManiaLib\Manialink\Elements\Script;
 use ManiaLib\Manialink\Elements\Timeout;
-use ManiaLib\Manialink\Elements\XMLFragment;
+use ManiaLib\XML\Fragment;
 use ManiaLib\Manialink\Layouts\Line;
-use ManiaLib\Manialink\Rendering\Renderer;
+use ManiaLib\XML\Rendering\Renderer;
 use ManiaLib\Manialink\Styles\Bgs1;
 
 error_reporting(E_ALL);
@@ -159,7 +159,7 @@ Script::create()
 	->setNodeValue('main(){ log("Hello world"); } // < &')
 	->appendTo($ml);
 
-XMLFragment::create()
+Fragment::create()
 	->setNodeValue('<label text="This label is written directly in XML" />')
 	->appendTo($ml);
 

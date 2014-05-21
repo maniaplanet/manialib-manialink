@@ -4,7 +4,7 @@ namespace ManiaLib\Manialink\Elements;
 
 class Entry extends Base
 {
-	protected $tagName = 'entry';
+	protected $nodeName = 'entry';
 	
 	/**
 	 * @param string $default

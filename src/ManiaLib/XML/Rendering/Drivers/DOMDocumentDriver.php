@@ -1,11 +1,11 @@
 <?php
 
-namespace ManiaLib\Manialink\Rendering\Drivers;
+namespace ManiaLib\XML\Rendering\Drivers;
 
 use DOMDocument;
-use ManiaLib\Manialink\Node;
+use ManiaLib\XML\Node;
 
-class DOMDocumentDriver implements \ManiaLib\Manialink\Rendering\DriverInterface
+class DOMDocumentDriver implements \ManiaLib\XML\Rendering\DriverInterface
 {
 
 	/**
@@ -34,7 +34,7 @@ class DOMDocumentDriver implements \ManiaLib\Manialink\Rendering\DriverInterface
 	protected function getElement(Node $node)
 	{
 		// XML fragment?
-		if($node instanceof \ManiaLib\Manialink\Elements\XMLFragment)
+		if($node instanceof \ManiaLib\XML\Fragment)
 		{
 			return $this->appendXML($node->getNodeValue());
 		}
@@ -43,7 +43,7 @@ class DOMDocumentDriver implements \ManiaLib\Manialink\Rendering\DriverInterface
 		$node->executeCallbacks('prefilter');
 
 		// Create
-		$element = $this->document->createElement($node->getTagName());
+		$element = $this->document->createElement($node->getNodeName());
 
 		// Value
 		if($node->getNodeValue() !== null)

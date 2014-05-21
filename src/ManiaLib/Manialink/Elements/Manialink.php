@@ -2,7 +2,7 @@
 
 namespace ManiaLib\Manialink\Elements;
 
-use ManiaLib\Manialink\Node;
+use ManiaLib\XML\Node;
 
 class Manialink extends Node
 {
@@ -12,7 +12,7 @@ class Manialink extends Node
 	const BG_STARS = 'stars';
 	const BG_STATIONS = 'stations';
 	const BG_TITLE = 'title';
-	protected $tagName = 'manialink';
+	protected $nodeName = 'manialink';
 
 	function __construct()
 	{
