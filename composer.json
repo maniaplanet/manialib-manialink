@@ -1,7 +1,7 @@
 {
     "name": "maniaplanet/manialib-manialink",
     "type": "library",
-    "description": "[WIP] Object-oriented PHP framework for writing Manialink interfaces.",
+    "description": "Object-oriented PHP library for writing Manialink interfaces.",
     "keywords": ["ManiaPlanet", "ShootMania", "TrackMania", "ManiaLib"],
     "license": "MIT",
     "homepage": "https://github.com/maniaplanet/manialib-manialink",
