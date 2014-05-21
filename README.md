@@ -1,21 +1,11 @@
 ManiaLib\Manialink
 ===================================================
 
-[![Latest Stable Version](https://poser.pugx.org/maniaplanet/manialib-manialink/v/unstable.png)](https://packagist.org/packages/maniaplanet/manialib-manialink)
 [![Total Downloads](https://poser.pugx.org/maniaplanet/manialib-manialink/downloads.png)](https://packagist.org/packages/maniaplanet/manialib-manialink)
-[![License](https://poser.pugx.org/maniaplanet/manialib-manialink/license.png)](https://packagist.org/packages/maniaplanet/manialib-manialink)
 
-ManiaLib\Manialink is an object-oriented PHP framework for writing Manialink interfaces.
+ManiaLib\Manialink is an object-oriented PHP library for writing Manialink interfaces based on [ManiaLib\XML](https://github.com/maniaplanet/manialib-xml).
 
-Compared to former version of ManiaLib, this is just meant to be a standalone package to build Manialink pages.
-It can be used in any sort of projects, from Web frameworks (eg. ManiaLib) to server controllers (eg. ManiaLive).
-
-It shares some common code with ManiaLib\Gui, but a lot was changed in naming and overall architecture.
-
-Work in progress 
------------------------------
-
-Please beware this is a wip lib. We might break stuff at any time. But it is also the time to ask for features to be considered!
+We discuss about it at http://forum.maniaplanet.com/viewtopic.php?f=40&t=25999
 
 Installation
 -----------------------------
@@ -25,16 +15,14 @@ Installation
 ```
 {
 	"require": {
-        "maniaplanet/manialib-manialink": "dev-master"
+        "maniaplanet/manialib-manialink": "~0.1"
     }
 }
 ```
 
 Features
 -----------------------------
- * Standalone package
- * Flexible object-oriented architecture
- * Rendering drivers (DOMDocument, XMLWriter)
+ * Features of [ManiaLib\XML](https://github.com/maniaplanet/manialib-xml)
  * Frame logical size and alignment
  * Relative Alignment of child inside sized parent
  * Cards for composing complex reusable sets of elements
@@ -43,26 +31,7 @@ Features
 Architecture
 -----------------------------
 
- * Every element is a child of `ManiaLib\XML\Node`.
- * No constructor arguments.
- * Setter methods return the element.
- * `ManiaLib\XML\Node::create()` instanciates the object and returns it for easy chaining. 
-If you're running PHP 5.4+ you can use class member access on instantiation instead eg. 
-`(new Node)->setAttribute('foo', 'bar')`.
- * The important methods of Node are:
-
-```
-namespace ManiaLib\Manialink;
-
-abstract class Node
-{
-	function setAttribute($name, $value)
-	function setNodeValue($value)
-	function appendChild(Node $child)
-	function appendTo(Node $parent)
-}
-```
-
+ * See [ManiaLib\XML](https://github.com/maniaplanet/manialib-xml)
  * Most element should implement setter for usual attributes (eg. `ManiaLib\Manialink\Elements\Quad::setImage($image)`), 
 but if the setter doesnt exists you can use `setAttribute($name, $value)` instead.
  * For style and substyle, the setStyle($style) method handles both at once when used with abstract classes 
@@ -213,13 +182,18 @@ To help understand these concepts visually:
  * Source: https://gist.github.com/gou1/9970824
 
 
+Has it anything to do with ManiaLib Framework?
+-----------------------------
+
+Compared to former version of ManiaLib, this is just meant to be a standalone package to build Manialink pages.
+It can be used in any sort of projects, from Web frameworks (eg. ManiaLib) to server controllers (eg. ManiaLive).
+It shares some common code with ManiaLib\Gui, but a lot was changed in naming and overall architecture.
+
 Todo
 -----------------------------
- * XMLComment
- * setNodeValue? setValue?
+
  * Bug layouts dans Frame3d?
- * Driver examples
  * Implement all Element classes
  * Implement all layouts
- * Doc
+ * PhpDoc
  
