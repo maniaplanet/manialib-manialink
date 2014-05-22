@@ -32,7 +32,7 @@ abstract class Base extends Node
 		$dispatcher->addListener(Events::postRender($this), array($this, 'postFilterLayout'));
 	}
 
-	protected function preFilterPosition()
+	public function preFilterPosition()
 	{
 		if(!$this->attributeExists('posn'))
 		{
@@ -45,7 +45,7 @@ abstract class Base extends Node
 		}
 	}
 
-	protected function preFilterSize()
+	public function preFilterSize()
 	{
 		if(!$this->attributeExists('sizen'))
 		{
@@ -56,7 +56,7 @@ abstract class Base extends Node
 		}
 	}
 
-	protected function preFilterLayout()
+	public function preFilterLayout()
 	{
 		if($this->getParent() instanceof Frame && $this->getParent()->getLayout() instanceof AbstractLayout)
 		{
@@ -65,7 +65,7 @@ abstract class Base extends Node
 		}
 	}
 
-	protected function postFilterLayout()
+	public function postFilterLayout()
 	{
 		if($this->getParent() instanceof Frame && $this->getParent()->getLayout() instanceof AbstractLayout)
 		{
@@ -73,7 +73,7 @@ abstract class Base extends Node
 		}
 	}
 
-	protected function preFilterRelativePosition()
+	public function preFilterRelativePosition()
 	{
 		if($this->getParent() instanceof Base)
 		{
