@@ -2,6 +2,7 @@ ManiaLib\Manialink
 ===================================================
 
 [![Latest Stable Version](https://poser.pugx.org/maniaplanet/manialib-manialink/v/stable.png)](https://packagist.org/packages/maniaplanet/manialib-manialink)
+[![Development version](https://poser.pugx.org/maniaplanet/manialib-manialink/v/unstable.png)](https://packagist.org/packages/maniaplanet/manialib-manialink)
 [![Total Downloads](https://poser.pugx.org/maniaplanet/manialib-manialink/downloads.png)](https://packagist.org/packages/maniaplanet/manialib-manialink)
 
 ManiaLib\Manialink is an object-oriented PHP library for writing Manialink interfaces based on [ManiaLib\XML](https://github.com/maniaplanet/manialib-xml).
@@ -16,7 +17,7 @@ Installation
 ```
 {
 	"require": {
-        "maniaplanet/manialib-manialink": "~0.1"
+        "maniaplanet/manialib-manialink": "dev-master"
     }
 }
 ```
