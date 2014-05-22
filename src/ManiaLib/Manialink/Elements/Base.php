@@ -6,12 +6,11 @@ use ManiaLib\Manialink\Exception;
 use ManiaLib\Manialink\Layouts\AbstractLayout;
 use ManiaLib\Manialink\Utils;
 use ManiaLib\XML\Node;
+use ManiaLib\XML\Rendering\Events;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 abstract class Base extends Node
 {
-
-	const EVENT_PREFILTER = 'prefilter';
-	const EVENT_POSTFILTER = 'postfilter';
 
 	protected $posnX;
 	protected $posnY;
@@ -19,14 +18,18 @@ abstract class Base extends Node
 	protected $sizenX;
 	protected $sizenY;
 
-	function __construct()
+	function registerListeners(EventDispatcherInterface $dispatcher)
 	{
-		parent::__construct();
-		$this->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilterLayout'));
-		$this->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilterRelativePosition'));
-		$this->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilterPosition'));
-		$this->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilterSize'));
-		$this->registerCallback(self::EVENT_POSTFILTER, array($this, 'postFilterLayout'));
+		parent::registerListeners($dispatcher);
+
+		// Pre-render filters
+		$dispatcher->addListener(Events::preRender($this), array($this, 'preFilterLayout'));
+		$dispatcher->addListener(Events::preRender($this), array($this, 'preFilterRelativePosition'));
+		$dispatcher->addListener(Events::preRender($this), array($this, 'preFilterPosition'));
+		$dispatcher->addListener(Events::preRender($this), array($this, 'preFilterSize'));
+
+		// Post-render filters
+		$dispatcher->addListener(Events::postRender($this), array($this, 'postFilterLayout'));
 	}
 
 	protected function preFilterPosition()
