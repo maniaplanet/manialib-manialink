@@ -2,8 +2,10 @@
 
 namespace ManiaLib\Manialink\Elements;
 
-use ManiaLib\Manialink\Utils;
 use ManiaLib\Manialink\Layouts\AbstractLayout;
+use ManiaLib\Manialink\Utils;
+use ManiaLib\XML\Rendering\Events;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class Frame extends Base
 {
@@ -15,12 +17,12 @@ class Frame extends Base
 	 */
 	protected $layout;
 
-	function __construct()
+	function registerListeners(EventDispatcherInterface $dispatcher)
 	{
-		parent::__construct();
-		$this->prependCallback(self::EVENT_PREFILTER, array($this, 'preFilterAlign'));
+		$dispatcher->addListener(Events::preRender($this), array($this, 'preFilterAlign'));
+		parent::registerListeners($dispatcher);
 	}
-	
+
 	function __clone()
 	{
 		parent::__clone();
@@ -39,12 +41,12 @@ class Frame extends Base
 	{
 		$halign = $this->getHalign();
 		$valign = $this->getValign();
-		if ($halign)
+		if($halign)
 		{
 			$this->setPosnX(Utils::getAlignedPosX($this->getPosnX(), $this->getRealSizenX(), $halign, "left"));
 			$this->deleteAttribute('halign');
 		}
-		if ($valign)
+		if($valign)
 		{
 			$this->setPosnY(Utils::getAlignedPosY($this->getPosnY(), $this->getRealSizenY(), $valign, "top"));
 			$this->deleteAttribute('valign');

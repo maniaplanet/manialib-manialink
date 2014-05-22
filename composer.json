@@ -17,7 +17,7 @@
     },
     "require": {
         "php": ">=5.3",
-        "maniaplanet/manialib-xml": "~0.1"
+        "maniaplanet/manialib-xml": "dev-event-dispatcher"
     },
     "require-dev": {
         "symfony/console": "~2.4",
