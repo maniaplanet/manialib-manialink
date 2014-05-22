@@ -21,7 +21,7 @@ class LabelBox extends Box
 			->appendTo($this);
 	}
 
-	protected function preFilterSize()
+	public function preFilterSize()
 	{
 		parent::preFilterSize();
 

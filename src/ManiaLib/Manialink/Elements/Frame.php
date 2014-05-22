@@ -32,12 +32,12 @@ class Frame extends Base
 		}
 	}
 
-	protected function preFilterSize()
+	public function preFilterSize()
 	{
 		// Override parent. Do nothing.
 	}
 
-	protected function preFilterAlign()
+	public function preFilterAlign()
 	{
 		$halign = $this->getHalign();
 		$valign = $this->getValign();

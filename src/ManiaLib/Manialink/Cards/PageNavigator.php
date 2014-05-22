@@ -70,8 +70,6 @@ class PageNavigator extends Frame
 
 	function __construct()
 	{
-		parent::__construct();
-
 		$this->arrowFastNext = Quad::create()
 			->setSizen(8, 8);
 		$this->arrowFastPrev = Quad::create()
