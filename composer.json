@@ -19,7 +19,7 @@
         "php": ">=5.3",
         "maniaplanet/manialib-xml": "dev-event-dispatcher"
     },
-    "require-dev": {
+     "require-dev": {
         "symfony/console": "~2.4",
         "symfony/stopwatch": "~2.4"
     },
