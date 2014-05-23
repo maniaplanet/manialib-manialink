@@ -212,7 +212,6 @@ class BenchmarkCommand extends Command
 	{
 		$manialink = BenchmarkTest::getTree();
 		$renderer = $this->getRenderer();
-		$renderer->setDriver(new \ManiaLib\XML\Rendering\Drivers\DOMDocumentDriver());
 		$renderer->setRoot($manialink);
 		$renderer->getXML();
 	}
