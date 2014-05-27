@@ -44,11 +44,7 @@ abstract class Base extends Node
 
     public function preFilterSize()
     {
-        if (!$this->attributeExists('sizen')) {
-            if ($this->sizenX !== null || $this->sizenY !== null) {
-                $this->setAttribute('sizen', (float)$this->sizenX . ' ' . (float)$this->sizenY);
-            }
-        }
+        
     }
 
     public function preFilterLayout()
@@ -103,34 +99,49 @@ abstract class Base extends Node
         }
     }
 
+    function getSizen()
+    {
+        $sizen = explode(' ', $this->getAttribute('sizen', '0 0'));
+        if (count($sizen) != 2) {
+            throw new Exception('Sizen should be a 2-element array');
+        }
+        return $sizen;
+    }
+
+    function getSizenX()
+    {
+        return reset($this->getSizen());
+    }
+
+    function getSizenY()
+    {
+        return end($this->getSizen());
+    }
+
+    function getRealSizenX()
+    {
+        if (!$this->attributeExists('sizen')) {
+            throw new Exception('SizenX is not set');
+        }
+        return $this->getSizenX() * $this->getAttribute("scale", 1);
+    }
+
+    function getRealSizenY()
+    {
+        if (!$this->attributeExists('sizen')) {
+            throw new Exception('SizenY is not set');
+        }
+        return $this->getSizenY() * $this->getAttribute("scale", 1);
+    }
+
     /**
      * @return \static
      */
     function setSizen($sizenX = null, $sizenY = null)
     {
-        if ($sizenX !== null) {
-            $this->setSizenX($sizenX);
-        }
-        if ($sizenY !== null) {
-            $this->setSizenY($sizenY);
-        }
-        return $this;
-    }
-
-    function getRealSizenX()
-    {
-        if ($this->sizenX === null) {
-            throw new Exception('SizenX is not set');
-        }
-        return $this->sizenX * $this->getAttribute("scale", 1);
-    }
-
-    function getRealSizenY()
-    {
-        if ($this->sizenY === null) {
-            throw new Exception('SizenY is not set');
-        }
-        return $this->sizenY * $this->getAttribute("scale", 1);
+        $sizenX = (float)$sizenX !== null ? $sizenX : $this->getSizenX();
+        $sizenY = (float)$sizenY !== null ? $sizenY : $this->getSizenY();
+        return $this->setAttribute('sizen', (float)$sizenX . ' ' . (float)$sizenY);
     }
 
     /**
@@ -138,8 +149,7 @@ abstract class Base extends Node
      */
     function setSizenX($sizenX)
     {
-        $this->sizenX = $sizenX;
-        return $this;
+        return $this->setSizen($sizenX, null);
     }
 
     /**
@@ -147,18 +157,7 @@ abstract class Base extends Node
      */
     function setSizenY($sizenY)
     {
-        $this->sizenY = $sizenY;
-        return $this;
-    }
-
-    function getSizenX()
-    {
-        return $this->sizenX;
-    }
-
-    function getSizenY()
-    {
-        return $this->sizenY;
+        return $this->setSizen(null, $sizenY);
     }
 
     /**
