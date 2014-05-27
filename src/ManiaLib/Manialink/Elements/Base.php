@@ -14,26 +14,12 @@ abstract class Base extends Node
 
     function registerListeners(EventDispatcherInterface $dispatcher)
     {
-        parent::registerListeners($dispatcher);
-
         // Pre-render filters
         $dispatcher->addListener(Events::preRender($this), array($this, 'preFilterLayout'));
         $dispatcher->addListener(Events::preRender($this), array($this, 'preFilterRelativePosition'));
-        $dispatcher->addListener(Events::preRender($this), array($this, 'preFilterPosition'));
-        $dispatcher->addListener(Events::preRender($this), array($this, 'preFilterSize'));
 
         // Post-render filters
         $dispatcher->addListener(Events::postRender($this), array($this, 'postFilterLayout'));
-    }
-
-    public function preFilterPosition()
-    {
-        
-    }
-
-    public function preFilterSize()
-    {
-        
     }
 
     public function preFilterLayout()
