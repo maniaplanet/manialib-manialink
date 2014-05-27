@@ -2,7 +2,7 @@ ManiaLib\Manialink
 ===================================================
 
 [![Latest Stable Version](https://poser.pugx.org/maniaplanet/manialib-manialink/v/stable.png)](https://packagist.org/packages/maniaplanet/manialib-manialink)
-[![Development Version](https://poser.pugx.org/maniaplanet/manialib-manialink/v/unstable.png)](https://packagist.org/packages/maniaplanet/manialib-manialink)
+[![Latest Unstable Version](https://poser.pugx.org/maniaplanet/manialib-manialink/v/unstable.svg)](https://packagist.org/packages/maniaplanet/manialib-manialink)
 [![Total Downloads](https://poser.pugx.org/maniaplanet/manialib-manialink/downloads.png)](https://packagist.org/packages/maniaplanet/manialib-manialink)
 
 ManiaLib\Manialink is an object-oriented PHP library for writing Manialink interfaces based on [ManiaLib\XML](https://github.com/maniaplanet/manialib-xml).
@@ -17,7 +17,7 @@ Installation
 ```
 {
 	"require": {
-        "maniaplanet/manialib-manialink": "dev-event-dispatcher"
+        "maniaplanet/manialib-manialink": "~0.2.0"
     }
 }
 ```
@@ -38,7 +38,6 @@ Architecture
 but if the setter doesnt exists you can use `setAttribute($name, $value)` instead.
  * For style and substyle, the setStyle($style) method handles both at once when used with abstract classes 
 in `ManiaLib\Manialink\Styles\` eg. `Quad::create()->setStyle(Bgs1::BgWindow1);`
- * Actual XML rendering is done by an implementation of `ManiaLib\XML\Rendering\RendererInterface` (see examples for usage).
 
 Examples
 -----------------------------
