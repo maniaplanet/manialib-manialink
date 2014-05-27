@@ -11,7 +11,6 @@ class Timeout extends Node
 
 	function __construct()
 	{
-		parent::__construct();
 		$this->setNodeValue(0);
 	}
 

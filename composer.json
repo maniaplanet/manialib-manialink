@@ -2,7 +2,7 @@
     "name": "maniaplanet/manialib-manialink",
     "type": "library",
     "description": "Object-oriented PHP library for writing Manialink interfaces.",
-    "keywords": ["ManiaPlanet", "ShootMania", "TrackMania", "ManiaLib"],
+    "keywords": ["ManiaPlanet", "ShootMania", "TrackMania", "XML", "Manialink"],
     "license": "MIT",
     "homepage": "https://github.com/maniaplanet/manialib-manialink",
     "authors": [
@@ -16,14 +16,21 @@
         "forum": "http://forum.maniaplanet.com/viewforum.php?f=40"
     },
     "require": {
-        "php": ">=5.3",
-        "maniaplanet/manialib-xml": "~0.1"
+        "maniaplanet/manialib-xml": "~0.2.0"
     },
-    "require-dev": {
+     "require-dev": {
         "symfony/console": "~2.4",
         "symfony/stopwatch": "~2.4"
     },
     "autoload": {
         "psr-4": {"ManiaLib\\": "src/ManiaLib/"}
+    },
+    "archive": {
+        "exclude": ["/bin", "/examples"]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.2.x-dev"
+        }
     }
 }

@@ -10,7 +10,8 @@ namespace ManiaLib\Manialink\Cards;
 use ManiaLib\Manialink\Elements\Frame;
 use ManiaLib\Manialink\Elements\Label;
 use ManiaLib\Manialink\Elements\Quad;
-use ManiaLib\XML\Node;
+use ManiaLib\XML\Rendering\Events;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class PageNavigator extends Frame
 {
@@ -69,8 +70,6 @@ class PageNavigator extends Frame
 
 	function __construct()
 	{
-		parent::__construct();
-
 		$this->arrowFastNext = Quad::create()
 			->setSizen(8, 8);
 		$this->arrowFastPrev = Quad::create()
@@ -87,9 +86,12 @@ class PageNavigator extends Frame
 			->setSizen(14);
 		$this->textBg = Quad::create()
 			->setSizen(16, 6);
+	}
 
-		$this->setSizen(64, 8)
-			->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilter'));
+	function registerListeners(EventDispatcherInterface $dispatcher)
+	{
+		parent::registerListeners($dispatcher);
+		$dispatcher->addListener(Events::preRender($this), array($this, 'preFilter'));
 	}
 
 	/**
@@ -339,21 +341,6 @@ class PageNavigator extends Frame
 	function isTextShown()
 	{
 		return $this->showText;
-	}
-
-	/**
-	 * Cloning behaviour: if you clone this, it also clones sub-Elements
-	 */
-	function __clone()
-	{
-		$this->registerCallback(self::EVENT_PREFILTER, array($this, 'preFilter'));
-		foreach($this as $name => $property)
-		{
-			if($property instanceof Node)
-			{
-				$this->$name = clone $property;
-			}
-		}
 	}
 
 	function preFilter()

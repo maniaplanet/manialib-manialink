@@ -15,11 +15,10 @@ class Box extends Frame
 
 	function __construct()
 	{
-		parent::__construct();
 		$this->bg = Quad::create()->appendTo($this);
 	}
 
-	protected function preFilterSize()
+	public function preFilterSize()
 	{
 		parent::preFilterSize();
 		$this->bg->setSizen($this->getSizenX(), $this->getSizenY());
