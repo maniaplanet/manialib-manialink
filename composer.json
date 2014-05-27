@@ -16,7 +16,7 @@
         "forum": "http://forum.maniaplanet.com/viewforum.php?f=40"
     },
     "require": {
-        "maniaplanet/manialib-xml": "~0.2.0"
+        "maniaplanet/manialib-xml": "0.2.*@dev"
     },
      "require-dev": {
         "symfony/console": "~2.4",
