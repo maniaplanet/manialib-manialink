@@ -14,7 +14,7 @@ Installation
 
 [Install via Composer](https://getcomposer.org/):
 
-```
+```JSON
 {
 	"require": {
         "maniaplanet/manialib-manialink": "0.2.*@dev"
