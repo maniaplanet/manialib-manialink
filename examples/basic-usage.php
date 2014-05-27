@@ -19,74 +19,73 @@ require_once '../vendor/autoload.php';
 $ml = new Manialink();
 
 Timeout::create()
-	->setNodeValue(0)
-	->appendTo($ml);
+    ->setNodeValue(0)
+    ->appendTo($ml);
 
 $frame = Frame::create()
-	->setPosn(-150, 80)
-	->appendTo($ml);
+    ->setPosn(-150, 80)
+    ->appendTo($ml);
 
 Quad::create()
-	->setSizen(50, 10)
-	->setPosn(2, 0, 0.1)
-	->setStyle(Bgs1::BgWindow1)
-	->appendTo($frame);
+    ->setSizen(50, 10)
+    ->setPosn(2, 0, 0.1)
+    ->setStyle(Bgs1::BgWindow1)
+    ->appendTo($frame);
 
 Label::create()
-	->setSizen(50, 5)
-	->setPosn(0, -15, 0.1)
-	->setText('hello world')
-	->appendTo($frame);
+    ->setSizen(50, 5)
+    ->setPosn(0, -15, 0.1)
+    ->setText('hello world')
+    ->appendTo($frame);
 
 $frame2 = Frame::create()
-	->setPosn(0, -25, 0.1)
-	->setLayout(Line::create()->setMarginWidth(1))
-	->appendTo($frame);
+    ->setPosn(0, -25, 0.1)
+    ->setLayout(Line::create()->setMarginWidth(1))
+    ->appendTo($frame);
 
-for($i = 0; $i < 5; $i++)
-{
-	Quad::create()
-		->setSizen(5, 5)
-		->setBgcolor('ccc')
-		->appendTo($frame2);
+for ($i = 0; $i < 5; $i++) {
+    Quad::create()
+        ->setSizen(5, 5)
+        ->setBgcolor('ccc')
+        ->appendTo($frame2);
 }
 
 $ui = LabelBox::create()
-	->setPosn(0, -35)
-	->setSizen(100, 10)
-	->appendTo($frame);
+    ->setPosn(0, -35)
+    ->setSizen(100, 10)
+    ->appendTo($frame);
 $ui->getBg()
-	->setStyle(Bgs1::BgTitle3);
+    ->setStyle(Bgs1::BgTitle3);
 $ui->getLabel()
-	->setText('Much foobar')
-	->setTextSize(4);
+    ->setText('Much foobar')
+    ->setTextSize(4);
 
 $frame2 = Frame::create()
-	->setPosn(0, -50)
-	->setSizen(50, 50)
-	->setAlign('left', 'top')
-	->appendTo($frame);
+    ->setPosn(0, -50)
+    ->setSizen(50, 50)
+    ->setAlign('left', 'top')
+    ->appendTo($frame);
 
 Quad::create()
-	->setSizen(50, 50)
-	->setBgcolor('eee')
-	->appendTo($frame2);
+    ->setSizen(50, 50)
+    ->setBgcolor('eee')
+    ->appendTo($frame2);
 
 Quad::create()
-	->setSizen(10, 10)
-	->setPosnZ(0.1)
-	->setAlign('right', 'bottom')
-	->setRelativeAlign('right', 'bottom')
-	->setBgcolor('ccc')
-	->appendTo($frame2);
+    ->setSizen(10, 10)
+    ->setPosnZ(0.1)
+    ->setAlign('right', 'bottom')
+    ->setRelativeAlign('right', 'bottom')
+    ->setBgcolor('ccc')
+    ->appendTo($frame2);
 
 Script::create()
-	->setNodeValue('main(){ log("Hello world"); } // < &')
-	->appendTo($ml);
+    ->setNodeValue('main(){ log("Hello world"); } // < &')
+    ->appendTo($ml);
 
 Fragment::create()
-	->setNodeValue('<label text="This label is written directly in XML" />')
-	->appendTo($ml);
+    ->setNodeValue('<label text="This label is written directly in XML" />')
+    ->appendTo($ml);
 
 header('Content-type: application/xml; charset=utf-8');
 

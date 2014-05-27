@@ -7,6 +7,6 @@ use ManiaLib\XML\Node;
 class Redirect extends Node
 {
 
-	protected $nodeName = 'redirect';
+    protected $nodeName = 'redirect';
 
 }

@@ -8,28 +8,28 @@ use ManiaLib\Manialink\Elements\Quad;
 class Box extends Frame
 {
 
-	/**
-	 * @var Quad
-	 */
-	protected $bg;
+    /**
+     * @var Quad
+     */
+    protected $bg;
 
-	function __construct()
-	{
-		$this->bg = Quad::create()->appendTo($this);
-	}
+    function __construct()
+    {
+        $this->bg = Quad::create()->appendTo($this);
+    }
 
-	public function preFilterSize()
-	{
-		parent::preFilterSize();
-		$this->bg->setSizen($this->getSizenX(), $this->getSizenY());
-	}
+    public function preFilterSize()
+    {
+        parent::preFilterSize();
+        $this->bg->setSizen($this->getSizenX(), $this->getSizenY());
+    }
 
-	/**
-	 * @return Quad
-	 */
-	function getBg()
-	{
-		return $this->bg;
-	}
+    /**
+     * @return Quad
+     */
+    function getBg()
+    {
+        return $this->bg;
+    }
 
 }

@@ -5,84 +5,84 @@ namespace ManiaLib\Manialink\Elements;
 class Format extends Base
 {
 
-	protected $nodeName = 'format';
+    protected $nodeName = 'format';
 
-	/**
-	 * @return \static
-	 */
-	function setTextprefix($textprefix)
-	{
-		return $this->setAttribute("textprefix", $textprefix);
-	}
+    /**
+     * @return \static
+     */
+    function setTextprefix($textprefix)
+    {
+        return $this->setAttribute("textprefix", $textprefix);
+    }
 
-	function getTextprefix()
-	{
-		return $this->getAttribute("textprefix");
-	}
+    function getTextprefix()
+    {
+        return $this->getAttribute("textprefix");
+    }
 
-	/**
-	 * @return \static
-	 */
-	function setTextemboss($textemboss)
-	{
-		return $this->setAttribute("textemboss", $textemboss);
-	}
+    /**
+     * @return \static
+     */
+    function setTextemboss($textemboss)
+    {
+        return $this->setAttribute("textemboss", $textemboss);
+    }
 
-	function getTextemboss()
-	{
-		return $this->getAttribute("textemboss");
-	}
+    function getTextemboss()
+    {
+        return $this->getAttribute("textemboss");
+    }
 
-	/**
-	 * @return \static
-	 */
-	function setTextcolor($textcolor)
-	{
-		return $this->setAttribute("textcolor", $textcolor);
-	}
+    /**
+     * @return \static
+     */
+    function setTextcolor($textcolor)
+    {
+        return $this->setAttribute("textcolor", $textcolor);
+    }
 
-	function getTextcolor()
-	{
-		return $this->getAttribute("textcolor");
-	}
+    function getTextcolor()
+    {
+        return $this->getAttribute("textcolor");
+    }
 
-	/**
-	 * @return \static
-	 */
-	function setTextsize($textsize)
-	{
-		return $this->setAttribute("textsize", $textsize);
-	}
+    /**
+     * @return \static
+     */
+    function setTextsize($textsize)
+    {
+        return $this->setAttribute("textsize", $textsize);
+    }
 
-	function getTextsize()
-	{
-		return $this->getAttribute("textsize");
-	}
+    function getTextsize()
+    {
+        return $this->getAttribute("textsize");
+    }
 
-	/**
-	 * @return \static
-	 */
-	function setFocusareacolor1($focusareacolor1)
-	{
-		return $this->setAttribute("focusareacolor1", $focusareacolor1);
-	}
+    /**
+     * @return \static
+     */
+    function setFocusareacolor1($focusareacolor1)
+    {
+        return $this->setAttribute("focusareacolor1", $focusareacolor1);
+    }
 
-	function getFocusareacolor1()
-	{
-		return $this->getAttribute("focusareacolor1");
-	}
+    function getFocusareacolor1()
+    {
+        return $this->getAttribute("focusareacolor1");
+    }
 
-	/**
-	 * @return \static
-	 */
-	function setFocusareacolor2($focusareacolor2)
-	{
-		return $this->setAttribute("focusareacolor2", $focusareacolor2);
-	}
+    /**
+     * @return \static
+     */
+    function setFocusareacolor2($focusareacolor2)
+    {
+        return $this->setAttribute("focusareacolor2", $focusareacolor2);
+    }
 
-	function getFocusareacolor2()
-	{
-		return $this->getAttribute("focusareacolor2");
-	}
+    function getFocusareacolor2()
+    {
+        return $this->getAttribute("focusareacolor2");
+    }
 
 }
