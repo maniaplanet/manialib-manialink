@@ -103,6 +103,20 @@ abstract class Base extends Node
         }
     }
 
+    /**
+     * @return \static
+     */
+    function setSizen($sizenX = null, $sizenY = null)
+    {
+        if ($sizenX !== null) {
+            $this->setSizenX($sizenX);
+        }
+        if ($sizenY !== null) {
+            $this->setSizenY($sizenY);
+        }
+        return $this;
+    }
+
     function getRealSizenX()
     {
         if ($this->sizenX === null) {
@@ -122,6 +136,34 @@ abstract class Base extends Node
     /**
      * @return \static
      */
+    function setSizenX($sizenX)
+    {
+        $this->sizenX = $sizenX;
+        return $this;
+    }
+
+    /**
+     * @return \static
+     */
+    function setSizenY($sizenY)
+    {
+        $this->sizenY = $sizenY;
+        return $this;
+    }
+
+    function getSizenX()
+    {
+        return $this->sizenX;
+    }
+
+    function getSizenY()
+    {
+        return $this->sizenY;
+    }
+
+    /**
+     * @return \static
+     */
     function setPosn($posnX = null, $posnY = null, $posnZ = null)
     {
         if ($posnX !== null) {
@@ -132,20 +174,6 @@ abstract class Base extends Node
         }
         if ($posnZ !== null) {
             $this->setPosnZ($posnZ);
-        }
-        return $this;
-    }
-
-    /**
-     * @return \static
-     */
-    function setSizen($sizenX = null, $sizenY = null)
-    {
-        if ($sizenX !== null) {
-            $this->setSizenX($sizenX);
-        }
-        if ($sizenY !== null) {
-            $this->setSizenY($sizenY);
         }
         return $this;
     }
@@ -190,34 +218,6 @@ abstract class Base extends Node
     function getPosnZ()
     {
         return $this->posnZ;
-    }
-
-    /**
-     * @return \static
-     */
-    function setSizenX($sizenX)
-    {
-        $this->sizenX = $sizenX;
-        return $this;
-    }
-
-    /**
-     * @return \static
-     */
-    function setSizenY($sizenY)
-    {
-        $this->sizenY = $sizenY;
-        return $this;
-    }
-
-    function getSizenX()
-    {
-        return $this->sizenX;
-    }
-
-    function getSizenY()
-    {
-        return $this->sizenY;
     }
 
     /**
