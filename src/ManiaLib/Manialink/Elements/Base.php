@@ -12,7 +12,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 abstract class Base extends Node
 {
 
-    function registerListeners(EventDispatcherInterface $dispatcher)
+    public function registerListeners(EventDispatcherInterface $dispatcher)
     {
         // Pre-render filters
         $dispatcher->addListener(Events::preRender($this), array($this, 'preFilterLayout'));
@@ -116,7 +116,7 @@ abstract class Base extends Node
      */
     function setSizen($sizenX = null, $sizenY = null)
     {
-        $sizenX = (float)$sizenX === null ? $this->getSizenX() : $sizenX ;
+        $sizenX = (float)$sizenX === null ? $this->getSizenX() : $sizenX;
         $sizenY = (float)$sizenY === null ? $this->getSizenY() : $sizenY;
         return $this->setAttribute('sizen', (float)$sizenX . ' ' . (float)$sizenY);
     }
