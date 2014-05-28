@@ -12,43 +12,14 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 abstract class Base extends Node
 {
 
-    protected $posnX;
-    protected $posnY;
-    protected $posnZ;
-    protected $sizenX;
-    protected $sizenY;
-
-    function registerListeners(EventDispatcherInterface $dispatcher)
+    public function registerListeners(EventDispatcherInterface $dispatcher)
     {
-        parent::registerListeners($dispatcher);
-
         // Pre-render filters
         $dispatcher->addListener(Events::preRender($this), array($this, 'preFilterLayout'));
         $dispatcher->addListener(Events::preRender($this), array($this, 'preFilterRelativePosition'));
-        $dispatcher->addListener(Events::preRender($this), array($this, 'preFilterPosition'));
-        $dispatcher->addListener(Events::preRender($this), array($this, 'preFilterSize'));
 
         // Post-render filters
         $dispatcher->addListener(Events::postRender($this), array($this, 'postFilterLayout'));
-    }
-
-    public function preFilterPosition()
-    {
-        if (!$this->attributeExists('posn')) {
-            if ($this->posnX !== null || $this->posnY !== null || $this->posnZ !== null) {
-
-                $this->setAttribute('posn', (float)$this->posnX . ' ' . (float)$this->posnY . ' ' . (float)$this->posnZ);
-            }
-        }
-    }
-
-    public function preFilterSize()
-    {
-        if (!$this->attributeExists('sizen')) {
-            if ($this->sizenX !== null || $this->sizenY !== null) {
-                $this->setAttribute('sizen', (float)$this->sizenX . ' ' . (float)$this->sizenY);
-            }
-        }
     }
 
     public function preFilterLayout()
@@ -103,37 +74,41 @@ abstract class Base extends Node
         }
     }
 
+    function getSizen()
+    {
+        $sizen = explode(' ', $this->getAttribute('sizen', '0 0'));
+        if (count($sizen) != 2) {
+            throw new Exception('Sizen should be a 2-element array');
+        }
+        return $sizen;
+    }
+
+    function getSizenX()
+    {
+        $sizen = $this->getSizen();
+        return $sizen[0];
+    }
+
+    function getSizenY()
+    {
+        $sizen = $this->getSizen();
+        return $sizen[1];
+    }
+
     function getRealSizenX()
     {
-        if ($this->sizenX === null) {
+        if (!$this->attributeExists('sizen')) {
             throw new Exception('SizenX is not set');
         }
-        return $this->sizenX * $this->getAttribute("scale", 1);
+        return $this->getSizenX() * $this->getAttribute("scale", 1);
     }
 
     function getRealSizenY()
     {
-        if ($this->sizenY === null) {
+        if (!$this->attributeExists('sizen')) {
             throw new Exception('SizenY is not set');
         }
-        return $this->sizenY * $this->getAttribute("scale", 1);
-    }
-
-    /**
-     * @return \static
-     */
-    function setPosn($posnX = null, $posnY = null, $posnZ = null)
-    {
-        if ($posnX !== null) {
-            $this->setPosnX($posnX);
-        }
-        if ($posnY !== null) {
-            $this->setPosnY($posnY);
-        }
-        if ($posnZ !== null) {
-            $this->setPosnZ($posnZ);
-        }
-        return $this;
+        return $this->getSizenY() * $this->getAttribute("scale", 1);
     }
 
     /**
@@ -141,55 +116,9 @@ abstract class Base extends Node
      */
     function setSizen($sizenX = null, $sizenY = null)
     {
-        if ($sizenX !== null) {
-            $this->setSizenX($sizenX);
-        }
-        if ($sizenY !== null) {
-            $this->setSizenY($sizenY);
-        }
-        return $this;
-    }
-
-    /**
-     * @return \static
-     */
-    function setPosnX($posnX)
-    {
-        $this->posnX = $posnX;
-        return $this;
-    }
-
-    /**
-     * @return \static
-     */
-    function setPosnY($posnY)
-    {
-        $this->posnY = $posnY;
-        return $this;
-    }
-
-    /**
-     * @return \static
-     */
-    function setPosnZ($posnZ)
-    {
-        $this->posnZ = $posnZ;
-        return $this;
-    }
-
-    function getPosnX()
-    {
-        return $this->posnX;
-    }
-
-    function getPosnY()
-    {
-        return $this->posnY;
-    }
-
-    function getPosnZ()
-    {
-        return $this->posnZ;
+        $sizenX = (float)$sizenX === null ? $this->getSizenX() : $sizenX;
+        $sizenY = (float)$sizenY === null ? $this->getSizenY() : $sizenY;
+        return $this->setAttribute('sizen', (float)$sizenX . ' ' . (float)$sizenY);
     }
 
     /**
@@ -197,8 +126,7 @@ abstract class Base extends Node
      */
     function setSizenX($sizenX)
     {
-        $this->sizenX = $sizenX;
-        return $this;
+        return $this->setSizen($sizenX, null);
     }
 
     /**
@@ -206,18 +134,69 @@ abstract class Base extends Node
      */
     function setSizenY($sizenY)
     {
-        $this->sizenY = $sizenY;
-        return $this;
+        return $this->setSizen(null, $sizenY);
     }
 
-    function getSizenX()
+    function getPosn()
     {
-        return $this->sizenX;
+        $posn = explode(' ', $this->getAttribute('posn', '0 0 0'));
+        if (count($posn) != 3) {
+            throw new Exception('Posn should be a 3-element array');
+        }
+        return $posn;
     }
 
-    function getSizenY()
+    function getPosnX()
     {
-        return $this->sizenY;
+        $posn = $this->getPosn();
+        return $posn[0];
+    }
+
+    function getPosnY()
+    {
+        $posn = $this->getPosn();
+        return $posn[1];
+    }
+
+    function getPosnZ()
+    {
+        $posn = $this->getPosn();
+        return $posn[2];
+    }
+
+    /**
+     * @return \static
+     */
+    function setPosn($posnX = null, $posnY = null, $posnZ = null)
+    {
+        $posnX = $posnX === null ? $this->getPosnX() : $posnX;
+        $posnY = $posnY === null ? $this->getPosnY() : $posnY;
+        $posnZ = $posnZ === null ? $this->getPosnZ() : $posnZ;
+        return $this->setAttribute('posn', (float)$posnX . ' ' . (float)$posnY . ' ' . (float)$posnZ);
+    }
+
+    /**
+     * @return \static
+     */
+    function setPosnX($posnX)
+    {
+        return $this->setPosn($posnX, null, null);
+    }
+
+    /**
+     * @return \static
+     */
+    function setPosnY($posnY)
+    {
+        return $this->setPosn(null, $posnY, null);
+    }
+
+    /**
+     * @return \static
+     */
+    function setPosnZ($posnZ)
+    {
+        return $this->setPosn(null, null, $posnZ);
     }
 
     /**
