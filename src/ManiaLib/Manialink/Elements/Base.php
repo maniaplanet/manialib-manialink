@@ -97,17 +97,17 @@ abstract class Base extends Node
 
     function getRealSizenX()
     {
-        if (!$this->attributeExists('sizen')) {
-            throw new Exception('SizenX is not set');
-        }
+//        if (!$this->attributeExists('sizen')) {
+//            throw new Exception('SizenX is not set');
+//        }
         return $this->getSizenX() * $this->getAttribute("scale", 1);
     }
 
     function getRealSizenY()
     {
-        if (!$this->attributeExists('sizen')) {
-            throw new Exception('SizenY is not set');
-        }
+//        if (!$this->attributeExists('sizen')) {
+//            throw new Exception('SizenY is not set');
+//        }
         return $this->getSizenY() * $this->getAttribute("scale", 1);
     }
 
