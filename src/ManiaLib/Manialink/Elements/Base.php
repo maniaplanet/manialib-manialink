@@ -116,8 +116,8 @@ abstract class Base extends Node
      */
     function setSizen($sizenX = null, $sizenY = null)
     {
-        $sizenX = (float)$sizenX === null ? $this->getSizenX() : $sizenX;
-        $sizenY = (float)$sizenY === null ? $this->getSizenY() : $sizenY;
+        $sizenX = $sizenX === null ? $this->getSizenX() : $sizenX;
+        $sizenY = $sizenY === null ? $this->getSizenY() : $sizenY;
         return $this->setAttribute('sizen', (float)$sizenX . ' ' . (float)$sizenY);
     }
 
