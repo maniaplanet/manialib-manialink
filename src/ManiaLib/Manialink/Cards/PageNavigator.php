@@ -71,28 +71,54 @@ class PageNavigator extends Frame
     function __construct()
     {
         $this->arrowFastNext = Quad::create()
+			->setScriptevents()
             ->setSizen(8, 8);
         $this->arrowFastPrev = Quad::create()
+			->setScriptevents()
             ->setSizen(8, 8);
         $this->arrowFirst    = Quad::create()
+			->setScriptevents()
             ->setSizen(8, 8);
         $this->arrowLast     = Quad::create()
+			->setScriptevents()
             ->setSizen(8, 8);
         $this->arrowPrev     = Quad::create()
+			->setScriptevents()
             ->setSizen(8, 8);
         $this->arrowNext     = Quad::create()
+			->setScriptevents()
             ->setSizen(8, 8);
         $this->text          = Label::create()
             ->setSizen(14);
         $this->textBg        = Quad::create()
+			->setScriptevents()
             ->setSizen(16, 6);
+		$this->setId('PageNavigator');
     }
 
     function registerListeners(EventDispatcherInterface $dispatcher)
     {
         parent::registerListeners($dispatcher);
         $dispatcher->addListener(Events::preRender($this), array($this, 'preFilter'));
+		$dispatcher->addListener(Events::preRender($this), array($this, 'preFilterIds'));
     }
+
+	/**
+	 * @return Label
+	 */
+	public function getText()
+	{
+		return $this->text;
+	}
+
+	/**
+	 * @return Quad
+	 */
+	public function getTextBg()
+	{
+		return $this->textBg;
+	}
+
 
     /**
      * @return Quad
@@ -381,7 +407,10 @@ class PageNavigator extends Frame
             $this->arrowFirst->setManialink(null);
         }
 
-        $this->text->setText($this->currentPage . ' / ' . $this->pageNumber);
+		if($this->currentPage && $this->pageNumber)
+        {
+			$this->text->setText($this->currentPage . ' / ' . $this->pageNumber);
+		}
         $this->text->setAlign('center', 'center2');
         $this->text->setRelativeAlign('center', 'center');
         $this->text->setPosnZ(0.1);
@@ -425,5 +454,19 @@ class PageNavigator extends Frame
         $this->appendChild($this->arrowPrev);
         $this->appendChild($this->arrowNext);
     }
+
+	public function preFilterIds()
+	{
+		if($this->getId())
+		{
+			$this->arrowFirst->setId($this->getId().':arrowFirst');
+			$this->arrowFastPrev->setId($this->getId().':arrowFastPrev');
+			$this->arrowPrev->setId($this->getId().':arrowPrev');
+			$this->text->setId($this->getId().':text');
+			$this->arrowNext->setId($this->getId().':arrowNext');
+			$this->arrowFastNext->setId($this->getId().':arrowFastNext');
+			$this->arrowLast->setId($this->getId().':arrowLast');
+		}
+	}
 
 }
