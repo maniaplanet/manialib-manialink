@@ -70,30 +70,30 @@ class PageNavigator extends Frame
 
     function __construct()
     {
-		$this->setId('PageNavigator');
+        $this->setId('PageNavigator');
         $this->arrowFastNext = Quad::create()
-			->setId($this->getId().':arrowFastNext')
+            ->setId($this->getId().':arrowFastNext')
             ->setSizen(8, 8);
         $this->arrowFastPrev = Quad::create()
-			->setId($this->getId().':arrowFastPrev')
+            ->setId($this->getId().':arrowFastPrev')
             ->setSizen(8, 8);
         $this->arrowFirst    = Quad::create()
-			->setId($this->getId().':arrowFirst')
+            ->setId($this->getId().':arrowFirst')
             ->setSizen(8, 8);
         $this->arrowLast     = Quad::create()
-			->setId($this->getId().':arrowLast')
+            ->setId($this->getId().':arrowLast')
             ->setSizen(8, 8);
         $this->arrowPrev     = Quad::create()
-			->setId($this->getId().':arrowPrev')
+            ->setId($this->getId().':arrowPrev')
             ->setSizen(8, 8);
         $this->arrowNext     = Quad::create()
-			->setId($this->getId().':arrowNext')
+            ->setId($this->getId().':arrowNext')
             ->setSizen(8, 8);
         $this->text          = Label::create()
-			->setId($this->getId().':text')
+            ->setId($this->getId().':text')
             ->setSizen(14);
         $this->textBg        = Quad::create()
-			->setId($this->getId().':textBg')
+            ->setId($this->getId().':textBg')
             ->setSizen(16, 6);
     }
 
@@ -103,21 +103,21 @@ class PageNavigator extends Frame
         $dispatcher->addListener(Events::preRender($this), array($this, 'preFilter'));
     }
 
-	/**
-	 * @return Label
-	 */
-	public function getText()
-	{
-		return $this->text;
-	}
+    /**
+     * @return Label
+     */
+    public function getText()
+    {
+        return $this->text;
+    }
 
-	/**
-	 * @return Quad
-	 */
-	public function getTextBg()
-	{
-		return $this->textBg;
-	}
+    /**
+     * @return Quad
+     */
+    public function getTextBg()
+    {
+        return $this->textBg;
+    }
 
     /**
      * @return Quad
