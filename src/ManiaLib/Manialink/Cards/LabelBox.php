@@ -25,7 +25,7 @@ class LabelBox extends Box
     {
         parent::preFilterSize();
 
-        if (!$this->label->getSizenX() && $this->label->getSizenY()) {
+        if (!$this->label->getSizenX() && !$this->label->getSizenY()) {
             $this->label->setSizen($this->getSizenX(), $this->getSizenY());
         }
     }
