@@ -43,5 +43,13 @@ class Manialink extends Node
     {
         return $this->setAttribute('navigable3d', $value);
     }
+	
+	/**
+	 * @return static
+	 */
+	public function setName($value)
+	{
+		return $this->setAttribute('name', $value);
+	}
 
 }
