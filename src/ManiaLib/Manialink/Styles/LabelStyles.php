@@ -103,5 +103,6 @@ abstract class LabelStyles
     const CardMain_Quit              = 'CardMain_Quit';
     const CardMain_Tool              = 'CardMain_Tool';
     const CardMain_Tool_NoBg         = 'CardMain_Tool_NoBg';
+    const CardMain_Tool_NoBg2         = 'CardMain_Tool_NoBg2';
 
 }
