@@ -14,8 +14,6 @@ use ManiaLib\Manialink\Styles\Bgs1;
 
 error_reporting(E_ALL);
 
-require_once '../vendor/autoload.php';
-
 $ml = new Manialink();
 
 Timeout::create()
@@ -87,11 +85,7 @@ Fragment::create()
     ->setNodeValue('<label text="This label is written directly in XML" />')
     ->appendTo($ml);
 
-header('Content-type: application/xml; charset=utf-8');
-
-$renderer = new Renderer();
-$renderer->setRoot($ml);
-echo $renderer->getXML();
+return $ml;
 
 //This will output:
 //<manialink version="1">

@@ -12,8 +12,6 @@ use ManiaLib\Manialink\Styles\Icons64x64_1;
 use ManiaLib\Manialink\Styles\LabelStyles;
 use ManiaLib\XML\Rendering\Renderer;
 
-require_once '../vendor/autoload.php';
-
 error_reporting(E_ALL);
 
 $manialink = Manialink::create()
@@ -140,8 +138,4 @@ $cases[11]->appendChild(
     )
 );
 
-header('Content-type: application/xml; charset=utf-8');
-
-$renderer = new Renderer();
-$renderer->setRoot($manialink);
-echo $renderer->getXML();
+return $manialink;
