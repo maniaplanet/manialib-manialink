@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!-- see http://www.phpunit.de/wiki/Documentation -->
+<phpunit
+	bootstrap="./vendor/maniaplanet/manialib-xml/tests/bootstrap.php"
+	colors="true"
+	verbose="true">
+	<php>
+		<const name="APP_ROOT" value="../../../../"/>
+	</php>
+	<testsuites>
+		<testsuite name="LibXML Tests">
+			<directory suffix="Test.php">./vendor/maniaplanet/manialib-xml/tests</directory>
+		</testsuite>
+	</testsuites>
+</phpunit>
