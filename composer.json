@@ -20,7 +20,8 @@
     },
      "require-dev": {
         "symfony/console": "~2.4",
-        "symfony/stopwatch": "~2.4"
+        "symfony/stopwatch": "~2.4",
+        "symfony/finder": "~2.3"
     },
     "autoload": {
         "psr-4": {"ManiaLib\\": "src/ManiaLib/"}
