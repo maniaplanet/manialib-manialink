@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manialink version="1">
+    <timeout>0</timeout>
+	<label text="Line layout examples" halign="center" style="TextRaceMessageBig" posn="0 80 0"/>
+    <frame posn="-150 60 0">
+        <frame sizen="90 35" posn="0 0 0">
+            <label halign="center" text="Left align" style="TextTitle3" posn="45 -3 0" />
+            <quad sizen="6 6" halign="center" valign="center" posn="25 -20.5 2" style="Icons64x64_1" substyle="QuitRace" />
+            <frame posn="25 -20.5 0">
+                <quad sizen="20 20" halign="left" valign="center" bgcolor="F00" opacity="0.5" posn="0 0 0" />
+                <quad sizen="20 20" halign="left" valign="center" bgcolor="F00" opacity="0.5" posn="21 0 0" />
+                <quad sizen="20 20" halign="left" valign="center" bgcolor="F00" opacity="0.5" posn="42 0 0" />
+            </frame>
+        </frame>
+        <frame sizen="90 35" posn="90 0 0">
+            <label halign="center" text="Center align" style="TextTitle3" posn="45 -3 0" />
+            <quad sizen="6 6" halign="center" valign="center" posn="25 -20.5 2" style="Icons64x64_1" substyle="QuitRace" />
+            <frame posn="25 -20.5 0">
+                <quad sizen="20 20" halign="center" valign="center" bgcolor="F00" opacity="0.5" posn="0 0 0" />
+                <quad sizen="20 20" halign="center" valign="center" bgcolor="F00" opacity="0.5" posn="21 0 0" />
+                <quad sizen="20 20" halign="center" valign="center" bgcolor="F00" opacity="0.5" posn="42 0 0" />
+            </frame>
+        </frame>
+        <frame sizen="90 35" posn="180 0 0">
+            <label halign="center" text="Right align" style="TextTitle3" posn="45 -3 0" />
+            <quad sizen="6 6" halign="center" valign="center" posn="25 -20.5 2" style="Icons64x64_1" substyle="QuitRace" />
+            <frame posn="25 -20.5 0">
+                <quad sizen="20 20" halign="right" valign="center" bgcolor="F00" opacity="0.5" posn="0 0 0" />
+                <quad sizen="20 20" halign="right" valign="center" bgcolor="F00" opacity="0.5" posn="21 0 0" />
+                <quad sizen="20 20" halign="right" valign="center" bgcolor="F00" opacity="0.5" posn="42 0 0" />
+            </frame>
+        </frame>
+    </frame>
+    <frame posn="-45 20 0" sizen="90 35">
+        <label halign="center" text="left and right align" style="TextTitle3" posn="45 -3 0" />
+        <quad sizen="6 6" halign="center" valign="center" posn="25 -20.5 2" style="Icons64x64_1" substyle="QuitRace" />
+        <frame posn="25 -20.5 0">
+            <quad sizen="20 20" halign="left" bgcolor="F00" opacity="0.5" posn="0 0 0" />
+            <quad sizen="20 20" halign="right" bgcolor="F00" opacity="0.5" posn="41 0 0" />
+            <quad sizen="20 20" halign="left" bgcolor="F00" opacity="0.5" posn="42 0 0" />
+        </frame>
+    </frame>
+</manialink>
