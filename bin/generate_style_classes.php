@@ -1,5 +1,5 @@
 <?php
-    const STYLES_URL = 'https://raw.github.com/maniaplanet/documentation/gh-pages/manialink/styles.json';
+    const STYLES_URL = 'https://raw.githubusercontent.com/maniaplanet/documentation/gh-pages/creation/manialink/styles.json';
     const PHP_NAMESPACE = 'ManiaLib\Manialink\Styles';
 
 function debug($message)
