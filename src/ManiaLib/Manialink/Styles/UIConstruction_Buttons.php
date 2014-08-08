@@ -24,6 +24,7 @@ abstract class UIConstruction_Buttons
     const Down                 = 'UIConstruction_Buttons:Down';
     const Drive                = 'UIConstruction_Buttons:Drive';
     const Erase                = 'UIConstruction_Buttons:Erase';
+    const FreeItems            = 'UIConstruction_Buttons:FreeItems';
     const GhostBlocks          = 'UIConstruction_Buttons:GhostBlocks';
     const Help                 = 'UIConstruction_Buttons:Help';
     const Item                 = 'UIConstruction_Buttons:Item';

@@ -33,6 +33,7 @@ abstract class Bgs1
     const BgColorContour      = 'Bgs1:BgColorContour';
     const BgDialogBlur        = 'Bgs1:BgDialogBlur';
     const BgEmpty             = 'Bgs1:BgEmpty';
+    const BgGlow2             = 'Bgs1:BgGlow2';
     const BgGradBottom        = 'Bgs1:BgGradBottom';
     const BgGradLeft          = 'Bgs1:BgGradLeft';
     const BgGradRight         = 'Bgs1:BgGradRight';
@@ -42,11 +43,13 @@ abstract class Bgs1
     const BgIconBorder        = 'Bgs1:BgIconBorder';
     const BgList              = 'Bgs1:BgList';
     const BgListLine          = 'Bgs1:BgListLine';
+    const BgMetalBar          = 'Bgs1:BgMetalBar';
     const BgPager             = 'Bgs1:BgPager';
     const BgProgressBar       = 'Bgs1:BgProgressBar';
     const BgShadow            = 'Bgs1:BgShadow';
     const BgSlider            = 'Bgs1:BgSlider';
     const BgSystemBar         = 'Bgs1:BgSystemBar';
+    const BgTitle             = 'Bgs1:BgTitle';
     const BgTitle2            = 'Bgs1:BgTitle2';
     const BgTitle3            = 'Bgs1:BgTitle3';
     const BgTitle3_1          = 'Bgs1:BgTitle3_1';

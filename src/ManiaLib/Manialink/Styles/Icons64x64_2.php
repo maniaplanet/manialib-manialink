@@ -7,6 +7,7 @@ abstract class Icons64x64_2
 
     const ArrowElimination   = 'Icons64x64_2:ArrowElimination';
     const ArrowHit           = 'Icons64x64_2:ArrowHit';
+    const Calendar           = 'Icons64x64_2:Calendar';
     const Disconnected       = 'Icons64x64_2:Disconnected';
     const DisconnectedLight  = 'Icons64x64_2:DisconnectedLight';
     const LaserElimination   = 'Icons64x64_2:LaserElimination';

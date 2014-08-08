@@ -5,6 +5,8 @@ namespace ManiaLib\Manialink\Styles;
 abstract class Icons128x32_1
 {
 
+    const ArrowUp         = 'Icons128x32_1:ArrowUp';
+    const BgQuadWhite     = 'Icons128x32_1:BgQuadWhite';
     const Empty_          = 'Icons128x32_1:Empty';
     const ManiaLinkHome   = 'Icons128x32_1:ManiaLinkHome';
     const ManiaLinkSwitch = 'Icons128x32_1:ManiaLinkSwitch';
